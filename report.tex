@@ -1,0 +1,86 @@
+\documentclass{scrartcl}
+\usepackage{pgfplots}
+\usepackage{makecell}
+\usepackage{multirow} % For merged cells
+\usepackage{booktabs} % For better table formatting
+\usepackage{calc}
+\usepackage{Style_File}
+\usepackage{fancyhdr}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Recommended preamble:
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{%
+    layers/standard/.define layer set={%
+        background,axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground%
+    }{
+        grid style={/pgfplots/on layer=axis grid},%
+        tick style={/pgfplots/on layer=axis ticks},%
+        axis line style={/pgfplots/on layer=axis lines},%
+        label style={/pgfplots/on layer=axis descriptions},%
+        legend style={/pgfplots/on layer=axis descriptions},%
+        title style={/pgfplots/on layer=axis descriptions},%
+        colorbar style={/pgfplots/on layer=axis descriptions},%
+        ticklabel style={/pgfplots/on layer=axis tick labels},%
+        axis background@ style={/pgfplots/on layer=axis background},%
+        3d box foreground style={/pgfplots/on layer=axis foreground},%
+    },
+}
+
+
+\setlength{\headheight}{0.75in}
+\setlength{\oddsidemargin}{0in}
+        \setlength{\evensidemargin}{0in}
+        \setlength{\textwidth}{6.5in}
+        \setlength{\headwidth}{7.3in}
+        \setlength{\textheight}{8.75in}
+        \rfoot{\thepage}
+        \renewcommand{\headrulewidth}{0pt} % Remove the header line
+        \renewcommand{\footrulewidth}{0pt}
+\fancyhead[L,C]{}
+\fancyhead[L]{PH3203: Term Project}
+\fancyhead[R]{0\thepage}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=cyan!80!black}
+\fancyhead[C]{ Entanglement Classification using Knots}
+\fancyfoot[C]{0\thepage}
+\fancyfoot[R,L]{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{longtable} 
+\usepackage[left = 0.7in,
+right = 0.7in,
+bottom = 0.9in,
+top = 0.9in,
+a4paper]{geometry}
+
+\title{
+        \Huge\textbf{\textcolor{blue}{{Classification of Entanglement using Knots}}} \\[0.5cm]
+        \Large\textsc{{PH3203 Term Project} }
+}
+
+
+\author{{\Large Sagnik Seth} \\ \small{22MS026} \and {\Large Jessica  Das} \\ \small{22MS157} \and {\Large Sayan Karmakar} \\ \small{22MS163}}
+\date{}
+\begin{document}
+\maketitle  
+\tableofcontents
+\newpage
+\section{Introduction}
+\section{Classification of Links}
+\section{Entanglement Classification}
+\section{Physical Significance}
+\section{Discussion and Conclusion}
+\newpage
+\section*{Appendix A: {\huge Quantum Information Basics}}
+\addcontentsline{toc}{section}{Appendix A: Quantum Information Basics} % Optional
+\subsection{Density Matrix}
+\subsection{Peres-Horodecki Criterion}
+\newpage
+\section*{Appendix B: {\huge Knot Theory Basics}}
+\addcontentsline{toc}{section}{Appendix B: { Knot Theory Basics}}
+\end{document}
