@@ -1,5 +1,6 @@
 \ProvidesPackage{mystyle1}
 \RequirePackage{enumitem}
+\RequirePackage{listings}
 % \renewcommand{\familydefault}{\QTAncientOlive}
 \RequirePackage{fontawesome}
 \usepackage[T1]{fontenc}
@@ -7,6 +8,31 @@
 \usepackage{siunitx}
 \sisetup{detect-all}
 
+\lstdefinelanguage{Julia}{
+  morekeywords={
+    abstract, break, case, catch, const, continue, do, else, elseif,
+    end, export, false, for, function, global, if, import, in, let,
+    local, macro, module, mutable, new, quote, return, true, try,
+    type, using, while, where, struct
+  },
+  sensitive=true,
+  morecomment=[l]\#,
+  morestring=[b]",
+}
+
+\lstset{
+  language=Julia,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  breaklines=true,
+  breakatwhitespace=true,
+  showstringspaces=false,
+  frame=single,
+  columns=fullflexible,
+  captionpos=b
+}
 
 % \usepackage[ttdefault=true]{AnonymousPro}
 % \renewcommand*\familydefault{\ttdefault} 

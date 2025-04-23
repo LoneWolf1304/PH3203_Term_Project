@@ -115,6 +115,32 @@ Then we can trace out the qudit state $\ket{d}$ to obtain the density matrix of 
 $$\boxed{\hat{\rho}_{abc}=\frac{\Tr_d{\ket{\psi}\bra{\psi}}}{\sqrt{\braket{\psi|\psi}}}} $$
 \end{itemize}
 \subsection{Applying to Three Qubit Systems}
+As a demonstraction, we will apply our algorithm to three qubit systems. Note that from the rules of the `link' polynomial, the possible basis terms for three qubit system are: $\{ab,ac,bc, abc\}$. Using this, four distinct classes of polynomials are possible:
+\begin{align*}
+    P_1(a,b,c) &= abc \\
+    P_2(a,b,c) &= abc+ab \\
+    P_3(a,b,c) &= ab+ac \\
+    P_4(a,b,c) &= ab+ac+bc
+\end{align*}
+Let us start with the $3^1$ link class, which correspond to the Borromean Link. Cutting any of $a,b$ or $c$ will lead to complete separabability and loss of entanglement. 
+\begin{figure}[H]
+    \centering
+  \input{borromean.tex}  
+  \caption{The Borromean link, characterising the $3^1$ link class.}
+\end{figure}
+\noindent
+We already know that on its own the GHZ state characterises the $3^1$ link, as discussed in the preceding works. Thus, we have the pure state:
+$$\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$$\\[0.3cm]
+Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting any of $a,b$ will lead to complete separabality but if we cut $c$, then the other rings will remain entangled. The link can be represented as: 
+\begin{figure}[H]
+    \centering
+  \input{3_2.tex}  
+  \caption{The knot diagram, characterising the $3^2$ link class.}
+\end{figure}
+\noindent
+Here the blue knot corresponds to $c$ while the other two correspond to $a$ and $b$ (a,b are symmetric in the polynomial). An example of a pure state is found, as mentioned in the paper: 
+$$\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $$
+To check that this state indeed statistfies the link, let us calculate the density operator $\hat{\rho}_{abc}=\ket{3^2}_{abc}\bra{3^2}_{abc}$ and then check for the PPT test for each cuts. 
 \subsection{Applying to Four Qubit Systems}
 \section{Physical Significance: Use in Quantum Networks}
 \section{Discussion and Conclusion}
@@ -126,4 +152,12 @@ $$\boxed{\hat{\rho}_{abc}=\frac{\Tr_d{\ket{\psi}\bra{\psi}}}{\sqrt{\braket{\psi|
 \newpage
 \section*{Appendix B: {\huge Knot Theory Basics}}
 \addcontentsline{toc}{section}{Appendix B: { Knot Theory Basics}}
+\newpage
+
+\section*{Appendix C: {\huge Code for Numeric Calculations}}
+We used the \texttt{QuantumInformation.jl} package in \texttt{Julia} to perform the numerical calculations. The code provided below shows some basic calculations that we had used in this report. 
+\addcontentsline{toc}{section}{Appendix C: { Code for Numerical Calculations}}
+\begin{lstlisting}[language=Julia,label={lst:transmission}]
+using QuantumInformation, LinearAlgebra, Latexify
+\end{lstlisting}
 \end{document}
