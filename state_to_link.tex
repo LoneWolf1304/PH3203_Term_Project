@@ -1,0 +1,45 @@
+\documentclass{amsart}
+
+\usepackage{amsmath,amsfonts, amssymb, amsthm, esint, physics}
+\usepackage{amscd}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+	\title{State to Links}
+	\author{Sayan Karmakar }
+	\address{Department of Physics, IISERK}
+	\email{sk22ms163@iiserkol.ac.in }
+	\maketitle
+	
+	
+	\section{Introduction}
+	We have till now only shown existence of a polynomial invariant of a link characterized by the way it behaves after cutting. In this section, we will show that this polynomial can be connected to any quantum state, and using this we can study the entanglement property of the state.
+	 
+	 
+	\section{Obtaining a Link from Quantum System} 
+	The polynomial gives us the behavior of the topological link after cutting any particular knot. In the case, we the operation of cutting a particular is equivalent to taking a partial trace with respect to that system. That means if a measurement is done for some system then the other states are entangled or not. 
+	
+	As cutting the link is equivalent to tracing out the state. First step to write down the polynomial expression for the state is to perform all possible partial traces, and then we have to check if the resulting state is entangled or not. This information gives us the polynomial which is essentially the same as finding out the topological link.
+	
+	\subsection{Example}
+	
+	Consider the three qubit system, given by the wavefunction, 
+	 \begin{equation*}
+	 	\ket{\psi} = \frac{1}{2} (\ket{100}_{abc} + \ket{010}_{abc} + \ket{110}_{abc}+ \ket{011}_{abc}).
+	 \end{equation*}
+ 
+ 	The density matrix here is given by the matrix $\rho = \ket{\psi}\bra{\psi}$. Also we chose the convention that the state $a$ is identified as the ring variable $a$,  state $b$ for the ring variable $b$, and state $c$ for the ring variable $c$.
+ 	
+ 	Firstly we have to find out if all the wavefunctions are in entangled initially or not. This will tell us if the polynomial has any three variable term or not. To do this we use the PPT test (positive partial transpose) with respect to each subsystem.
+	
+	
+\end{document}
