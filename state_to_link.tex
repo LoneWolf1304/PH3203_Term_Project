@@ -2,6 +2,7 @@
 
 \usepackage{amsmath,amsfonts, amssymb, amsthm, esint, physics}
 \usepackage{amscd}
+\usepackage{siunitx}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \theoremstyle{definition}
@@ -25,7 +26,7 @@
 	We have till now only shown existence of a polynomial invariant of a link characterized by the way it behaves after cutting. In this section, we will show that this polynomial can be connected to any quantum state, and using this we can study the entanglement property of the state.
 	 
 	 
-	\section{Obtaining a Link from Quantum System} 
+	\section{Obtaining A Link From Quantum System} 
 	The polynomial gives us the behavior of the topological link after cutting any particular knot. In the case, we the operation of cutting a particular is equivalent to taking a partial trace with respect to that system. That means if a measurement is done for some system then the other states are entangled or not. 
 	
 	As cutting the link is equivalent to tracing out the state. First step to write down the polynomial expression for the state is to perform all possible partial traces, and then we have to check if the resulting state is entangled or not. This information gives us the polynomial which is essentially the same as finding out the topological link.
@@ -38,8 +39,62 @@
 	 \end{equation*}
  
  	The density matrix here is given by the matrix $\rho = \ket{\psi}\bra{\psi}$. Also we chose the convention that the state $a$ is identified as the ring variable $a$,  state $b$ for the ring variable $b$, and state $c$ for the ring variable $c$.
- 	
+ 	\begin{equation*}
+ 		\rho = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
  	Firstly we have to find out if all the wavefunctions are in entangled initially or not. This will tell us if the polynomial has any three variable term or not. To do this we use the PPT test (positive partial transpose) with respect to each subsystem.
+ 	We denote the partial transpose with respect to subsystem $a$ as $\rho^{T_a}$. Here we present the partial transpose with respect to each subsystem.
+ 	\begin{equation*}
+ 		\rho^{T_a} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+ 	This matrix has negative eigenvalues.
+ 	\begin{equation*}
+ 		\rho^{T_b} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0.25 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+ 	This matrix also has negative eigenvalues.
+ 	\begin{equation*}
+ 		\rho^{T_c} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+	This matrix is the same as the matrix $\rho^{T_a}$. As partial transpose of all the subsystem has negative eigenvalues we can say that all the subsystems are entangled with each other. So there exists a \textbf{tripartite entanglement.}
 	
+	Now we want to see if the system remains entangled after tracing out with respect to each subsystem or not. Here the reduced density matrix is denoted as $\rho_{ab}$ when the system $c$ is traced out, similarly we have reduced density matrix $\rho_{bc}$, and $\rho_{ac}$. To see if this reduced density matrices are separable or entangled, we again use PPT test. Here as the system size is $2 \times 2$, presence of atleast one negative eigenvalue will imply entanglement between the subsystems, but also if none of the eigenvalues are negative then the systems are separable. The last statement is only true for $2 \times 2$ and $2 \times 3$ systems.
+	
+	The reduced density matrices, $ \rho_{bc},\rho_{ab}, \rho_{ac}$ are the following:
+	
+	\begin{equation*}
+		\rho_{bc} = \left[\begin{matrix}0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0\\0.25 & 0 & 0.5 & 0.25\\0 & 0 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+
+	\begin{equation*}
+		\rho_{ac} = \left[\begin{matrix}0.25 & 0.25 & 0.25 & 0\\0.25 & 0.25 & 0.25 & 0\\0.25 & 0.25 & 0.5 & 0\\0 & 0 & 0 & 0\end{matrix}\right].
+	\end{equation*}
+
+	\begin{equation*}
+		\rho_{ab} = \left[\begin{matrix}0 & 0 & 0 & 0\\0 & 0.5 & 0.25 & 0.25\\0 & 0.25 & 0.25 & 0.25\\0 & 0.25 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+
+	%Here also see that $\rho_{ab} = \rho_{bc}$, that means tracing out with respect to $a$ creates the same kind of state as tracing out with respect to $c$. 
+	% We saw symmetry in the partial transpose with respect to a and c also.
+	Partial transpose of $\rho_{bc}$ with respect to subsystem $b $ is $\rho^{T_b}_{bc}$.
+	\begin{equation*}
+		\rho^{T_b}_{bc} = \left[\begin{matrix}0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0\\0.25 & 0 & 0.5 & 0.25\\0 & 0 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+	This has all positive eigenvalues. So, the subsystem $b$ and $c$ are separated after $a$ is traced out. Now, partial transpose of $\rho_{ac}$ with respect to the subsystem $a$ is $\rho^{T_a}_{ac}$ and it is
+	\begin{equation*}
+		\rho^{T_a}_{ac} = \left[\begin{matrix}0.25 & 0.25 & 0.25 & 0.25\\0.25 & 0.25 & 0 & 0\\0.25 & 0 & 0.5 & 0\\0.25 & 0 & 0 & 0\end{matrix}\right].
+	\end{equation*}
+	This has negative eigenvalues. So after tracing out subsystem $b$, the subsystem $a$ and $c$ remains entangled.
+	Partial transpose of $\rho_{ab}$ with respect to the subsystem $a$ is the following,
+	\begin{equation*}
+		\rho^{T_a}_{ab} = \left[\begin{matrix}0 & 0 & 0 & 0.25\\0 & 0.5 & 0 & 0.25\\0 & 0 & 0.25 & 0.25\\0.25 & 0.25 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+	This also has negative eigenvalues, so after tracing out $c$, the subsystem $a$ and $b$ remains entangled.
+ So to summarize, we want to a 3 variable polynomial with the following property:
+	\begin{itemize}
+		\item If we put $a = 0$, the polynomial is zero.
+		\item If we put $b = 0$, the polynomial is just $ac$, corresponding to the entanglement of $a$ and $c$ after tracing out $b$.
+		\item If we put $c = 0$, the polynomial is $bc$, as tracing out $c$, gives an entangled state of $b$ and $c$.
+	\end{itemize}
+	From these information we can say that the polynomial corresponding to this state is $ac + bc$. This corresponds to the link class $3^3$.
 	
 \end{document}
