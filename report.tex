@@ -84,36 +84,80 @@ This idea has been used successfully to study three-qubit states, as shown in [1
 In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.
 
 
-One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  
+One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  
 
 
 
 \section{Classification of Links: A Polynomial Approach}
-\section{Entanglement Classification}
-\subsection{Obtaining a link from quantum state}
 \subsection{Obtaining a state from a link}
-
-HI  I am doing this on FRIDAY 
-
-
+In this section, we will see how we can obtain a link from a quantum state. This is in general a difficult task to obtain an entangled quantum states from the polynomial as the number of qubits increases. The process in the paper mentions an algorithm which provides an `incomplete' map betwee a given link and a quantum state. Using the procedure, the general structure of the quantum state can be obtained, however, some free coefficients remain which needs to be fixed computationally. Moreover, presently only mixed states satisfying the link can be obtained using this procedure. \\[0.3cm]
+Note that although incomplete, the map is still useful since we can ascertain the structure of each state contained in the mixed state. That is, from a possibility of $2^N$ (for $N$ qubits, there are $2^N$ basis states, namely $\ket{0}, \ket{1}, \ldots \ket{2^N-1}$ where each ket is to be assumed in the binary representation) states, we are reducing it to a much smaller number. \\[0.3cm]
+For this, we will use the GHZ type of state as a building block which are of the form:
+\begin{align*}
+    \ket{N^1} = \frac{1}{\sqrt{2}}\brac{\ket{0}^{\otimes N} + \ket{1}^{\otimes N}} \\
+\end{align*}
+Here $\ket{0}^{\otimes N}$ is the tensor product of $N$ number of $\ket{0}$ states, that is, $\ket{0}^{\otimes N} = \ket{\underbrace{0000\ldots0}_{\mathrm{N\ times}}}$. The state $\ket{N^1}$ is a maximally entangled state of $N$ qubits. The general algorithm to obtain a state from the link is as follows:
+\begin{enumerate}
+    \item Let a polynomial $P$ be given. Select a term of the given `link' polynomial, say $t$. 
+    \item The term $t$ is then mapped to a state of the form $\ket{\mathrm{E_q}}\otimes\ket{\mathrm{S_q}}\otimes\ket{\mathrm{Q_d}}$ where: 
+    \begin{itemize}
+        \item $\ket{\mathrm{E_q}}$ is the entangled qubit of the GHZ type as specified above, associated to ring variables contained in $t$.
+        \item $\ket{\mathrm{S_q}}$ is a separable qubit associated with ring variables not contained in $t$. There are a number of possibilities for this separable qubit and we have to find it computationally.
+        \item $\ket{\mathrm{Q_d}}$ is a qudit state which is associated with an artifically introduced ring variable (which is alphabetically the next letter of the largest ring variable present). The states always starts from 0 for the first term and is increased by 1 for each successive term of the polynomial. This will later be traced out, hence is of less significance. 
+    \end{itemize}
+    \item The full state $\ket{\psi}$ is constructed by summing these individual states obtained for each term of the polynomial. 
+    \item The full mixed state characterised by this polynomial is then obtained by tracing out the qudit state $\ket{\mathrm{Q_d}}$.
+    $$\boxed{\hat{\rho}(P)=\frac{\Tr_d{\ket{\psi}\bra{\psi}}}{\sqrt{\braket{\psi|\psi}}}}$$
+\end{enumerate}
+\textbf{Example demonstrating the algorithm:} \\[0.3cm]
+We will see a simple example of the algorithm to obtain a state from a link. Consider the polynomial $P(a,b,c) = ab+ac$. This is a three-ring link. 
+\begin{itemize}
+    \item Let us choose the term $t = ab$. This term has two ring variables thus we will associate a two qubit GHZ type of state to $\ket{\mathrm{E_q}}$. Thus, we have $\ket{\mathrm{E_q}} = \frac{1}{\sqrt{2}}\brac{\ket{00} + \ket{11}}\equiv \ket{2^1}_{ab}$. \\[0.3cm]Since the separable qubit has large possibility, we will denote it generally by $\ket{q_1}$ and this will be associated with the remaining ring variable which is $c$. Thus, $\ket{\mathrm{S_q}} = \ket{q_1}_c$. The remaining term is the qudit state which will be associated to $d$ (since $d$ is alphabetical successor of the largest ring variable $c$). Then we will have the full state:
+\begin{align*}
+    \ket{\psi_1} &= \ket{2^1}_{ab}\otimes\ket{q_1}_c\otimes\ket{0}_d 
+\end{align*}
+\item Now, let us choose the next term in the polynomial which is $t = ac$. Similar to above, to the entangled qubit we will associate the two qubit GHZ state, thus, $\ket{\mathrm{E_q}} = \frac{1}{\sqrt{2}}\brac{\ket{00} + \ket{11}}\equiv \ket{2^1}_{ac}$.\\[0.3cm] The separable qubit will be associated with the remaining ring variable $b$ and we will denote it by $\ket{q_2}_b$. The qudit state will be associated with $d$ which is the alphabetical successor of $c$ but this time we will use $\ket{1}_d$ as for each successive term, the qudit state increases to the next level. Thus, we have:
+\begin{align*}
+    \ket{\psi_2} &= \ket{2^1}_{ac}\otimes\ket{q_2}_b\otimes\ket{1}_d
+\end{align*}
+\item The full state $\ket{\psi}$ is then obtained by summing the two states obtained above with some coefficients:
+\begin{align*}
+    \ket{\psi} &= c_1\ket{\psi_1} + c_2\ket{\psi_2} \\
+    &=c_1(\ket{2^1}_{ab}\otimes\ket{q_1}_c\otimes\ket{0}_d )+ c_2(\ket{2^1}_{ac}\otimes\ket{q_2}_b\otimes\ket{1}_d)
+\end{align*}
+Then we can trace out the qudit state $\ket{d}$ to obtain the density matrix of the ring variables:
+$$\boxed{\hat{\rho}_{abc}=\frac{\Tr_d{\ket{\psi}\bra{\psi}}}{\sqrt{\braket{\psi|\psi}}}} $$
+\end{itemize}
 \subsection{Applying to Three Qubit Systems}
+As a demonstraction, we will apply our algorithm to three qubit systems. Note that from the rules of the `link' polynomial, the possible basis terms for three qubit system are: $\{ab,ac,bc, abc\}$. Using this, four distinct classes of polynomials are possible:
+\begin{align*}
+    P_1(a,b,c) &= abc \\
+    P_2(a,b,c) &= abc+ab \\
+    P_3(a,b,c) &= ab+ac \\
+    P_4(a,b,c) &= ab+ac+bc
+\end{align*}
+Let us start with the $3^1$ link class, which correspond to the Borromean Link. Cutting any of $a,b$ or $c$ will lead to complete separabability and loss of entanglement. 
+\begin{figure}[H]
+    \centering
+  \input{borromean.tex}  
+  \caption{The Borromean link, characterising the $3^1$ link class.}
+\end{figure}
+\noindent
+We already know that on its own the GHZ state characterises the $3^1$ link, as discussed in the preceding works. Thus, we have the pure state:
+$$\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$$\\[0.3cm]
+Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting any of $a,b$ will lead to complete separabality but if we cut $c$, then the other rings will remain entangled. The link can be represented as: 
+\begin{figure}[H]
+    \centering
+  \input{3_2.tex}  
+  \caption{The knot diagram, characterising the $3^2$ link class.}
+\end{figure}
+\noindent
+Here the blue knot corresponds to $c$ while the other two correspond to $a$ and $b$ (a,b are symmetric in the polynomial). An example of a pure state is found, as mentioned in the paper: 
+$$\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $$
+To check that this state indeed statistfies the link, let us calculate the density operator $\hat{\rho}_{abc}=\ket{3^2}_{abc}\bra{3^2}_{abc}$ and then check for the PPT test for each cuts. 
 \subsection{Applying to Four Qubit Systems}
 \section{Physical Significance: Use in Quantum Networks}
 \section{Discussion and Conclusion}
-% References 
-\begin{thebibliography}{99}
-
-    \bibitem{Aravind}
-    P. K. Aravind, Borromean entanglement of the GHZ state,
-     in \emph{Quantum Potentiality, Entanglement and Passion-at-a
-    Distance: Essays for Abner Shimony}, editedbyR.S.Cohen,
-     M. Horne, and J. Stachel (Kluwer, Dordrecht, 1997), p. 53.
-    \bibitem{Sugita}
-    A. Sugita, Borromean entanglement revisited, in \emph{Proceedings of
-     the International Workshop on Knot Theory for Scientic Objects}
-     (Osaka, Japan, 2006).
-    
-    \end{thebibliography}
 \newpage
 \section*{Appendix A: {\huge Quantum Information Basics}}
 \addcontentsline{toc}{section}{Appendix A: Quantum Information Basics} % Optional
@@ -122,4 +166,16 @@ HI  I am doing this on FRIDAY
 \newpage
 \section*{Appendix B: {\huge Knot Theory Basics}}
 \addcontentsline{toc}{section}{Appendix B: { Knot Theory Basics}}
+\newpage
+
+\section*{Appendix C: {\huge Code for Numeric Calculations}}
+We used the \texttt{QuantumInformation.jl} package in \texttt{Julia} to perform the numerical calculations. The code provided below shows some basic calculations that we had used in this report. 
+\addcontentsline{toc}{section}{Appendix C: { Code for Numerical Calculations}}
+\begin{lstlisting}[language=Julia,label={lst:transmission}]
+using QuantumInformation, LinearAlgebra, Latexify
+\end{lstlisting}
+\bibliographystyle{plain}
+\newpage
+\bibliography{ref}
 \end{document}
+% References 
