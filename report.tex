@@ -142,6 +142,52 @@ Let us start with the $3^1$ link class, which correspond to the Borromean Link. 
 \noindent
 We already know that on its own the GHZ state characterises the $3^1$ link, as discussed in the preceding works. Thus, we have the pure state:
 $$\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$$\\[0.3cm]
+The density matrix corresponding to the state is found to be:
+\begin{equation}
+    \rho_{abc} =
+    \left[
+    \begin{array}{cccccccc}
+    0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
+    \end{array}
+    \right]
+    \end{equation}
+    The partial transpose with respect to any of the subsystem (since the polynomial is symmetric) is same and is given by:
+    \begin{equation}
+        \rho^{T_a/T_b/T_c} =
+        \left[
+        \begin{array}{cccccccc}
+        0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.5 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.5 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
+        \end{array}
+        \right]
+        \end{equation}
+        The eigenvalues corresponding to this matrix are 0.0, 0.5 and -0.5. Since there are negative eigenvalues, we can conclude that the system exhibits \textbf{tripartite entanglement} as a whole.\\[0.3cm]
+        Now, let us reduce the system by tracing out one of the variable. Since the polynomial is symmetric, we can choose any of the variable, say $c$. The reduced density matrix is given by:
+        \begin{equation}
+            \rho_{ab}
+            \left[
+            \begin{array}{cccc}
+            0.5 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.5 \\
+            \end{array}
+            \right]
+            \end{equation} 
+            The partial transpose with respect to $a$ or $b$ results in the same above matrix which have eigenvalues $0.5$ and $0.0$ which are all positive, thus concluding the absence of any entanglement in the system. This is consistent with the fact that for the Borromean link, cutting any link with result in complete separability of the links. \\[0.3cm]
 Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting any of $a,b$ will lead to complete separabality but if we cut $c$, then the other rings will remain entangled. The link can be represented as: 
 \begin{figure}[H]
     \centering
@@ -152,7 +198,86 @@ Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting
 Here the blue knot corresponds to $c$ while the other two correspond to $a$ and $b$ (a,b are symmetric in the polynomial). An example of a pure state is found, as mentioned in the paper: 
 $$\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $$
 To check that this state indeed statistfies the link, let us calculate the density operator $\hat{\rho}_{abc}=\ket{3^2}_{abc}\bra{3^2}_{abc}$ and then check for the PPT test for each cuts. 
-\textcolor{red}{to be done }\\[0.3cm]
+The density matrix obtained is: 
+\begin{equation}
+    \rho_{abc}=
+    \left[
+    \begin{array}{cccccccc}
+    0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\
+    0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\
+    \end{array}
+    \right]
+    \end{equation}
+    Since the variables $a$ and $b$ are symmetrix, we can choose to analyse only one of them and $c$. We then see the partial transpose with respect to $a$ and $c$. The matrices are given by:
+    \begin{align}
+        \rho^{T_a} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.333 & 0.333 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\
+        \end{array}
+        \right]\\
+            \rho^{T_c} &=
+            \left[
+            \begin{array}{cccccccc}
+            0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 & 0.333 \\
+            0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\
+            \end{array}
+            \right]
+            \end{align}
+            The above matrices have eigenvalues $\lambda_a =-0.471, 0.0, 0.333, 0.471, 0.666$ and $\lambda_c=-0.333, 0.0, 0.127, 0.333, 0.872 $ respectively. Since there are negative eigenvalues, we can conclude that the system exhibits \textbf{tripartite entanglement} as a whole.\\[0.3cm]
+            The reduced density matrices are given by:
+            \begin{align}
+                \rho_{bc} &=
+                \left[
+                \begin{array}{cccc}
+                0.333 & 0.333 & 0.0 & 0.0 \\
+                0.333 & 0.333 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.333 \\
+                \end{array}
+                \right]\\
+                \rho_{ab} &=
+                    \left[
+                    \begin{array}{cccc}
+                    0.666 & 0.0 & 0.0 & 0.333 \\
+                    0.0 & 0.0 & 0.0 & 0.0 \\
+                    0.0 & 0.0 & 0.0 & 0.0 \\
+                    0.333 & 0.0 & 0.0 & 0.333 \\
+                    \end{array}
+                    \right]
+                    \end{align}
+                   We now obtain the partial tranpose for the PPT test. We note that $\rho_{bc}^{T_b/T_c}$ is the same as that of the above matrix whose eigenvalues are $0.0, 0.333, 0.666$ which are all positive. Thus, we can conclude that the system is separable. On the other hand, we obtain:
+                   \begin{equation}
+                    \rho_{ab}^{T_a} =
+                    \left[
+                    \begin{array}{cccc}
+                    0.666 & 0.0 & 0.0 & 0.0 \\
+                    0.0 & 0.0 & 0.333 & 0.0 \\
+                    0.0 & 0.333 & 0.0 & 0.0 \\
+                    0.0 & 0.0 & 0.0 & 0.333 \\
+                    \end{array}
+                    \right]
+                    \end{equation}
+                    The eigenvalues of this matrix are $0.333, -0.333, 0.666$, one of which is negative, thus denoting the presence of entanglement. This successfully verifies the behaviour of the link $abc+ac$. \\[0.3cm]
 Using the above algorithm, we can construct the mixed state corresponding to the link by considering the state:
 $$\ket{\psi_2} = \ket{3^1}_{abc}\ket{0}_d + \ket{2^1}_{ab}\ket{0}_c\ket{1}_d$$
 It is to be noted that this class has not been described in the previous works \cite{Aravind1997,Sugita2007-ko}. The density operator is then given by:
