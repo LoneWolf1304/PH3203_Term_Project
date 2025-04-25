@@ -45,7 +45,7 @@
 \fancyhead[L]{PH3203: Term Project}
 \fancyhead[R]{0\thepage}
 \usepackage[hidelinks]{hyperref}
-\hypersetup{colorlinks=true,linkcolor=cyan!80!black}
+\hypersetup{colorlinks=true,linkcolor=cyan!80!black, citecolor=YellowOrange,urlcolor=cyan!80!black}
 \fancyhead[C]{ Entanglement Classification using Knots}
 \fancyfoot[C]{0\thepage}
 \fancyfoot[R,L]{}
@@ -74,22 +74,19 @@ a4paper]{geometry}
 \section{Introduction}
 %     Source - Wikipedia
 
-Classifying entanglement is essential because not all quantum states are equally useful for quantum information tasks. Different types of entanglement serve as distinct resources, each suited to specific applications such as quantum algorithms or secure communication protocols like quantum key distribution. Understanding and identifying these entanglement types helps determine how quantum states can be used and manipulated effectively. hi hi hi this is testing
-
-
-SLOCC (Stochastic Local Operations and Classical Communication) is a method for classifying quantum entanglement. It defines equivalence classes of quantum states based on whether they can be converted into each other using local operations (on individual qubits) and classical communication. 
-
-This idea has been used successfully to study three-qubit states, as shown in [1,2], classifying four-qubit states [3–6] Methods have been developed for handling systems with even more qubits [7,8].
-
-In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.
-
-
+Classifying entanglement is essential because not all quantum states are equally useful for quantum information tasks. Different types of entanglement serve as distinct resources, each suited to specific applications such as quantum algorithms or secure communication protocols like quantum key distribution. Understanding and identifying these entanglement types helps determine how quantum states can be used and manipulated effectively. hi hi hi this is testing\\[0.3cm]
+SLOCC (Stochastic Local Operations and Classical Communication) is a method for classifying quantum entanglement. It defines equivalence classes of quantum states based on whether they can be converted into each other using local operations (on individual qubits) and classical communication.\\[0.3cm]
+This idea has been used successfully to study three-qubit states, as shown in [1,2], classifying four-qubit states [3–6] Methods have been developed for handling systems with even more qubits [7,8].[0.3cm]
+In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.\\[0.3cm]
 One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  
 
 
 
 \section{Classification of Links: A Polynomial Approach}
-\subsection{Obtaining a state from a link}
+\subsection{Formalism of the Link Polynomial}
+\subsection{Obtaining a Link from an Entangled Quantum State}\label{link_from_state}
+
+\subsection{Obtaining an Entangled Quantum State from a Link}\label{state_from_link}
 In this section, we will see how we can obtain a link from a quantum state. This is in general a difficult task to obtain an entangled quantum states from the polynomial as the number of qubits increases. The process in the paper mentions an algorithm which provides an `incomplete' map betwee a given link and a quantum state. Using the procedure, the general structure of the quantum state can be obtained, however, some free coefficients remain which needs to be fixed computationally. Moreover, presently only mixed states satisfying the link can be obtained using this procedure. \\[0.3cm]
 Note that although incomplete, the map is still useful since we can ascertain the structure of each state contained in the mixed state. That is, from a possibility of $2^N$ (for $N$ qubits, there are $2^N$ basis states, namely $\ket{0}, \ket{1}, \ldots \ket{2^N-1}$ where each ket is to be assumed in the binary representation) states, we are reducing it to a much smaller number. \\[0.3cm]
 For this, we will use the GHZ type of state as a building block which are of the form:
@@ -155,6 +152,31 @@ Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting
 Here the blue knot corresponds to $c$ while the other two correspond to $a$ and $b$ (a,b are symmetric in the polynomial). An example of a pure state is found, as mentioned in the paper: 
 $$\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $$
 To check that this state indeed statistfies the link, let us calculate the density operator $\hat{\rho}_{abc}=\ket{3^2}_{abc}\bra{3^2}_{abc}$ and then check for the PPT test for each cuts. 
+\textcolor{red}{to be done }\\[0.3cm]
+Using the above algorithm, we can construct the mixed state corresponding to the link by considering the state:
+$$\ket{\psi_2} = \ket{3^1}_{abc}\ket{0}_d + \ket{2^1}_{ab}\ket{0}_c\ket{1}_d$$
+It is to be noted that this class has not been described in the previous works \cite{Aravind1997,Sugita2007-ko}. The density operator is then given by:
+$$\hat{\rho}(a,b,c) = \frac{\Tr_d\ket{\psi_2}\bra{\psi_2}}{\sqrt{\braket{\psi_2|\psi_2}}} $$
+We now analyse the class $P_3(a,b,c) = ab+ac$. The link diagram is given by:
+\begin{figure}[H]
+    \centering
+  \input{3_3.tex}  
+  \caption{The knot diagram, characterising the $3^3$ link class.}
+\end{figure}
+\noindent
+We can see that the knot polynomial is symmetric in $b$ and $c$. Thus, if we cut either $b$ or $c$, the other will remain entangled with $a$ but complete separation results from cutting $a$. This case has already been discussed in section \ref{link_from_state} and a pure state has been obtained. The mixed state can be obtained using the state:
+$$\ket{\psi_3} = \ket{2^1}_{ab}\ket{0}_c\ket{0}_d + \ket{2^1}_{ac}\ket{1}_b\ket{1}_d  $$ 
+Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given by:
+\begin{figure}[H]
+    \centering
+  \input{3_4.tex}  
+  \caption{The knot diagram, characterising the $3^4$ link class.}
+\end{figure}
+\noindent
+This link demostrates a behaviour opposite to that of the Borromean ring, that is, setting any one variable to zero with not result in complete separability. The other two links remain entangled. The pure state having the characteristic of the link is the \textbf{W state} which has been documented in previous works:
+$$\ket{3^4} = \frac{1}{\sqrt{3}}\brac{\ket{001}_{abc}+\ket{010}_{abc}+\ket{100}_{abc}}$$ 
+From the algorithm, the mixed state can be obtained using the state:
+$$\ket{\psi_4} = \ket{2^1}_{ab}\ket{0}_c\ket{0}_d+\ket{2^1}_{ac}\ket{1}_b\ket{1}_d+\ket{2^1}_{bc}\ket{0}_a\ket{2}_d$$
 \subsection{Applying to Four Qubit Systems}
 \section{Physical Significance: Use in Quantum Networks}
 \section{Discussion and Conclusion}
