@@ -3,6 +3,8 @@
 \usepackage{bookmark}
 \title[Entanglement using Knots]{\huge Entanglement Classification using Knots \\{\large PH3203 Term Project}}
 \author[Seth, Das, Karmakar]{{ Sagnik Seth} {\tiny{22MS026}} \and { Jessica  Das}  {\tiny{22MS157}} \and { Sayan Karmakar}  {\tiny{22MS163}}}
+\institute[]{Instructor: Prof. Sourin Das\\[0.2cm]
+	\textit{Department of Physics, IISER Kolkata}}
 \date{}
 \usetheme{Madrid}
 \usecolortheme{orchid}
@@ -51,7 +53,233 @@
 			\textbf{\Huge Some Examples...}
 		\end{center}
 	\end{frame}
-	\begin{frame}{\textbf{Three Qubit System}}
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{1} class}
+		\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$\\[0.3cm]
+		\begin{minipage}{0.35\textwidth}
+			%\input{borromean.tex}  % Make sure this file exists
+			\scalebox{0.6}{\input{borromean.tex}}
+			\begin{itemize}
+				\item \textbf{Eigenvalues:} $0.0,\ 0.5,\ \mathcolor{red}{-0.5}$
+				\item One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}
+			\end{itemize}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\footnotesize
+			\begin{equation*}
+				\rho_{abc} =
+				\left[
+				\begin{array}{cccccccc}
+				0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
+				\end{array}
+				\right]
+			\end{equation*}
+			\begin{equation*}
+				\rho^{T_a}_{abc} =
+				\left[
+				\begin{array}{cccccccc}
+				0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.5 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.5 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
+				\end{array}
+				\right]
+				\end{equation*}
+		\end{minipage}
+	\end{frame}
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{1} class}
+		\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$\\[0.3cm]
+		\begin{minipage}{0.35\textwidth}
+			%\input{borromean.tex}  % Make sure this file exists
+			\scalebox{0.6}{\input{borromean_cut.tex}}\\[0.3cm]\textbf{Eigenvalues:} $0.0,\ 0.5$
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\footnotesize
+			\begin{equation*}
+				\rho_{ab}
+				\left[
+				\begin{array}{cccc}
+				0.5 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.0 \\
+				0.0 & 0.0 & 0.0 & 0.5 \\
+				\end{array}
+				\right]
+				\end{equation*} 
+				\begin{equation*}
+					\rho^{Ta}_{ab}
+					\left[
+					\begin{array}{cccc}
+					0.5 & 0.0 & 0.0 & 0.0 \\
+					0.0 & 0.0 & 0.0 & 0.0 \\
+					0.0 & 0.0 & 0.0 & 0.0 \\
+					0.0 & 0.0 & 0.0 & 0.5 \\
+					\end{array}
+					\right]
+					\end{equation*}
+				\begin{itemize}
+					\item All eigenvalues are positive.
+					\item System completely separable.
+				\end{itemize}
+		\end{minipage}
+	\end{frame}
+
+
+
+
+
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class}
+		\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]
+		\begin{minipage}{0.35\textwidth}
+			%\input{borromean.tex}  % Make sure this file exists
+			\begin{figure}
+			\scalebox{0.4}{\input{3_2.tex}}\end{figure}
+			\begin{itemize}
+				\item \textbf{Eigenvalues:} {\tiny $ \mathcolor{OliveGreen}{ \mathbf{-0.471}, 0.0, 0.333, 0.471, 0.666$}}\\{\tiny $ \mathcolor{red}{   \mathbf{-0.333}, 0.0, 0.127, 0.333, 0.872$}}
+				\item \small One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}
+				 \end{itemize}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\tiny  
+			\begin{align*}
+				\rho_{abc} &=
+				\left[
+				\begin{array}{cccccccc}
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
+				\end{array}
+				\right]
+				\\
+				\mathcolor{OliveGreen}{\rho^{T_a}_{abc}} &=
+				\left[
+				\begin{array}{cccccccc}
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.333 & 0.333 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
+				\end{array}
+				\right]
+				\\
+				\mathcolor{red}{\rho^{T_c}_{abc}} &=
+				\left[
+				\begin{array}{cccccccc}
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 & 0.333 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
+				0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
+				\end{array}
+				\right]
+				\end{align*}
+		\end{minipage}
+	\end{frame}
+
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class}
+		\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]
+		\begin{minipage}{0.35\textwidth}
+			%\input{borromean.tex}  % Make sure this file exists
+			\begin{figure}
+			\scalebox{0.4}{\input{3_2_cut1.tex}}\end{figure}
+			\begin{itemize}
+				\item \textbf{Eigenvalues:} {\footnotesize $\mathcolor{OliveGreen}{0.333,{\mathbf{-0.333}}, 0.666$}}
+				\item \small One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}
+				 \end{itemize}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+		\footnotesize
+			\begin{align*}
+				\rho_{ab} &=
+                    \left[
+                    \begin{array}{cccc}
+                    0.666 & 0.0 & 0.0 & 0.333 \\
+                    0.0 & 0.0 & 0.0 & 0.0 \\
+                    0.0 & 0.0 & 0.0 & 0.0 \\
+                    0.333 & 0.0 & 0.0 & 0.333 \\
+                    \end{array}
+                    \right]\\
+				\mathcolor{OliveGreen}{\rho_{ab}^{T_a}} &=
+                    \left[
+                    \begin{array}{cccc}
+                    0.666 & 0.0 & 0.0 & 0.0 \\
+                    0.0 & 0.0 & 0.333 & 0.0 \\
+                    0.0 & 0.333 & 0.0 & 0.0 \\
+                    0.0 & 0.0 & 0.0 & 0.333 \\
+                    \end{array}
+                    \right]\\
+				\end{align*}
+		\end{minipage}
+	\end{frame}
+
+
+
+
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class}
+		\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]
+		\begin{minipage}{0.35\textwidth}
+			%\input{borromean.tex}  % Make sure this file exists
+			\begin{figure}
+			\scalebox{0.4}{\input{3_2_cut2.tex}}\end{figure}
+			\begin{itemize}
+				\item \textbf{Eigenvalues:} {\footnotesize{\footnotesize $\mathcolor{red}{ 0.0, 0.333, 0.666$}}}
+				\item \small No eigenvalue is negative $\rightarrow$ \textbf{\textcolor{red}{Separable}}
+				 \end{itemize}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+		\footnotesize
+			\begin{align*}
+					\rho_{bc} &=
+					\left[
+					\begin{array}{cccc}
+					0.333 & 0.333 & 0.0 & 0.0 \\
+					0.333 & 0.333 & 0.0 & 0.0 \\
+					0.0 & 0.0 & 0.0 & 0.0 \\
+					0.0 & 0.0 & 0.0 & 0.333 \\
+					\end{array}
+					\right]\\
+					\mathcolor{red}{\rho^{T_b}_{bc}}&=
+                \left[
+                \begin{array}{cccc}
+                0.333 & 0.333 & 0.0 & 0.0 \\
+                0.333 & 0.333 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.333 \\
+                \end{array}
+                \right]
+				\end{align*}
+		\end{minipage}
+	\end{frame}
+
+
+
+
+
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{3} class}
+		
+	\end{frame}
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{4} class}
 		
 	\end{frame}
 	\begin{frame}{\textbf{Four Qubit System}}
