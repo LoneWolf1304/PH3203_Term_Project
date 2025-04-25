@@ -133,6 +133,7 @@ As a demonstraction, we will apply our algorithm to three qubit systems. Note th
     P_3(a,b,c) &= ab+ac \\
     P_4(a,b,c) &= ab+ac+bc
 \end{align*}
+\textbf{\large \texttt{3\textsuperscript{1}} Link Class} \\[0.3cm]
 Let us start with the $3^1$ link class, which correspond to the Borromean Link. Cutting any of $a,b$ or $c$ will lead to complete separabability and loss of entanglement. 
 \begin{figure}[H]
     \centering
@@ -188,6 +189,7 @@ The density matrix corresponding to the state is found to be:
             \right]
             \end{equation} 
             The partial transpose with respect to $a$ or $b$ results in the same above matrix which have eigenvalues $0.5$ and $0.0$ which are all positive, thus concluding the absence of any entanglement in the system. This is consistent with the fact that for the Borromean link, cutting any link with result in complete separability of the links. \\[0.3cm]
+            \textbf{\large \texttt{3\textsuperscript{2}} Link Class} \\[0.3cm]
 Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting any of $a,b$ will lead to complete separabality but if we cut $c$, then the other rings will remain entangled. The link can be represented as: 
 \begin{figure}[H]
     \centering
@@ -265,7 +267,7 @@ The density matrix obtained is:
                     \end{array}
                     \right]
                     \end{align}
-                   We now obtain the partial tranpose for the PPT test. We note that $\rho_{bc}^{T_b/T_c}$ is the same as that of the above matrix whose eigenvalues are $0.0, 0.333, 0.666$ which are all positive. Thus, we can conclude that the system is separable. On the other hand, we obtain:
+                   We now obtain the partial tranpose for the PPT test. We note that $\rho_{bc}^{T_b/T_c}$ is the same as that of the above matrix $\rho_{bc}$ whose eigenvalues are $0.0, 0.333, 0.666$ which are all positive. Thus, we can conclude that the system is separable. On the other hand, we obtain:
                    \begin{equation}
                     \rho_{ab}^{T_a} =
                     \left[
@@ -277,12 +279,13 @@ The density matrix obtained is:
                     \end{array}
                     \right]
                     \end{equation}
-                    The eigenvalues of this matrix are $0.333, -0.333, 0.666$, one of which is negative, thus denoting the presence of entanglement. This successfully verifies the behaviour of the link $abc+ac$. \\[0.3cm]
-Using the above algorithm, we can construct the mixed state corresponding to the link by considering the state:
+                    The eigenvalues of this matrix are $0.333, -0.333, 0.666$, one of which is negative, thus denoting the presence of entanglement. This successfully verifies the behaviour of the link $abc+ab$. \\[0.3cm]
+Using the above algorithm, we can also construct the mixed state corresponding to the link by considering the state:
 $$\ket{\psi_2} = \ket{3^1}_{abc}\ket{0}_d + \ket{2^1}_{ab}\ket{0}_c\ket{1}_d$$
 It is to be noted that this class has not been described in the previous works \cite{Aravind1997,Sugita2007-ko}. The density operator is then given by:
 $$\hat{\rho}(a,b,c) = \frac{\Tr_d\ket{\psi_2}\bra{\psi_2}}{\sqrt{\braket{\psi_2|\psi_2}}} $$
-We now analyse the class $P_3(a,b,c) = ab+ac$. The link diagram is given by:
+\textbf{\large \texttt{3\textsuperscript{3}} Link Class} \\[0.3cm]
+We now analyse the link class given by $P_3(a,b,c) = ab+ac$. The link diagram is given by:
 \begin{figure}[H]
     \centering
   \input{3_3.tex}  
@@ -291,6 +294,7 @@ We now analyse the class $P_3(a,b,c) = ab+ac$. The link diagram is given by:
 \noindent
 We can see that the knot polynomial is symmetric in $b$ and $c$. Thus, if we cut either $b$ or $c$, the other will remain entangled with $a$ but complete separation results from cutting $a$. This case has already been discussed in section \ref{link_from_state} and a pure state has been obtained. The mixed state can be obtained using the state:
 $$\ket{\psi_3} = \ket{2^1}_{ab}\ket{0}_c\ket{0}_d + \ket{2^1}_{ac}\ket{1}_b\ket{1}_d  $$ 
+\textbf{\large \texttt{3\textsuperscript{4}} Link Class} \\[0.3cm]
 Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given by:
 \begin{figure}[H]
     \centering
@@ -300,6 +304,81 @@ Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given 
 \noindent
 This link demostrates a behaviour opposite to that of the Borromean ring, that is, setting any one variable to zero with not result in complete separability. The other two links remain entangled. The pure state having the characteristic of the link is the \textbf{W state} which has been documented in previous works:
 $$\ket{3^4} = \frac{1}{\sqrt{3}}\brac{\ket{001}_{abc}+\ket{010}_{abc}+\ket{100}_{abc}}$$ 
+Let us check whether this state satisfies the link property. The density matrix is given by:
+\begin{equation}
+    \rho{abc}=
+    \left[
+    \begin{array}{cccccccc}
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.333 & 0.333 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.333 & 0.333 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.333 & 0.333 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    \end{array}
+    \right]
+    \end{equation}
+    The corresponding partial transpose with respect to the three variables are given by:
+    \begin{equation}
+        \rho^{T_a}_{abc} =
+        \left[
+        \begin{array}{cccccccc}
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 & 0.333 & 0.0 \\
+        0.0 & 0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+        0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        \end{array}
+        \right]
+        \end{equation}
+        \begin{equation}
+            \rho^{T_b}_{abc}=
+            \left[
+            \begin{array}{cccccccc}
+            0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.333 & 0.0 \\
+            0.0 & 0.333 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.333 & 0.0 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+            \end{array}
+            \right]
+            \end{equation}
+            \begin{equation}
+                \rho^{T_c}_{abc}=
+                \left[
+                \begin{array}{cccccccc}
+                0.0 & 0.0 & 0.0 & 0.333 & 0.0 & 0.333 & 0.0 & 0.0 \\
+                0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.333 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+                0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.333 & 0.0 & 0.333 & 0.0 & 0.0 & 0.0 \\
+                0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+                \end{array}
+                \right]
+                \end{equation}
+               All the three matrices have the same set of eigenvalues $-0.471, 0.0, 0.333, 0.471, 0.666$, one of which is negative, thus denoting the presence of entanglement. The reduced density matrix in each case is the same and is given by:
+               \begin{equation}
+                \rho_{reduced} =
+                \left[
+                \begin{array}{cccc}
+                0.333 & 0.0 & 0.0 & 0.333 \\
+                0.0 & 0.333 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.333 & 0.0 \\
+                0.333 & 0.0 & 0.0 & 0.0 \\
+                \end{array}
+                \right]
+                \end{equation}
+                The eigenvalues of this matrix are $-0.206, 0.333, 0.333, 0.539$, one of which is negative, thus denoting the present of entanglement. This verifies the behaviour of the link $ab+ac+bc$. \\[0.3cm]
 From the algorithm, the mixed state can be obtained using the state:
 $$\ket{\psi_4} = \ket{2^1}_{ab}\ket{0}_c\ket{0}_d+\ket{2^1}_{ac}\ket{1}_b\ket{1}_d+\ket{2^1}_{bc}\ket{0}_a\ket{2}_d$$
 \subsection{Applying to Four Qubit Systems}
