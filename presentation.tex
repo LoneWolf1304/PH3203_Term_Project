@@ -101,7 +101,10 @@
 		\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$\\[0.3cm]
 		\begin{minipage}{0.35\textwidth}
 			%\input{borromean.tex}  % Make sure this file exists
-			\scalebox{0.6}{\input{borromean_cut.tex}}\\[0.3cm]\textbf{Eigenvalues:} $0.0,\ 0.5$
+			\scalebox{0.6}{\input{borromean_cut.tex}}
+			\begin{itemize}
+				\item \textbf{Eigenvalues:} $0.0,\ 0.5\geq0$
+			\end{itemize}
 		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 			\footnotesize
@@ -129,7 +132,7 @@
 					\end{equation*}
 				\begin{itemize}
 					\item All eigenvalues are positive.
-					\item System completely separable.
+					\item System completely \textbf{separable} after cut.
 				\end{itemize}
 		\end{minipage}
 	\end{frame}
