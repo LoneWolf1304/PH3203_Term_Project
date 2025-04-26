@@ -68,7 +68,29 @@ a4paper]{geometry}
 \author{{\Large Sagnik Seth} \\ \small{22MS026} \and {\Large Jessica  Das} \\ \small{22MS157} \and {\Large Sayan Karmakar} \\ \small{22MS163}}
 \date{}
 \begin{document}
-\maketitle  
+\makeatletter
+\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}{\sffamily\bfseries
+        \Huge \textcolor{blue}{Classification of Entanglement using Knots}\\[0.5cm]
+        \Large PH3203 Term Project Report \\[0.5cm]
+        \Large \textit{Instructor: Prof. Sourin Das}}\\[3cm]\end{center}
+       
+        \begin{figure}[H]
+            \centering
+            \includesvg[scale=0.6]{Square_knot.svg}
+        \end{figure}
+        \vspace{3cm}
+        \begin{table}[H]
+			\centering
+			\def\arraystretch{2}\tabcolsep=1.2cm
+			\begin{tabular}{cc}
+				\thead{\Large \texttt{Sagnik Seth }                      \\[5pt] \large 22MS026} &
+				\thead{\Large  \texttt{Jessica Das }              \\[5pt] \large 22MS157} \\
+				\multicolumn{2}{c}{\thead{\Large  \texttt{Sayan Karmakar} \\[5pt] \large 22MS163}}
+			\end{tabular}
+		\end{table}
+\end{titlepage}
 \tableofcontents
 \newpage
 \section{Introduction}
