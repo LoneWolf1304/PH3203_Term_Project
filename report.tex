@@ -1,5 +1,6 @@
 \documentclass{scrartcl}
 \usepackage{pgfplots}
+\usepackage[scaled=0.85]{beramono}
 \usepackage{makecell}
 \usepackage{multirow} % For merged cells
 \usepackage{booktabs} % For better table formatting
@@ -52,7 +53,7 @@
 \usetikzlibrary{calc}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.4pt}
-
+\definecolor{titleblue}{RGB}{0, 80, 120}
 \usepackage{longtable} 
 \usepackage[left = 0.7in,
 right = 0.7in,
@@ -66,7 +67,7 @@ a4paper]{geometry}
 }
 
 
-\author{{\Large Sagnik Seth} \\ \small{22MS026} \and {\Large Jessica  Das} \\ \small{22MS157} \and {\Large Sayan Karmakar} \\ \small{22MS163}}
+\author{{\Large Sagnik Seth} \\ \small{22MS026} \and {\Large \textbf{Jessica  Das}} \\ \small{22MS157} \and {\Large Sayan Karmakar} \\ \small{22MS163}}
 \date{}
 \begin{document}
 \makeatletter
@@ -79,25 +80,38 @@ a4paper]{geometry}
     \vspace*{2cm}
     \begin{center}
         {\sffamily\bfseries
-        \Huge\textbf{\textcolor{blue}{Classification of Entanglement using Knots}}\\[0.5cm] 
-        \Large PH3203 Term Project Report \\[0.5cm]
+        \Huge\textbf{\textcolor{titleblue}{Classification of Entanglement using Knots}}\\[0.2cm] 
+        \Large \textcolor{blue!60!black}{A Topological Approach to Quantum States}\\[1.0cm]
+        \Large PH3203 Term Project Report \\[0.2cm]
         \Large \textit{Instructor: Prof. Sourin Das}}\\[3cm]\end{center}
        
         \begin{figure}[H]
             \centering
             \includesvg[scale=0.6]{Square_knot.svg}
         \end{figure}
-        \vspace{3cm}
+        \vspace{1cm}
         \begin{table}[H]
 			\centering
 			\def\arraystretch{2}\tabcolsep=1.2cm
 			\begin{tabular}{cc}
-				\thead{\Large \texttt{Sagnik Seth }                      \\[5pt] \large 22MS026} &
-				\thead{\Large  \texttt{Jessica Das }              \\[5pt] \large 22MS157} \\
-				\multicolumn{2}{c}{\thead{\Large  \texttt{Sayan Karmakar} \\[5pt] \large 22MS163}}
+				\thead{\Large \texttt{\textbf{Sagnik Seth }}                      \\[5pt] \large 22MS026} &
+				\thead{\Large  \texttt{\textbf{Jessica Das} }              \\[5pt] \large 22MS157} \\
+				\multicolumn{2}{c}{\thead{\Large  \texttt{\textbf{Sayan Karmakar}} \\[5pt] \large 22MS163}}
 			\end{tabular}
 		\end{table}
+        \vspace{0.5cm}
+       \begin{center}
+       \textbf{ Depart of Physical Sciences}\\
+        \textbf{IISER Kolkata}
+        \begin{figure}[H]
+            \centering
+            \includesvg[scale=0.2]{IISER-Kolkata-logo-vector-01.svg}
+        \end{figure}
+       \end{center}
 \end{titlepage}
+
+  
+       
 \tableofcontents
 \newpage
 \section{Introduction}
