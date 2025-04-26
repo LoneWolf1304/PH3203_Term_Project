@@ -49,6 +49,7 @@
 \fancyhead[C]{ Entanglement Classification using Knots}
 \fancyfoot[C]{0\thepage}
 \fancyfoot[R,L]{}
+\usetikzlibrary{calc}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -70,6 +71,11 @@ a4paper]{geometry}
 \begin{document}
 \makeatletter
 \begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[black, line width=3pt] 
+            ($(current page.north west)+(0.6cm,-0.6cm)$) rectangle 
+            ($(current page.south east)+(-0.6cm,0.6cm)$);
+    \end{tikzpicture}
     \vspace*{2cm}
     \begin{center}{\sffamily\bfseries
         \Huge \textcolor{blue}{Classification of Entanglement using Knots}\\[0.5cm]
