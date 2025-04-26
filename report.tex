@@ -284,6 +284,22 @@ Using the above algorithm, we can also construct the mixed state corresponding t
 $$\ket{\psi_2} = \ket{3^1}_{abc}\ket{0}_d + \ket{2^1}_{ab}\ket{0}_c\ket{1}_d$$
 It is to be noted that this class has not been described in the previous works \cite{Aravind1997,Sugita2007-ko}. The density operator is then given by:
 $$\hat{\rho}(a,b,c) = \frac{\Tr_d\ket{\psi_2}\bra{\psi_2}}{\sqrt{\braket{\psi_2|\psi_2}}} $$
+Using numerical calculation and tracing out subsystem $d$, we found the density matrix to be:
+\begin{equation}
+    \rho_{abc}=
+    \left[
+    \begin{array}{cccccccc}
+    0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.25 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right]
+    \end{equation}
 \textbf{\large \texttt{3\textsuperscript{3}} Link Class} \\[0.3cm]
 We now analyse the link class given by $P_3(a,b,c) = ab+ac$. The link diagram is given by:
 \begin{figure}[H]
@@ -294,6 +310,22 @@ We now analyse the link class given by $P_3(a,b,c) = ab+ac$. The link diagram is
 \noindent
 We can see that the knot polynomial is symmetric in $b$ and $c$. Thus, if we cut either $b$ or $c$, the other will remain entangled with $a$ but complete separation results from cutting $a$. This case has already been discussed in section \ref{link_from_state} and a pure state has been obtained. The mixed state can be obtained using the state:
 $$\ket{\psi_3} = \ket{2^1}_{ab}\ket{0}_c\ket{0}_d + \ket{2^1}_{ac}\ket{1}_b\ket{1}_d  $$ 
+The density matrix obtained for the system is: 
+\begin{equation}
+    \rho_{abc}=
+    \left[
+    \begin{array}{cccccccc}
+    0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right]
+    \end{equation}
 \textbf{\large \texttt{3\textsuperscript{4}} Link Class} \\[0.3cm]
 Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given by:
 \begin{figure}[H]
@@ -378,9 +410,128 @@ Let us check whether this state satisfies the link property. The density matrix 
                 \end{array}
                 \right]
                 \end{equation}
-                The eigenvalues of this matrix are $-0.206, 0.333, 0.333, 0.539$, one of which is negative, thus denoting the present of entanglement. This verifies the behaviour of the link $ab+ac+bc$. \\[0.3cm]
+                The partial transpose of this is the same as that of the matrix. The eigenvalues of the PPT matrix are $-0.206, 0.333, 0.333, 0.539$, one of which is negative, thus denoting the present of entanglement. This verifies the behaviour of the link $ab+ac+bc$. \\[0.3cm]
 From the algorithm, the mixed state can be obtained using the state:
 $$\ket{\psi_4} = \ket{2^1}_{ab}\ket{0}_c\ket{0}_d+\ket{2^1}_{ac}\ket{1}_b\ket{1}_d+\ket{2^1}_{bc}\ket{0}_a\ket{2}_d$$
+Using the above state after tracing out subsystem $d$, we obtained the density matrix as:
+\begin{equation}
+    \rho_{abc}=
+    \left[
+    \begin{array}{cccccccc}
+    0.25 & 0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.125 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    0.125 & 0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.125 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.125 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right]
+    \end{equation}
+    Let us now check the partial transpose for the entire system. The PPT matrices are found to be:\\
+    \begin{align*}
+        \rho^{T_a}_{abc} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.25 & 0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 \\
+        0.125 & 0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.125 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]   \\
+        \rho^{T_b}_{abc} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.125 & 0.25 & 0.0 & 0.125 & 0.0 & 0.0 & 0.25 \\
+        0.0 & 0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.125 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]\\
+        \rho^{T_c}_{abc} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.125 & 0.0 \\
+        0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.125 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.125 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.125 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.125 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]
+        \end{align*}
+        The set of eigenvalues of $\rho^{T_a}_{abc}$ and $\rho^{T_c}_{abc}$ are the same, namely $\mathbf{-0.146}, \mathbf{-0.052}, 0.0, 0.0, 0.222, 0.25, 0.302, 0.424$ while the eigenvalues of $\rho^{T_b}_{abc}$ are $\mathbf{-0.138}, 0.0, 0.0, 0.107, 0.125, 0.125, 0.25, 0.531$. We see that there exists atleast one negative eigenvalue in all the three matrices, thus denoting the presence of tripartite entanglement. Let us now check the reduced density matrices. 
+
+        \begin{align*}
+            \rho_{bc} &=
+            \left[
+            \begin{array}{cccc}
+            0.25 & 0.0 & 0.0 & 0.125 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.375 & 0.0 \\
+            0.125 & 0.0 & 0.0 & 0.375 \\
+            \end{array}
+            \right]\quad \rho_{bc}^{T_b} = 
+            \left[
+                \begin{array}{cccc}
+                0.25 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.125 & 0.0 \\
+                0.0 & 0.125 & 0.375 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.375 \\
+                \end{array}
+                \right]
+                \\
+            \rho_{ac} &=
+            \left[
+            \begin{array}{cccc}
+            0.5 & 0.0 & 0.0 & 0.25 \\
+            0.0 & 0.125 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.125 & 0.0 \\
+            0.25 & 0.0 & 0.0 & 0.25 \\
+            \end{array}
+            \right]\quad \rho_{ac}^{Ta}= \left[
+                \begin{array}{cccc}
+                0.5 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.125 & 0.25 & 0.0 \\
+                0.0 & 0.25 & 0.125 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.25 \\
+                \end{array}
+                \right]\\
+            \rho_{ab} &=
+            \left[
+            \begin{array}{cccc}
+            0.25 & 0.0 & 0.0 & 0.125 \\
+            0.0 & 0.375 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.125 & 0.0 & 0.0 & 0.375 \\
+            \end{array}
+            \right]\quad \rho_{ab}^{T_a} = \left[
+                \begin{array}{cccc}
+                0.25 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.375 & 0.125 & 0.0 \\
+                0.0 & 0.125 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.375 \\
+                \end{array}
+                \right]
+            \end{align*}
+           The set of eigenvalues of PPT matrices of $\rho_{bc}$ and $\rho_{ab}$ are the same given by $\mathbf{-0.038}, 0.25, 0.375, 0.413$ while the eigenvalues of PPT matrix of $\rho_{ac}$ are $\mathbf{-0.125}, 0.25, 0.375, 0.5$. Since in each set, a negative eigenvalue exists, we can conclude that the system exhibits entanglement, thus verifying the behaviour of the link $ab+ac+bc$, that is, even after cutting one variable, the other two remain entangled.
+            
+
+
+
+
+
 \subsection{Applying to Four Qubit Systems}
 \section{Physical Significance: Use in Quantum Networks}
 \section{Discussion and Conclusion}
