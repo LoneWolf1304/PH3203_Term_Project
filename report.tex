@@ -343,6 +343,118 @@ Using numerical calculation and tracing out subsystem $d$, we found the density 
     \end{array}
     \right]
     \end{equation}
+Let us now calculate the partial transposes for the PPT test: 
+\begin{align*}
+    \rho^{T_a}_{abc} &=
+    \left[
+    \begin{array}{cccccccc}
+    0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right]
+    \\
+    \rho^{T_b}_{abc} &=
+    \left[
+    \begin{array}{cccccccc}
+    0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.25 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right]
+    \\
+    \rho^{T_c}_{abc} &=
+    \left[
+    \begin{array}{cccccccc}
+    0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    0.25 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right]
+    \end{align*}
+    
+    The set of eigenvalues for the above matrices are:
+    \begin{itemize}
+        \item $ \lambda_a = \mathcolor{red}{-0.354}, 0.0, 0.0, 0.0, 0.25, 0.25, 0.354, 0.5$
+        \item $ \lambda_b = \mathcolor{red}{-0.354}, 0.0, 0.0, 0.0, 0.25, 0.25, 0.354, 0.5$
+        \item $ \lambda_c = \mathcolor{red}{-0.183}, 0.0, 0.0, 0.0, 0.0, 0.25, 0.25, 0.683$
+    \end{itemize}
+Each of the above matrices have atleast one negative eigenvalues, thus denoting the presence of entanglement in the system as a whole. Let us now analyse the reduced density matrices and their PPT matrices which corresponds to the act of `cutting a link': 
+\begin{align*}
+    \rho_{bc} &=
+    \left[
+    \begin{array}{cccc}
+    0.5 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right] \quad \rho_{bc}^{T_b} = \left[
+        \begin{array}{cccc}
+        0.5 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]
+    \\
+    \rho_{ac} &=
+    \left[
+    \begin{array}{cccc}
+    0.5 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.25 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.25 \\
+    \end{array}
+    \right] \quad \rho_{ac}^{T_a} =\left[
+        \begin{array}{cccc}
+        0.5 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]
+    \\
+    \rho_{ab} &=
+    \left[
+    \begin{array}{cccc}
+    0.5 & 0.0 & 0.0 & 0.25 \\
+    0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.0 \\
+    0.25 & 0.0 & 0.0 & 0.5 \\
+    \end{array}
+    \right] \quad \rho_{ab}^{T_a} = \left[
+        \begin{array}{cccc}
+        0.5 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.25 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.5 \\
+        \end{array}
+        \right]
+    \end{align*}
+    
+    The set of eigenvalues for the above matrices are:
+    \begin{itemize}
+        \item $0.0, 0.25, 0.25, 0.5 \longrightarrow$ no eigenvalue is negative, thus cutting $a$ separates the systems $b$ and $c$.        
+        \item $0.0, 0.25, 0.25, 0.5 \longrightarrow$ no eigenvalue is negative, thus cutting $b$ separates the systems $a$ and $c$.        
+       \item $ \mathcolor{red}{-0.25}, 0.25, 0.5, 0.5 \longrightarrow$ one eigenvalue is negative, thus on cutting $c$, the systems $a$ and $b$ remain entangled.
+    \end{itemize}
+    This faithfully reproduces the behaviour of the link $abc+ab$ and thus, the state characterises the link.\\[0.3cm]
 \textbf{\large \texttt{3\textsuperscript{3}} Link Class} \\[0.3cm]
 We now analyse the link class given by $P_3(a,b,c) = ab+ac$. The link diagram is given by:
 \begin{figure}[H]
@@ -472,6 +584,7 @@ The density matrix obtained for the system is:
                 \item $\mathcolor{red}{-0.155}, 0.25, 0.405, 0.5$ $\longrightarrow$ negative eigenvalue, so on cutting $b$, system $a$ and $c$ remain entangled.
                 \item $\mathcolor{red}{-0.155}, 0.25, 0.405, 0.5$ $\longrightarrow$ negative eigenvalue, so on cutting $c$  system $a$ and $b$ remain entangled.
             \end{itemize}
+            This is consistent with the link properties and hence the mixed state obtained is indeed characterises the link. \\[0.3cm]
 \textbf{\large \texttt{3\textsuperscript{4}} Link Class} \\[0.3cm]
 Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given by:
 \begin{figure}[H]
