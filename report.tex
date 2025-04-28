@@ -39,17 +39,21 @@
   % OR for true small caps:
   % {\Large\MakeUppercase{\expandafter\@firstofone#1}\scshape\MakeLowercase{#1}}%
 }
+\usepackage[left = 1in,
+right = 1in,
+bottom = 1in,
+top = 1in,
+a4paper]{geometry}
 
-
-\setlength{\headheight}{0.75in}
-\setlength{\oddsidemargin}{0in}
-        \setlength{\evensidemargin}{0in}
-        \setlength{\textwidth}{6.5in}
-        \setlength{\headwidth}{7.3in}
-        \setlength{\textheight}{8.75in}
-        \rfoot{\thepage}
-        \renewcommand{\headrulewidth}{0pt} % Remove the header line
-        \renewcommand{\footrulewidth}{0pt}
+% \setlength{\headheight}{0.75in}
+% \setlength{\oddsidemargin}{0in}
+%         \setlength{\evensidemargin}{0in}
+%         \setlength{\textwidth}{6.5in}
+%         \setlength{\headwidth}{7.3in}
+%         \setlength{\textheight}{8.75in}
+%         \rfoot{\thepage}
+%         \renewcommand{\headrulewidth}{0pt} % Remove the header line
+%         \renewcommand{\footrulewidth}{0pt}
 \fancyhead[L,C]{}
 \fancyhead[L]{PH3203: Term Project}
 \fancyhead[R]{0\thepage}
@@ -63,11 +67,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \definecolor{titleblue}{RGB}{0, 80, 120}
 \usepackage{longtable} 
-\usepackage[left = 1in,
-right = 1in,
-bottom = 1in,
-top = 1in,
-a4paper]{geometry}
+
 
 \begin{document}
 \makeatletter
@@ -109,9 +109,9 @@ a4paper]{geometry}
 			\centering
 			\def\arraystretch{2}\tabcolsep=1.2cm
 			\begin{tabular}{cc}
-				\thead{\Large \texttt{\textbf{Sagnik Seth }}                      \\[5pt] \large 22MS026} &
-				\thead{\Large  \texttt{\textbf{Jessica Das} }              \\[5pt] \large 22MS157} \\
-				\multicolumn{2}{c}{\thead{\Large  \texttt{\textbf{Sayan Karmakar}} \\[5pt] \large 22MS163}}
+				\thead{\Large \texttt{\textbf{{\LARGE  S}agnik {\LARGE S}eth }}                      \\[5pt] \large 22MS026} &
+				\thead{\Large  \texttt{\textbf{{\LARGE J}essica {\LARGE D}as} }              \\[5pt] \large 22MS157} \\
+				\multicolumn{2}{c}{\thead{\Large  \texttt{\textbf{{\LARGE S}ayan {\LARGE K}armakar}} \\[5pt] \large 22MS163}}
 			\end{tabular}
 		\end{table}
         \vspace{0.5cm}
