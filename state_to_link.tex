@@ -47,11 +47,11 @@
  	\begin{equation*}
  		\rho^{T_a} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
  	\end{equation*}
- 	This matrix has negative eigenvalues.
+ 	The set of eigenvalues of this matrix is $\mathcolor{red}{-0.433}, 0.0, 0.0, 0.0, 0.0, 0.25, 0.433, 0.75$, one of which is negative. 
  	\begin{equation*}
  		\rho^{T_b} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0.25 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
  	\end{equation*}
- 	This matrix also has negative eigenvalues.
+ 	The set of eigenvalues of this matrix is $\mathcolor{red}{-0.354}, 0.0, 0.0, 0.0, 0.0, 0.146, 0.354, 0.854$, one of which is negative. 
  	\begin{equation*}
  		\rho^{T_c} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
  	\end{equation*}
@@ -79,16 +79,16 @@
 	\begin{equation*}
 		\rho^{T_b}_{bc} = \left[\begin{matrix}0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0\\0.25 & 0 & 0.5 & 0.25\\0 & 0 & 0.25 & 0.25\end{matrix}\right].
 	\end{equation*}
-	This has all positive eigenvalues. So, the subsystem $b$ and $c$ are separated after $a$ is traced out. Now, partial transpose of $\rho_{ac}$ with respect to the subsystem $a$ is $\rho^{T_a}_{ac}$ and it is
+	This has all positive eigenvalues: $0.0, 0.0, 0.25, 0.75$. So, the subsystem $b$ and $c$ are separated after $a$ is traced out. Now, partial transpose of $\rho_{ac}$ with respect to the subsystem $a$ is $\rho^{T_a}_{ac}$ and it is
 	\begin{equation*}
 		\rho^{T_a}_{ac} = \left[\begin{matrix}0.25 & 0.25 & 0.25 & 0.25\\0.25 & 0.25 & 0 & 0\\0.25 & 0 & 0.5 & 0\\0.25 & 0 & 0 & 0\end{matrix}\right].
 	\end{equation*}
-	This has negative eigenvalues. So after tracing out subsystem $b$, the subsystem $a$ and $c$ remains entangled.
+	The eigenvalues of this matrix are $\mathcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative. So after tracing out subsystem $b$, the subsystem $a$ and $c$ remains entangled.
 	Partial transpose of $\rho_{ab}$ with respect to the subsystem $a$ is the following,
 	\begin{equation*}
 		\rho^{T_a}_{ab} = \left[\begin{matrix}0 & 0 & 0 & 0.25\\0 & 0.5 & 0 & 0.25\\0 & 0 & 0.25 & 0.25\\0.25 & 0.25 & 0.25 & 0.25\end{matrix}\right].
 	\end{equation*}
-	This also has negative eigenvalues, so after tracing out $c$, the subsystem $a$ and $b$ remains entangled.
+	The eigenvalues of this matrix are $\mathcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative, so after tracing out $c$, the subsystem $a$ and $b$ remains entangled.
  So to summarize, we want to a 3 variable polynomial with the following property:
 	\begin{itemize}
 		\item If we put $a = 0$, the polynomial is zero.
