@@ -3,6 +3,7 @@
 \usepackage{amsmath,amsfonts, amssymb, amsthm, esint, physics}
 \usepackage{amscd}
 \usepackage{siunitx}
+\usepackage{xcolor}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \theoremstyle{definition}
@@ -47,11 +48,11 @@
  	\begin{equation*}
  		\rho^{T_a} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
  	\end{equation*}
- 	The set of eigenvalues of this matrix is $\mathcolor{red}{-0.433}, 0.0, 0.0, 0.0, 0.0, 0.25, 0.433, 0.75$, one of which is negative. 
+ 	The set of eigenvalues of this matrix is $\textcolor{red}{-0.433}, 0.0, 0.0, 0.0, 0.0, 0.25, 0.433, 0.75$, one of which is negative. 
  	\begin{equation*}
  		\rho^{T_b} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0.25 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
  	\end{equation*}
- 	The set of eigenvalues of this matrix is $\mathcolor{red}{-0.354}, 0.0, 0.0, 0.0, 0.0, 0.146, 0.354, 0.854$, one of which is negative. 
+ 	The set of eigenvalues of this matrix is $\textcolor{red}{-0.354}, 0.0, 0.0, 0.0, 0.0, 0.146, 0.354, 0.854$, one of which is negative. 
  	\begin{equation*}
  		\rho^{T_c} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
  	\end{equation*}
@@ -83,12 +84,12 @@
 	\begin{equation*}
 		\rho^{T_a}_{ac} = \left[\begin{matrix}0.25 & 0.25 & 0.25 & 0.25\\0.25 & 0.25 & 0 & 0\\0.25 & 0 & 0.5 & 0\\0.25 & 0 & 0 & 0\end{matrix}\right].
 	\end{equation*}
-	The eigenvalues of this matrix are $\mathcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative. So after tracing out subsystem $b$, the subsystem $a$ and $c$ remains entangled.
+	The eigenvalues of this matrix are $\textcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative. So after tracing out subsystem $b$, the subsystem $a$ and $c$ remains entangled.
 	Partial transpose of $\rho_{ab}$ with respect to the subsystem $a$ is the following,
 	\begin{equation*}
 		\rho^{T_a}_{ab} = \left[\begin{matrix}0 & 0 & 0 & 0.25\\0 & 0.5 & 0 & 0.25\\0 & 0 & 0.25 & 0.25\\0.25 & 0.25 & 0.25 & 0.25\end{matrix}\right].
 	\end{equation*}
-	The eigenvalues of this matrix are $\mathcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative, so after tracing out $c$, the subsystem $a$ and $b$ remains entangled.
+	The eigenvalues of this matrix are $\textcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative, so after tracing out $c$, the subsystem $a$ and $b$ remains entangled.
  So to summarize, we want to a 3 variable polynomial with the following property:
 	\begin{itemize}
 		\item If we put $a = 0$, the polynomial is zero.
@@ -119,4 +120,22 @@ Let $B$ is observable corresponds to the Hilbert space $\mathcal{H}$. The expect
     &= \sum_{j} \bra{\psi_j} B \rho \ket{\psi_j} \\
     &= \Tr{B \rho}
 \end{align*}
+
+\section{Peres–Horodecki criterion}
+% We have to write something about the separable and entangled state. And how it is a very hard and still a open problem to find out.
+% I dont know much about this, so I am copying it from wikipedia.
+The Peres–Horodecki criterion is a necessary condition, for the joint density matrix $\rho$ of two quantum mechanical system $A$ and $B$, to be separable. It is also called the PPT criterion, for positive partial transpose. In the $2\times2$ and $2\times3$ dimensional cases the condition is also sufficient. It is used to decide the separability of mixed states, where the Schmidt decomposition does not apply. The theorem was discovered in 1996 by Asher Peres and the Horodecki family.
+
+In higher dimensions, the test is inconclusive, and one should supplement it with more advanced tests, such as those based on entanglement witnesses. 
+
+Suppose, we have a general state given by a density matrix $\rho$ in a joint Hilbert state $\mathcal{H}_A \otimes \mathcal{H}_B$. Let the $\rho $ is denoted as, \begin{equation*}
+	\rho = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{k}\bra{l}.
+\end{equation*}
+Here, $i,j$ represents the basis elements from $\mathcal{H}_A$ and $k,l$ represents the basis elements from $\mathcal{H}_B$, and $\otimes$ denote the Kronecker product. %Write about Kronecker Product also.
+Now, partial transpose with respect to $B$ is given as 
+\begin{equation*}
+	\rho^{T_B} = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes (\ket{k}\bra{l})^{T} = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{l}\bra{k}.
+\end{equation*}
+
+Now, Peres-Horodecki criterion says that if $\rho$ is separable then all the eigenvalues of the partial transpose of $\rho$ is non-negative. So, this means if any of them are negative, then the state is not separable so entangled. The converse of this is not true in general, but in 2 $\times$ 2 and $2 \times 3$ the converse is also true.
 \end{document}
