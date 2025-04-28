@@ -80,14 +80,14 @@ a4paper]{geometry}
     \vspace*{2cm}
     \begin{center}
         {\sffamily\bfseries
-        \Huge\textbf{\textcolor{titleblue}{Classification of Entanglement using Knots}}\\[0.2cm] 
-        \Large \textcolor{blue!60!black}{A Topological Approach to Quantum States}\\[1.0cm]
+        \Huge\textbf{\textcolor{titleblue}{\texttt{Classification of Entanglement using Knots}}}\\[0.2cm] 
+        \Large \textcolor{blue!60!black}{\texttt{A Topological Approach to Quantum States}}\\[1.0cm]
         \Large PH3203 Term Project Report \\[0.2cm]
         \Large \textit{Instructor: Prof. Sourin Das}}\\[3cm]\end{center}
        
         \begin{figure}[H]
             \centering
-            \includesvg[scale=0.6]{Square_knot.svg}
+            \includesvg[scale=0.6]{pics/Square_knot.svg}
         \end{figure}
         \vspace{1cm}
         \begin{table}[H]
@@ -105,7 +105,7 @@ a4paper]{geometry}
         \textbf{IISER Kolkata}
         \begin{figure}[H]
             \centering
-            \includesvg[scale=0.2]{IISER-Kolkata-logo-vector-01.svg}
+            \includesvg[scale=0.2]{pics/IISER-Kolkata-logo-vector-01.svg}
         \end{figure}
        \end{center}
 \end{titlepage}
@@ -180,7 +180,7 @@ As a demonstraction, we will apply our algorithm to three qubit systems. Note th
 Let us start with the $3^1$ link class, which correspond to the Borromean Link. Cutting any of $a,b$ or $c$ will lead to complete separabability and loss of entanglement. 
 \begin{figure}[H]
     \centering
-  \input{borromean.tex}  
+  \input{pics/borromean.tex}  
   \caption{The Borromean link, characterising the $3^1$ link class.}
 \end{figure}
 \noindent
@@ -236,7 +236,7 @@ The density matrix corresponding to the state is found to be:
 Let us now consider the $3^2$ link class given by $P_2(a,b,c) = abc+ab$. Cutting any of $a,b$ will lead to complete separabality but if we cut $c$, then the other rings will remain entangled. The link can be represented as: 
 \begin{figure}[H]
     \centering
-  \input{3_2.tex}  
+  \input{pics/3_2.tex}  
   \caption{The knot diagram, characterising the $3^2$ link class.}
 \end{figure}
 \noindent
@@ -347,7 +347,7 @@ Using numerical calculation and tracing out subsystem $d$, we found the density 
 We now analyse the link class given by $P_3(a,b,c) = ab+ac$. The link diagram is given by:
 \begin{figure}[H]
     \centering
-  \input{3_3.tex}  
+  \input{pics/3_3.tex}  
   \caption{The knot diagram, characterising the $3^3$ link class.}
 \end{figure}
 \noindent
@@ -369,11 +369,114 @@ The density matrix obtained for the system is:
     \end{array}
     \right]
     \end{equation}
+    Let us calculate the partial transposes for the PPT test: 
+    \begin{align*}
+        \rho^{T_a}_{abc} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]\\  \rho^{T_b}_{abc} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.25 & 0.0 & 0.0 & 0.25 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]\\  \rho^{T_c}_{abc} &=
+        \left[
+        \begin{array}{cccccccc}
+        0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+        0.25 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0 & 0.25 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 \\
+        \end{array}
+        \right]
+        \end{align*}
+        The set of eigenvalues obtained for the above matrices are: 
+        \begin{itemize}
+            \item $\lambda_a =\mathcolor{red}{-0.155}, \mathcolor{red}{-0.155}, 0.0, 0.0, 0.25, 0.25, 0.405, 0.405$
+            \item $\lambda_b = \mathcolor{red}{-0.2}, 0.0, 0.0, 0.0, 0.139, 0.25, 0.25, 0.562$
+            \item $\lambda_c = \mathcolor{red}{-0.2}, 0.0, 0.0, 0.0, 0.139, 0.25, 0.25, 0.562$
+        \end{itemize}
+        Since atleast one of the eigenvalues is negative for each matrix, we can conclude that the system exhibits \textbf{tripartite entanglement} as a whole. Let us now consider the reduced systems. We obtain the density matrices and their PPT matrices for the reduced system as:
+        \begin{align*}
+            \rho_{bc} &= 
+            \left[
+            \begin{array}{cccc}
+            0.25 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.5 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.25 \\
+            \end{array}
+            \right] \quad \rho_{bc}^{T_b} = \left[
+                \begin{array}{cccc}
+                0.25 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.5 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.25 \\
+                \end{array}
+                \right]\\
+            \rho_{ac} &=
+            \left[
+            \begin{array}{cccc}
+            0.5 & 0.0 & 0.0 & 0.25 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.25 & 0.0 \\
+            0.25 & 0.0 & 0.0 & 0.25 \\
+            \end{array}
+            \right] \quad \rho_{ac}^{T_a} = \left[
+                \begin{array}{cccc}
+                0.5 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.25 & 0.0 \\
+                0.0 & 0.25 & 0.25 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.25 \\
+                \end{array}
+                \right]\\
+            \rho_{ab} &=
+            \left[
+            \begin{array}{cccc}
+            0.25 & 0.0 & 0.0 & 0.25 \\
+            0.0 & 0.25 & 0.0 & 0.0 \\
+            0.0 & 0.0 & 0.0 & 0.0 \\
+            0.25 & 0.0 & 0.0 & 0.5 \\
+            \end{array}
+            \right]\quad \rho_{ab}^{T_a} = \left[
+                \begin{array}{cccc}
+                0.25 & 0.0 & 0.0 & 0.0 \\
+                0.0 & 0.25 & 0.25 & 0.0 \\
+                0.0 & 0.25 & 0.0 & 0.0 \\
+                0.0 & 0.0 & 0.0 & 0.5 \\
+                \end{array}
+                \right]
+            \end{align*}
+            The set of eigenvalues obtained for the above matrices are:
+            \begin{itemize}
+                \item $0.0, 0.25, 0.25, 0.5 \longrightarrow$ no negative eigenvalues, so cutting $a$ makes the system separable.        
+                \item $\mathcolor{red}{-0.155}, 0.25, 0.405, 0.5$ $\longrightarrow$ negative eigenvalue, so on cutting $b$, system $a$ and $c$ remain entangled.
+                \item $\mathcolor{red}{-0.155}, 0.25, 0.405, 0.5$ $\longrightarrow$ negative eigenvalue, so on cutting $c$  system $a$ and $b$ remain entangled.
+            \end{itemize}
 \textbf{\large \texttt{3\textsuperscript{4}} Link Class} \\[0.3cm]
 Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given by:
 \begin{figure}[H]
     \centering
-  \input{3_4.tex}  
+  \input{pics/3_4.tex}  
   \caption{The knot diagram, characterising the $3^4$ link class.}
 \end{figure}
 \noindent
