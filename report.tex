@@ -806,8 +806,53 @@ Using the above state after tracing out subsystem $d$, we obtained the density m
 
 
 \subsection{Applying to Four Qubit Systems}
-\section{Physical Significance: Use in Quantum Networks}
+\section{Physical Significance: Use in Qubit Networks}
+The knot theoretic approach to entangled quantum states can be of great use in qubit networks, where different parties posses different qubits, entangled together and they want to perform some protocols (Here protocol means some series of operations/measurements to obtain some result, like the \textbf{BB84 protocol} for secure key distribution).
+\begin{figure}[H]
+    \centering
+\input{pics/network.tex}
+\caption{A qubit network, showing three parties, Alice, Bob and Charlie sharing an entangled state, represented by density operator $\hat{\rho}_{abc}$.}
+\end{figure}
+\noindent
+For successfully performing a protocol between two parties, entanglement must exist between the qubits possessed by the two parties. The above diagram shows three parties Alice, Bob and Charlie, each possessing a qubit and their combined state is described by the density operator $\hat{\rho}_{abc}$. Then, suppose Alice and Bob want to perform a protocol while Charlie does not want to participate. In this case, a general operator for the system will be of the form:\\[0.2cm]
+$$\hat{\mathrm{O}} = \sum\limits_i (\mathrm{\hat{M}_{i,ab}\otimes\hat{\mathds{1}_c}})\hat{\rho}_{abc}(\mathrm{\hat{M}^{\dagger}_{i,ab}\otimes\hat{\mathds{1}_c}})$$ where $\hat{M}_{i,ab}$ is some operator acting on the combined Hilbert space of Alice and Bob and the index $i$ runs over all the possible outcomes. Note that the operator does not interfere with Charlie's qubit. The probability of the $i^{\mathrm{th}}$ outcome is given by:
+$$p_i = \Tr_{abc}[(\mathrm{\hat{M}^{\dagger}_{i,ab}\otimes\hat{\mathds{1}}_c})(\mathrm{\hat{M}_{i,ab}\otimes\hat{\mathds{1}}_c})\hat{\rho}_{abc}]\quad\xrightarrow[\text{system $c$}]{\text{Tracing out}} \Tr_{ab}[\mathrm{\hat{M}^{\dagger}_{i,ab}}\mathrm{\hat{M}_{i,ab}}\hat{\rho}_{ab}]$$
+In this case, knowledge of Charlie's system is not neccessary for successfully applying the protocol by Alice and Bob. In the case Charlie decides to act on his qubit by some operator $\mathrm{\hat{N}_{i,c}}$, the total operator for the system will now be modified by:
+$$\mathrm{\hat{M}_{i,ab}\otimes\hat{\mathds{1}_c}} \quad \longrightarrow \mathrm{\hat{M}_{i,ab}\otimes\hat{{N}}_{i,c}}$$
+Now, for successfully performing the protocol, Alice and Bob must have a kmowledge of Charlie's operation since it could potentially affect the outcome of the protocol as the states are entangled. Thus, we have the following observations from the above discussion:
+\begin{itemize}
+    \item If the operator $\hat{\rho}_{ab}$ is separable, then the protocol cannot be performed successfully between Alice and Bob, as the two parties are not entangled. 
+    \item If Charlie decides not to divulge any information about his system, the protocol cannot be applied as no correlation can be determined between the two parties Alice and Bob.
+\end{itemize}
+In this case, the above discussion on the knot theoretic approach to entangled quantum states can be of great use. As a demonstration, we consider building a three-qubit network such that: 
+\begin{itemize}
+    \item Bob and Charlie may never successfully perform any
+    protocols without external help from Alice.
+    \item Alice may
+    have a chance to communicate with either Bob or Charlie
+    if she wishes to.
+\end{itemize}
+The network is shown in the figure below:
+\begin{figure}[H]
+    \centering
+\input{pics/network1.tex}
+\caption{A qubit network, showing three parties, Alice, Bob and Charlie sharing an entangled state, represented by density operator $\hat{\rho}_{abc}$. The dotted line represent no connection between the two parties.}
+\end{figure}
+\noindent
+The network can be easily described using the link polynomial language as: $\mathrm{P(a,b,c)= ac+ab}$ and thus we can immediately find a state that satisfies the above condition. The situation becomes more helpful when we consider higher number of qubits. Let us consider a four qubit network, where Alice, Bob, Charlie and Diana are the parties such that only the following parties can communicate:
+\begin{itemize}
+    \item Alice, Bob, and Charlie
+    \item Alice, Bob, and Diana
+    \item Alice and Charlie
+\end{itemize}
+\begin{figure}[H]
+    \centering
+\input{pics/network3.tex}
+\caption{The four qubit network, showing four parties, Alice, Bob, Charlie and Diana sharing an entangled state, represented by density operator $\hat{\rho}_{abcd}$. The dotted line represent no connection between the two parties.}
+\end{figure}
+We can easily see that the polynomial describing this network is $\mathrm{P(a,b,c,d) = abc+abd+ac}$. Thus a state can immediately be obtained using the algorithm described previously.
 \section{Discussion and Conclusion}
+\section{Acknowledgements}
 \newpage
 \section*{Appendix A: {\huge Quantum Information Basics}}
 \addcontentsline{toc}{section}{Appendix A: Quantum Information Basics} % Optional
@@ -858,17 +903,17 @@ for i= 1:3
 end
 
 #calculating the eigenvalues of the PPT matrices
-for i =1:3
+for i = 1:3
     println(round.(eigvals((ppt_rho_3_2[i])), digits=3))
 end
 
 #calculating the PPT matrices and their eigenvalues of the reduced system
-for i =1:3
+for i = 1:3
     for j=1:2
     latexify(ptranspose(red_rho_3_2[i], [2,2], j))|>print
     end
 end
-for i =1:3
+for i = 1:3
     for j=1:1
     (round.(eigvals(ptranspose(red_rho_3_2[i], [2,2], j)), digits=3))|>println
     end
