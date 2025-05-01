@@ -1,13 +1,37 @@
-\documentclass{beamer}
+\documentclass[usenames,dvipsnames]{beamer}
+\usepackage{eulervm}
 \usepackage{mystyle1}
-\usepackage{bookmark}
 \title[Entanglement using Knots]{\huge Entanglement Classification using Knots \\{\large PH3203 Term Project}}
 \author[Seth, Das, Karmakar]{{ Sagnik Seth} {\tiny{22MS026}} \and { Jessica  Das}  {\tiny{22MS157}} \and { Sayan Karmakar}  {\tiny{22MS163}}}
 \institute[]{Instructor: Prof. Sourin Das\\[0.2cm]
 	\textit{Department of Physics, IISER Kolkata}}
 \date{}
 \usetheme{Madrid}
-\usecolortheme{orchid}
+\definecolor{bubbles}{rgb}{0.91, 1.0, 1.0}
+\usecolortheme{whale}
+\setbeamercolor{normal text}{fg=black,bg=bubbles!70}
+\setbeamercolor{structure}{fg=red, bg=violet}
+
+\setbeamercolor{alerted text}{fg=red!85!black}
+
+\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+
+\setbeamercolor*{framesubtitle}{fg=white}
+
+\setbeamercolor*{block title}{parent=structure,bg=black!60}
+\setbeamercolor*{block body}{fg=black,bg=black!10}
+\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
+
+
+
+
 % \setbeamertemplate{footline}{
 %     \hfill
 %     \scriptsize{
