@@ -78,16 +78,17 @@
 		\end{center}
 	\end{frame}
 	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{1} class}
-		\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$\\[0.3cm]
-		\begin{minipage}{0.35\textwidth}
+		\onslide<1->{\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$}\\[0.3cm]
+		
+		\onslide<2->{\begin{minipage}{0.35\textwidth}
 			%\input{pics/borromean.tex}  % Make sure this file exists
 			\scalebox{0.6}{\input{pics/borromean.tex}}
 			\begin{itemize}
-				\item \textbf{Eigenvalues:} $0.0,\ 0.5,\ \mathcolor{red}{-0.5}$
-				\item One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}
+				\onslide<5->{\item \textbf{Eigenvalues:} $0.0,\ 0.5,\ \mathcolor{red}{-0.5}$}
+				\onslide<6->{\item One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}}
 			\end{itemize}
-		\end{minipage}%
-		\begin{minipage}{0.5\textwidth}
+		\end{minipage}}%
+		\onslide<3->{\begin{minipage}{0.5\textwidth}
 			\footnotesize
 			\begin{equation*}
 				\rho_{abc} =
@@ -103,8 +104,8 @@
 				0.5 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.5 \\
 				\end{array}
 				\right]
-			\end{equation*}
-			\begin{equation*}
+			\end{equation*}}
+			\onslide<4->{\begin{equation*}
 				\rho^{T_a}_{abc} =
 				\left[
 				\begin{array}{cccccccc}
@@ -119,20 +120,20 @@
 				\end{array}
 				\right]
 				\end{equation*}
-		\end{minipage}
+		\end{minipage}}
 	\end{frame}
 	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{1} class}
-		\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$\\[0.3cm]
+		\onslide<1->{\textcolor{red}{\textbf{Pure State:} } $\ket{3^1}_{abc} = \frac{1}{\sqrt{2}}\brac{\ket{000}_{abc}+\ket{111}_{abc}}$}\\[0.3cm]
 		\begin{minipage}{0.35\textwidth}
 			%\input{pics/borromean.tex}  % Make sure this file exists
-			\scalebox{0.6}{\input{pics/borromean_cut.tex}}
+			\onslide<2->{\scalebox{0.6}{\input{pics/borromean_cut.tex}}}
 			\begin{itemize}
-				\item \textbf{Eigenvalues:} $0.0,\ 0.5\geq0$
+				\onslide<5->{\item \textbf{Eigenvalues:} $0.0,\ 0.5\geq0$}
 			\end{itemize}
 		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 			\footnotesize
-			\begin{equation*}
+			\onslide<3->{\begin{equation*}
 				\rho_{ab}
 				\left[
 				\begin{array}{cccc}
@@ -142,8 +143,8 @@
 				0.0 & 0.0 & 0.0 & 0.5 \\
 				\end{array}
 				\right]
-				\end{equation*} 
-				\begin{equation*}
+				\end{equation*} }
+				\onslide<4->{\begin{equation*}
 					\rho^{Ta}_{ab}
 					\left[
 					\begin{array}{cccc}
@@ -153,10 +154,10 @@
 					0.0 & 0.0 & 0.0 & 0.5 \\
 					\end{array}
 					\right]
-					\end{equation*}
+					\end{equation*}}
 				\begin{itemize}
-					\item All eigenvalues are positive.
-					\item System completely \textbf{separable} after cut.
+					\onslide<6->{\item All eigenvalues are positive.}
+					\onslide<7->{\item System completely \textbf{separable} after cut.}
 				\end{itemize}
 		\end{minipage}
 	\end{frame}
@@ -166,19 +167,19 @@
 
 
 	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class}
-		\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]
+		\onslide<1->{\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}}} $\\[0.3cm]
 		\begin{minipage}{0.35\textwidth}
 			%\input{pics/borromean.tex}  % Make sure this file exists
 			\begin{figure}
-			\scalebox{0.4}{\input{pics/3_2.tex}}\end{figure}
+				\onslide<2->{\scalebox{0.4}{\input{pics/3_2.tex}}\end{figure}}
 			\begin{itemize}
-				\item \textbf{Eigenvalues:} {\tiny $ \mathcolor{OliveGreen}{ \mathbf{-0.471}, 0.0, 0.333, 0.471, 0.666$}}\\{\tiny $ \mathcolor{red}{   \mathbf{-0.333}, 0.0, 0.127, 0.333, 0.872$}}
-				\item \small One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}
+				\onslide<5->{\item \textbf{Eigenvalues:} {\tiny $ \mathcolor{OliveGreen}{ \mathbf{-0.471}, 0.0, 0.333, 0.471, 0.666$}}}\\\onslide<7->{{\tiny $ \mathcolor{red}{   \mathbf{-0.333}, 0.0, 0.127, 0.333, 0.872$}}}
+				\onslide<8->{\item \small One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}}
 				 \end{itemize}
 		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 			\tiny  
-			\begin{align*}
+			\onslide<3->{\begin{align*}
 				\rho_{abc} &=
 				\left[
 				\begin{array}{cccccccc}
@@ -191,9 +192,9 @@
 				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
 				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
 				\end{array}
-				\right]
+				\right]}
 				\\
-				\mathcolor{OliveGreen}{\rho^{T_a}_{abc}} &=
+				\onslide<4->{\mathcolor{OliveGreen}{\rho^{T_a}_{abc}} &=
 				\left[
 				\begin{array}{cccccccc}
 				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
@@ -205,9 +206,9 @@
 				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
 				0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
 				\end{array}
-				\right]
+				\right]}
 				\\
-				\mathcolor{red}{\rho^{T_c}_{abc}} &=
+				\onslide<6->{\mathcolor{red}{\rho^{T_c}_{abc}} &=
 				\left[
 				\begin{array}{cccccccc}
 				0.333 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
@@ -219,26 +220,26 @@
 				0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\ 
 				0.0 & 0.333 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.333 \\ 
 				\end{array}
-				\right]
+				\right]}
 				\end{align*}
 		\end{minipage}
 	\end{frame}
 
-	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class}
-		\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class: cut}
+		\onslide<1->{\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]}
 		\begin{minipage}{0.35\textwidth}
 			%\input{pics/borromean.tex}  % Make sure this file exists
 			\begin{figure}
-			\scalebox{0.4}{\input{pics/3_2_cut1.tex}}\end{figure}
+				\onslide<2->{\scalebox{0.4}{\input{pics/3_2_cut1.tex}}}\end{figure}
 			\begin{itemize}
-				\item \textbf{Eigenvalues:} {\footnotesize $\mathcolor{OliveGreen}{0.333,{\mathbf{-0.333}}, 0.666$}}
-				\item \small One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}
+				\onslide<5->{\item \textbf{Eigenvalues:} {\footnotesize $\mathcolor{OliveGreen}{0.333,{\mathbf{-0.333}}, 0.666$}}}
+				\onslide<6->{\item \small One eigenvalue is negative $\rightarrow$ \textbf{\textcolor{OliveGreen}{Tripartite Entanglement}}}
 				 \end{itemize}
 		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 		\footnotesize
 			\begin{align*}
-				\rho_{ab} &=
+				\onslide<3->{\rho_{ab} &=
                     \left[
                     \begin{array}{cccc}
                     0.666 & 0.0 & 0.0 & 0.333 \\
@@ -246,16 +247,16 @@
                     0.0 & 0.0 & 0.0 & 0.0 \\
                     0.333 & 0.0 & 0.0 & 0.333 \\
                     \end{array}
-                    \right]\\
-				\mathcolor{OliveGreen}{\rho_{ab}^{T_a}} &=
-                    \left[
+                    \right]}\\
+					\onslide<4->{\mathcolor{OliveGreen}{\rho_{ab}^{T_a}} &=
+				 \left[
                     \begin{array}{cccc}
                     0.666 & 0.0 & 0.0 & 0.0 \\
                     0.0 & 0.0 & 0.333 & 0.0 \\
                     0.0 & 0.333 & 0.0 & 0.0 \\
                     0.0 & 0.0 & 0.0 & 0.333 \\
                     \end{array}
-                    \right]\\
+                    \right]}\\
 				\end{align*}
 		\end{minipage}
 	\end{frame}
@@ -263,21 +264,21 @@
 
 
 
-	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class}
-		\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $\\[0.3cm]
+	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{2} class: another cut}
+		\onslide<1->{\textcolor{red}{\textbf{Pure State:} } $\ket{3^2}_{abc} = \frac{1}{\sqrt{3}}\brac{\ket{000}_{abc} + \ket{111}_{abc} + \ket{001}_{abc}} $}\\[0.3cm]
 		\begin{minipage}{0.35\textwidth}
 			%\input{pics/borromean.tex}  % Make sure this file exists
 			\begin{figure}
-			\scalebox{0.4}{\input{pics/3_2_cut2.tex}}\end{figure}
+				\onslide<2->{\scalebox{0.4}{\input{pics/3_2_cut2.tex}}}\end{figure}
 			\begin{itemize}
-				\item \textbf{Eigenvalues:} {\footnotesize{\footnotesize $\mathcolor{red}{ 0.0, 0.333, 0.666$}}}
-				\item \small No eigenvalue is negative $\rightarrow$ \textbf{\textcolor{red}{Separable}}
+				\onslide<5->{\item \textbf{Eigenvalues:} {\footnotesize{\footnotesize $\mathcolor{red}{ 0.0, 0.333, 0.666$}}}}
+				\onslide<6->{\item \small No eigenvalue is negative $\rightarrow$ \textbf{\textcolor{red}{Separable}}}
 				 \end{itemize}
 		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 		\footnotesize
 			\begin{align*}
-					\rho_{bc} &=
+				\onslide<3->{\rho_{bc} &=
 					\left[
 					\begin{array}{cccc}
 					0.333 & 0.333 & 0.0 & 0.0 \\
@@ -285,8 +286,8 @@
 					0.0 & 0.0 & 0.0 & 0.0 \\
 					0.0 & 0.0 & 0.0 & 0.333 \\
 					\end{array}
-					\right]\\
-					\mathcolor{red}{\rho^{T_b}_{bc}}&=
+					\right]}\\
+					\onslide<4->{\mathcolor{red}{\rho^{T_b}_{bc}}&=
                 \left[
                 \begin{array}{cccc}
                 0.333 & 0.333 & 0.0 & 0.0 \\
@@ -294,7 +295,7 @@
                 0.0 & 0.0 & 0.0 & 0.0 \\
                 0.0 & 0.0 & 0.0 & 0.333 \\
                 \end{array}
-                \right]
+                \right]}
 				\end{align*}
 		\end{minipage}
 	\end{frame}
@@ -313,9 +314,111 @@
 		
 	\end{frame}
 	\begin{frame}{\textbf{Application to Qubit Networks}}
-		
+		\begin{itemize}
+			\item \onslide<1-> {Different parties possessing entangled qubits, want to perform protocols with certain restrictions. }
+			\item \onslide<3->{If density operator of the subsystem consisting the parties wanting to perform the protocol is separable, then the protocol cannot be performed successfully.}
+			\item \onslide<4-> {If another party (not participating in the protocol) does not divulge information about their local operations, then results of the protocol cannot be correlated.}
+		\end{itemize}
+		\begin{figure}
+			\centering
+		\onslide<2->{\scalebox{0.6}{
+
+			\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+			
+			\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+			
+			%Shape: Rectangle [id:dp5199805559721411] 
+			\draw  [fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (197,162.92) -- (289.44,162.92) -- (289.44,218.97) -- (197,218.97) -- cycle ;
+			%Shape: Rectangle [id:dp4541164641811364] 
+			\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (289.44,25.57) -- (381.88,25.57) -- (381.88,81.63) -- (289.44,81.63) -- cycle ;
+			%Shape: Rectangle [id:dp04458970673752716] 
+			\draw  [fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (380.56,162.92) -- (473,162.92) -- (473,218.97) -- (380.56,218.97) -- cycle ;
+			%Straight Lines [id:da5905977694939716] 
+			\draw [line width=1.5]    (225.19,147.84) -- (273.14,82.6) ;
+			\draw [shift={(274.91,80.18)}, rotate = 126.32] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+			\draw [shift={(223.41,150.26)}, rotate = 306.32] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+			%Straight Lines [id:da10833960790906139] 
+			\draw [line width=1.5]  [dash pattern={on 1.69pt off 2.76pt}]  (393.73,82.36) -- (454.47,151.03) ;
+			%Straight Lines [id:da635570582048944] 
+			\draw [line width=1.5]    (304.33,198.37) -- (368.32,198.37) ;
+			\draw [shift={(371.32,198.37)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+			\draw [shift={(301.33,198.37)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+			
+			% Text Node
+			\draw (222.06,180.54) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{pcr}\selectfont \textbf{Alice}}};
+			% Text Node
+			\draw (303.98,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\fontfamily{pcr}\selectfont Charlie}}};
+			% Text Node
+			\draw (413.58,180.34) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\fontfamily{pcr}\selectfont Bob}}};
+			% Text Node
+			\draw (317.14,111.48) node [anchor=north west][inner sep=0.75pt]  [font=\Large,color={rgb, 255:red, 255; green, 8; blue, 8 }  ,opacity=1 ]  {$\mathlarger{\mathlarger{{\hat{\rho }_{abc}}}}$};
+			
+			
+			\end{tikzpicture}
+			}}
+		\end{figure}
 	\end{frame}
+	\begin{frame}{Application to Qubit Networks}
+		Let us consider a four qubit
+		network, where Alice, Bob, Charlie and Diana are the parties such that only the following
+		parties can communicate:
+		\begin{itemize}
+			\item \onslide<2->{Alice, Bob, and Charlie}
+			\item \onslide<3->{Alice, Bob, and Diana}
+			\item \onslide<4->{Alice and Charlie}
+		\end{itemize}
+		\begin{figure}
+			\centering
+		\onslide<5->{	\scalebox{0.6}{
+
+		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+		
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+		
+		%Shape: Rectangle [id:dp10277356992512154] 
+		\draw  [fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (197,162.92) -- (289.44,162.92) -- (289.44,218.97) -- (197,218.97) -- cycle ;
+		%Shape: Rectangle [id:dp015384298355835657] 
+		\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (198.44,25.57) -- (290.88,25.57) -- (290.88,81.63) -- (198.44,81.63) -- cycle ;
+		%Shape: Rectangle [id:dp7204404417404228] 
+		\draw  [fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (380.56,162.92) -- (473,162.92) -- (473,218.97) -- (380.56,218.97) -- cycle ;
+		%Shape: Rectangle [id:dp17140074186825027] 
+		\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 223; green, 247; blue, 233 }  ,fill opacity=1 ][line width=1.5]  (380.44,25.57) -- (472.88,25.57) -- (472.88,81.63) -- (380.44,81.63) -- cycle ;
+		%Straight Lines [id:da032463145441033014] 
+		\draw [line width=1.5]    (303.33,191.37) -- (367.32,191.37) ;
+		\draw [shift={(370.32,191.37)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		\draw [shift={(300.33,191.37)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		%Straight Lines [id:da7055775840806392] 
+		\draw [line width=1.5]    (245.05,145.52) -- (245.95,94.88) ;
+		\draw [shift={(246,91.88)}, rotate = 91.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		\draw [shift={(245,148.52)}, rotate = 271.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		%Straight Lines [id:da39607289649694266] 
+		\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 44; green, 28; blue, 255 }  ,fill opacity=1 ][line width=1.5]    (429.05,145.52) -- (429.95,94.88) ;
+		\draw [shift={(430,91.88)}, rotate = 91.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		\draw [shift={(429,148.52)}, rotate = 271.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		%Straight Lines [id:da6546093054475423] 
+		\draw [line width=1.5]  [dash pattern={on 1.69pt off 2.76pt}]  (303.33,52.37) -- (332,52.37) -- (373.32,52.37) ;
+		
+		% Text Node
+		\draw (222.06,180.54) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{pcr}\selectfont \textbf{Alice}}};
+		% Text Node
+		\draw (213.98,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\fontfamily{pcr}\selectfont Charlie}}};
+		% Text Node
+		\draw (413.58,183.34) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\fontfamily{pcr}\selectfont Bob}}};
+		% Text Node
+		\draw (300.14,108.48) node [anchor=north west][inner sep=0.75pt]  [font=\Large,color={rgb, 255:red, 255; green, 8; blue, 8 }  ,opacity=1 ]  {$\mathlarger{\mathlarger{\mathlarger{\mathlarger{{\hat{\rho }_{abcd}}}}}}$};
+		% Text Node
+		\draw (405.98,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\fontfamily{pcr}\selectfont Diana}}};
+		
+		
+		\end{tikzpicture}
+		}}
 	
+		\end{figure}
+		\noindent
+		\onslide<6->We can easily see that the polynomial describing this network is $\mathrm{P(a, b, c, d) = abc + abd + ac} \longrightarrow $ \onslide<7->{a state can immediately be constructed from the algorithm}.
+	\end{frame}
 	\begin{frame}{\textbf{Conclusion}}
 		
 	\end{frame}
