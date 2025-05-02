@@ -161,7 +161,7 @@ Here $\ket{0}^{\otimes N}$ is the tensor product of $N$ number of $\ket{0}$ stat
     \end{itemize}
     \item The full state $\ket{\psi}$ is constructed by summing these individual states obtained for each term of the polynomial. 
     \item The full mixed state characterised by this polynomial is then obtained by tracing out the qudit state $\ket{\mathrm{Q_d}}$.
-    $$\boxed{\hat{\rho}(P)=\frac{\Tr_d{\ket{\psi}\bra{\psi}}}{\sqrt{\braket{\psi|\psi}}}}$$
+    $$\boxed{\hat{\rho}(P)=\frac{\Tr_d{\ket{\psi}\bra{\psi}}}{\Tr{\Tr_d{\ket{\psi}\bra{\psi}}}}}$$
 \end{enumerate}
 \textbf{Example demonstrating the algorithm:} \\[0.3cm]
 We will see a simple example of the algorithm to obtain a state from a link. Consider the polynomial $P(a,b,c) = ab+ac$. This is a three-ring link. 

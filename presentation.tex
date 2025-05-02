@@ -1,6 +1,7 @@
 \documentclass[usenames,dvipsnames]{beamer}
 \usepackage{eulervm}
 \usepackage{mystyle1}
+\usepackage{tikzsymbols}
 \title[Entanglement using Knots]{\huge Entanglement Classification using Knots \\{\large PH3203 Term Project}}
 \author[Seth, Das, Karmakar]{{ Sagnik Seth} {\tiny{22MS026}} \and { Jessica  Das}  {\tiny{22MS157}} \and { Sayan Karmakar}  {\tiny{22MS163}}}
 \institute[]{Instructor: Prof. Sourin Das\\[0.2cm]
@@ -58,6 +59,9 @@
 	\begin{frame}{\textbf{\large Introduction to Quantum Information}}
 		
 	\end{frame}
+	\begin{frame}{\textbf{Peres-Horodecki Criterion}}
+		
+	\end{frame}
 	\begin{frame}
 		\begin{center}
 			\textbf{\huge Classifying Entanglement using Knots}
@@ -70,8 +74,66 @@
 		
 	\end{frame}
 	\begin{frame}{\textbf{Obtaining State from a given Link}}
+		\begin{itemize}
+			\item \onslide<2->{In general, difficult to obtain state, given a link polynomial.}
+			\item \onslide<3->{Given $\mathrm{N}$ qubits, there are $2^N$ basis states, namely $\ket{0}, \ket{1}, \ldots \ket{2^N-1}$}
+			\item \onslide<4->{An algorithm has been devised to obtain a general structure of the state from the link.} 
+			\item \onslide<5->{But it only produces a mixed state only \Sadey \ !}
+		\end{itemize}
+		\onslide<6->{\textbf{Algorithm:}}
+		\begin{enumerate}
+			\item \onslide<7->{Take a term $t$ of the link polynomial $P(\{t\})$}
+			\item \onslide<8->{$t$  mapped to a state: $\ket{\mathrm{E_q}}\otimes\ket{\mathrm{S_q}}\otimes\ket{\mathrm{Q_d}}$}
+			\begin{itemize}
+				\onslide<9->{\item $\ket{\mathrm{E_q}}\longrightarrow $ entangled qubit of GHZ type, associated to ring variables in $t$.}
+				\onslide<10->{\item $\ket{\mathrm{S_q}}\longrightarrow$ separable qubit associated with ring variables not in $t$. Generally, large number of possibilities for this separable qubit.}
+				\onslide<11->{\item $\ket{\mathrm{Q_d}}\longrightarrow$  qudit state associated with \textit{artifically} introduced ring variable (alphabetical successor of the largest ring variable present). To be traced out later, hence is of less significance. Can be a random state, hence it becomes \textbf{mixed}. }
+			\end{itemize}
+			\item \onslide<12->{Full state $\ket{\psi}\longrightarrow$ sum of individual such states. Trace out $d$ and obtain density matrix of reduced system.}
+		\end{enumerate}
 		
 	\end{frame}
+	\begin{frame}{Demonstration of Algorithm}
+	\onslide<2->{Let us take a look at a demonstration of the algorithm. Take: $$\mathcolor{red}{\mathrm{P(a,b,c)=ab+ac}}$$}
+		\begin{itemize}
+			\item \onslide<3->{Choose the term $t=ab$}
+			\item \onslide<4->{Two ring variables $a$ and $b$, so 2 qubit GHZ state assigned to entangled part. $\ket{\mathrm{E_q}} = \frac{1}{\sqrt{2}}\brac{\ket{00} + \ket{11}}\equiv \ket{2^1}_{ab}$}
+			\item \onslide<5->{Separable qubit associated with $c$, keep it general $\ket{\mathrm{S_q}} = \ket{q_1}_c$}
+			\item \onslide<6->{Qudit state, take $\ket{\mathrm{Q_d}}= \ket{0}_d$ }
+			\item \onslide<7->{\textbf{Full state becomes}: $$\ket{\psi_1} = \ket{2^1}_{ab}\otimes\ket{q_1}_c\otimes\ket{0}_d $$}
+
+		\end{itemize}
+		
+
+	\end{frame}
+
+
+
+
+
+	\begin{frame}{Demonstration of Algorithm}
+		\onslide<1->{Let us take a look at a demonstration of the algorithm. Take: $$\mathcolor{red}{\mathrm{P(a,b,c)=ab+ac}}$$}
+			\begin{itemize}
+			\item \onslide<1->{Choose the term $t=ac$}
+				\item \onslide<2->{Two ring variables $a$ and $c$, so 2 qubit GHZ state assigned to entangled part. $\ket{\mathrm{E_q}} = \frac{1}{\sqrt{2}}\brac{\ket{00} + \ket{11}}\equiv \ket{2^1}_{ac}$}
+				\item \onslide<3->{Separable qubit associated with $b$, keep it general $\ket{\mathrm{S_q}} = \ket{q_1}_b$}
+				\item \onslide<4->{Qudit state, take $\ket{\mathrm{Q_d}}= \ket{1}_d$ }
+				\item \onslide<5->{\textbf{Full state becomes}: $\ket{\psi_2} = \ket{2^1}_{ac}\otimes\ket{q_2}_b\otimes\ket{1}_d$}
+			\end{itemize}
+		\end{frame}
+		\begin{frame}{Demonstration of Algorithm}
+
+			\begin{itemize}
+				\item \onslide<1->{\textbf{Mixed state characterising the link}: $ \ket{\psi} = c_1\ket{\psi_1} + c_2\ket{\psi_2}$}
+				\item \onslide<2->{ Then construct the density matrix accordingly for the state. }
+			\end{itemize}
+			\begin{figure}
+				\centering 
+				\scalebox{0.6}{\input{pics/algo_pic.tex}}
+				\caption{Schematic representation of the algorithm.}
+			\end{figure}
+			
+		\end{frame}
 	\begin{frame}
 		\begin{center}
 			\textbf{\Huge Some Examples...}
@@ -304,12 +366,6 @@
 
 
 
-	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{3} class}
-		
-	\end{frame}
-	\begin{frame}{\textbf{Three Qubit System}: 3\textsuperscript{4} class}
-		
-	\end{frame}
 	\begin{frame}{\textbf{Four Qubit System}}
 		
 	\end{frame}
@@ -359,7 +415,7 @@
 			}}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Application to Qubit Networks}
+	\begin{frame}{\textbf{Application to Qubit Networks}}
 		Let us consider a four qubit
 		network, where Alice, Bob, Charlie and Diana are the parties such that only the following
 		parties can communicate:
