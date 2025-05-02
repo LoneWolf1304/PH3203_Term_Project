@@ -1,0 +1,313 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{braket}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{comment}
+
+\begin{document}
+
+\section{}
+Aravind points out the connection between three-particle GHZ state and borromean rings. The latter is a set of three interlinked rings that can not be pulled apart. However, if one of the rings is cut, the other two are separated. GHZ state of 3 spin 1/2 particles has the form:
+
+\[
+\ket{\Psi} = \frac{1}{\sqrt{2}} (\ket{0}_1\ket{0}_2\ket{0}_3 - \ket{1}_1\ket{1}_2\ket{1}_3)
+\]
+where $\ket{0}$ and $\ket{1}$ are eigenvectors of $S_z$
+\[
+S_z\ket{0} = \frac{\hbar}{2}\ket{0} \text{ , }
+S_z\ket{1} = -\frac{\hbar}{2}\ket{1}
+\]
+
+
+He made the following associations between the GHZ state and the Borromean rings:
+
+\begin{itemize}
+    \item each particle is associated with a ring
+    \item measuring the spin of a particle along the z-direction is equivalent to cutting the corresponding ring
+    \item the entanglement of any set of particles along is modelled by the inability to separate the corresponding rings.
+\end{itemize}
+Aravind claims, That as long as no measurement is made on particle 1, particles 2 and 3 are in an entangled state, as their reduced density operator $\hat{\rho}_{23}$ can not be written as a product of density operators of particles 2 and 3. However, as pointed out in Sugita's paper, $\hat{\rho}_{23}$ is a separable state. We compute $\hat{\rho}_{23}$ and show that it is a mixed separable state. 
+
+\[
+\hat{\rho}_{123} = \ket{\Psi}\bra{\Psi}
+ = \frac{1}{2} (\ket{000}\bra{000} - \ket{000}\bra{111} - \ket{111}\bra{000} + \ket{111}\bra{111})
+\]
+Rduced density operator is defined as $\hat{\rho}_{23} = \mathrm{Tr}_1(\hat{\rho}_{123})$
+\[
+= \frac{1}{2} \left[(\mathrm{Tr}_1\ket{0}\bra{0})\cdot\ket{00}\bra{00} - \mathrm{Tr}_1(\ket{0}\bra{1})\cdot\ket{00}\bra{11} - \mathrm{Tr}_1(\ket{1}\bra{0})\cdot\ket{11}\bra{00} + \mathrm{Tr}_1(\ket{1}\bra{1})\cdot\ket{11}\bra{11}\right]
+\]
+We calculate partial trace as follows:
+\[
+\text{Tr}_1(\ket{0}\bra{0}) = \text{Tr} \left[
+\begin{matrix}
+\braket{0|0} \braket{0|0} & \braket{0|0}\braket{0|1} \\
+\braket{1|0} \braket{0|0} & \braket{1|0}\braket{0|1}
+\end{matrix}
+\right]
+= \text{Tr} \left[
+\begin{matrix}
+1 & 0 \\
+0 & 0
+\end{matrix}
+\right] = 1
+\]
+%---------------------------------------------
+\[
+\text{Tr}_1(\ket{0}\bra{1}) = \text{Tr} \left[
+\begin{matrix}
+\braket{0|0} \braket{1|0} & \braket{0|0}\braket{1|1} \\
+\braket{1|0} \braket{1|0} & \braket{1|0}\braket{1|1}
+\end{matrix}
+\right]
+= \text{Tr} \left[
+\begin{matrix}
+0 & 1 \\
+0 & 0
+\end{matrix}
+\right] = 0
+\]
+%-------------------------------------------------
+(where we have used the fact that  $\ket{0}$ and $\ket{1}$ are orthonormal. Similarly, we can show that ${Tr}_1(\ket{1}\bra{0})$=0 and  ${Tr}_1(\ket{1}\bra{1})$=1)
+
+
+Therefore, their reduced density operator is $
+\hat{\rho}_{23} = \frac{1}{2} (\ket{00}\bra{00} + \ket{11}\bra{11})
+$, proving $\hat{\rho}_{23}$ is a mixed state. Now we note that $\hat{\rho}_{23}$ can also be written as 
+\[
+\hat{\rho}_{23} = \frac{1}{2} \ket{0}\bra{0} \otimes \ket{0}\bra{0} + \frac{1}{2} \ket{1}\bra{1} \otimes \ket{1}\bra{1}
+\]
+proving our claim that $\hat{\rho}_{23}$ is a separable state. 
+%------------------------
+
+\bigskip
+Now, we will see the effect of measurement on the GHZ state. If we measure spin of particle 1 in GHZ state along z-direction, the result is either 
+$\frac{\hbar}{2}, \text{(corresponding to 1st particle being spin-up)} \text{or} -\frac{\hbar}{2}$, \text{( 1st particle  spin-down)}. In both cases, we know exactly the state particles 2 and 3 are in. Thus, particles 2 and 3 are disentangled. Since GHZ state is symmetric in all the three particles, the above argument suffices for measurement along z-direction for all the three particles. Thus, GHZ can be $'$modelled$'$ by Borromean ring. 
+
+
+
+%22222222222222222222222222222222222222222222222222
+
+
+\section{}
+Suppose that instead of measuring spin along the z-direction, we measure them along the x-direction. It is then natural to associate the cutting of a knot with a spin measurement on the corresponding particle along the x-direction. However, with this $'$altered$'$ meaning of $'$cutting a knot$'$, We show that GHZ state is no longer modelled by borromean rings.
+
+To do so, let us recall the eigenvectors and eigenvalues of $S_x$ are given by 
+\[
+S_x \frac{\ket{0}\pm\ket{1}}{\sqrt{2}} = \pm\frac{\hbar}{2} \frac{\ket{0}\pm\ket{1}}{\sqrt{2}}
+\]
+Here, we introduce the following notation
+\[
+\frac{\ket{0}+\ket{1}}{\sqrt{2}} = \ket{+} , \quad \frac{\ket{0}-\ket{1}}{\sqrt{2}} = \ket{-}
+\]
+Then the GHZ state can be written as 
+\[
+\ket{\Psi} = \frac{1}{\sqrt{2}} (\ket{000} - \ket{111})
+= \frac{1}{2\sqrt{2}}[(\ket{000}-\ket{011}+\ket{100}-\ket{111})+(\ket{000}+\ket{011}-\ket{100}-\ket{111})]
+\]
+\[
+= \frac{1}{2\sqrt{2}} \left[(\ket{0}+\ket{1})(\ket{00}-\ket{11})+(\ket{0}-\ket{1})(\ket{00}+\ket{11})\right]
+\]
+
+\[
+= \frac{1}{\sqrt{2}} \left[ \frac{\ket{0}+\ket{1}}{\sqrt{2}} \frac{\ket{00}-\ket{11}}{\sqrt{2}} + \frac{\ket{0}-\ket{1}}{\sqrt{2}} \frac{\ket{00}+\ket{11}}{\sqrt{2}} \right]
+\]
+
+\[
+ = \frac{\ket{+}}{\sqrt{2}}\frac{\ket{00}-\ket{11}}{\sqrt{2}} + \frac{\ket{-}}{\sqrt{2}}\frac{\ket{00}+\ket{11}}{\sqrt{2}}.............(*)
+\]
+
+Now, if spin of particle 1 is measured along the $x$-axis, the outcome is either $\frac{\hbar}{2}$ (corresponding to the first particle being spin-up along x) or $-\frac{\hbar}{2}$ (first particle spin-down along x). In both cases, particles 2 and 3 become entangled, as the state $\frac{\ket{00} \pm \ket{11}}{\sqrt{2}}$ is not separable.
+
+Therefore, the GHZ state cannot be modelled by Borromean rings; rather, it can be modelled by 3-Hopf rings, in which each pair of rings is linked and can not be separated even if the third ring is cut.
+
+The above discussion demonstrates that an entangled quantum state can correspond to more than one knot configuration. As observables to be measured can be chosen in many different ways(for example spin can be measured along different directions in space), there seems to be no unique quantum process that corresponds to the mathematical act of cutting a knot. 
+%33333333333333333333333333333333333333
+
+\section{}
+Now we investigate another 3-particle state (known as the $\ket{W}$ state) 
+\[
+\ket{\Psi} = \frac{1}{\sqrt{3}} (\ket{001}+\ket{010}+\ket{100}) = \ket{W}
+\]
+We measure spin of particle 1 in z-direction. The outcome is $\frac{\hbar}{2}$ with probbility 2/3, and -$\frac{\hbar}{2}$ with probability 1/3. In the former case, particles 2 and 3 are in state $\frac{1}{\sqrt{2}}(\ket{01}+\ket{10})$. Hence they are maximally entangled, and can be modelled by 3-Hopf rings. In the latter case, they are separable after the measurement and therefore modelled by Borromean rings.
+
+The peculiarity about $\ket{W}$ state is that it can be modeled by Borromean rings with probability $\frac{1}{3}$ and by 3-Hopf with probability $\frac{2}{3}$.
+
+
+%444444444444444444444444444444444444444444
+\section{}
+
+Aravind writes about one more linked 3-knots, where the middle ring in linked to the outer two rings, which are not connected to each other (we will call it the 3-chain) He shows that there exists a state, corresponding to this link configuration.
+
+Notice that in previous sections, we started with a multiparticle quantum state, and checked how it behaves under various measurements and partial traces. Then, we tried to find its suitable link configuration. But, here we do just the reverse. 
+Consider the state
+\[
+\ket{\Psi} = \frac{1}{\sqrt{2}} (\ket{0++}+\ket{1--})
+\]
+We will show that this state can be modelled appropriately by the 3-chain.
+
+\[
+\ket{\psi}= \frac{1}{\sqrt{2}}[(\ket{0}\otimes\frac{\ket{0}+\ket{1}}{\sqrt{2}} \otimes\frac{\ket{0}+\ket{1}}{\sqrt{2}}) + (\ket{1}\otimes\frac{\ket{0}-\ket{1}}{\sqrt{2}}\otimes\frac{\ket{0}-\ket{1}}{\sqrt{2}})]
+\]
+
+\[
+= \frac{1}{\sqrt{2}}[\frac{1}{\sqrt{2}}(\ket{00+}+\ket{01+})+\frac{1}{\sqrt{2}}(\ket{10-}-\ket{11-})]
+\]
+
+\[
+= \frac{1}{2}[\ket{0}_2 (\ket{0}_1 \ket{+}_3+\ket{1}_1\ket{-}_3)+\ket{1}_2(\ket{0}_1 \ket{+}_3-\ket{1}_1\ket{-}_3)]...........(*_1)
+\]
+
+
+\[
+= \frac{1}{2}[\ket{0}_3 (\ket{0}_1 \ket{+}_2+\ket{1}_1\ket{-}_2)+\ket{1}_3(\ket{0}_1 \ket{+}_2-\ket{1}_1\ket{-}_2)]...........(*_2)
+\]
+
+
+Notice that the state is symmetric in 2 and 3. Using equation $(*)$, $\ket{\psi}$ can also be written as,
+\[
+\ket{\Psi} = \frac{\ket{+}_1}{\sqrt{2}}(\ket{+}_2\ket{+}_3+\ket{-}_2\ket{-}_3)+\frac{\ket{-}_1}{\sqrt{2}}(\ket{+}_2\ket{+}_3-\ket{-}_2\ket{-}_3)
+\]
+
+%-----------------------------
+
+
+\begin{comment}
+    \[
+O_1 = \ket{0_1}\bra{0_1}-\ket{1_1}\bra{1_1}
+\]
+\[
+O_1\ket{\psi} = \braket{0_1|\Psi}\ket{0_1} -\braket{1_1|\Psi}\ket{1_1}
+\]
+\[
+= \frac{1}{\sqrt{2}}\ket{+}_2\ket{+}_3\ket{0}_1 -\frac{1}{\sqrt{2}}\ket{-}_2\ket{-}_3\ket{1}_1
+\]
+\end{comment}
+
+
+%------------------------
+Now, we measure spin of the three particles in z-direction:
+\begin{itemize}
+
+    \item Measure spin of 1: After the measuement, particles 2 and 3 are in state $\ket{+}_2\ket{+}_3 \text{ or }\ket{-}_2\ket{-}_3$. Thus, irrespective of the outcome, particles 2 and 3 are disentangled. 
+    
+    \item Measure spin of 2: After the measurement, particles 1 and 3 are in state $\ket{0}_1\ket{+}_3 +\ket{1}_1\ket{-}_3\text{ or } \ket{0}_1\ket{+}_3 -\ket{1}_1\ket{-}_3$. Thus, irrespective of the outcome, particles 1 and 3 are maximally entangled (Using equation $(*_1)$). 
+    
+    \item Measure spin of 3: After the measurement, particles 1 and 2 are in state $\ket{0}_1\ket{+}_2 +\ket{1}_1\ket{-}_2\text{ or }\ket{0}_1\ket{+}_2 -\ket{1}_1\ket{-}_2$. Thus, irrespective of the outcome, particles 1 and 2 are maximally entangled (Using equation $(*_2)$).
+    
+\end{itemize}
+
+Note that these states are unnormalized.
+
+
+Aravind concludes his paper by noting the low possiblility to develop the analogy between entangled quantum states and knot configurations in any systematic fashion. A part of the difficulty arises because there is no single quantum process that corresponds to the mathematical act of cutting a knot. It appears very unlikely that the classification of knot configurations has any systematic application or utility in the study of entangled quantum states.
+%----------------------------
+
+
+
+
+
+
+
+
+%---------------------------------
+\section{}
+Sugita introduced a correspondence between quantum states and links. In the
+ following, we consider composite systems consisting of qubits, and associate a ring
+ with a qubit. Entangled two qubits are represented by entangled two rings, and separable two qubits are represented by unentangled two rings.  If we associate the measurement with cutting of the corresponding ring (as was done by Aravind), then the correspomdance  depends on the choice of measurement basis. Instead, in this paper, partial trace is used instead of measurement as a counterpart of the cutting of a ring. Physically speaking, it means that we just ignore a qubit, and observe
+ only the other two.
+
+We start with the 3-particle GHZ state, trace out qubit A, the density operator 
+\[
+\rho^{BC} = \mathrm{tr}_A\hat{\rho} = \frac{1}{2}(\ket{00}\bra{00}+\ket{11}\bra{11})
+\]
+is a separable mixed state (we proved it in page 1). Therefore this state corresponds to the Borromean rings. Thus we can establish a connection between qubits and rings in a basis-independent way, since partial trace requires us to find trace, which is basis-independent.
+
+
+
+%666666666666666666666666666666666666666666
+\section{}
+Now we will see how the correspondence between tracing out a particle (i.e, finding reduced density operator) and cutting of the corresponding ring gives a natural basis-independent way to associate topological rings to quantum entangled states. We have the $\ket{W}$ state as follows:
+\[
+\ket{W} = \frac{1}{\sqrt{3}}[\ket{100}+\ket{010}+\ket{100}]
+\]
+We $'$trace out$'$ particle A, and find the reduced density operator as:
+\[
+\rho^{BC} = \frac{1}{3}(\ket{00}\bra{00}+\ket{01}\bra{01}+\ket{10}\bra{10}+\ket{11}\bra{11})
+\]
+Note that
+\[
+(\ket{01}+\ket{10})(\bra{01}+\bra{10}) = \ket{01}\bra{01}+\ket{01}\bra{10}+\ket{10}\bra{01}+\ket{10}\bra{10}
+\]
+Therefore reduced density operator of particles 2 and 3 can be wriiten as:
+\[
+ \rho^{BC} = \frac{1}{3}[\ket{00}\bra{00}+(\ket{01}+\ket{10})(\bra{01}+\bra{10})]
+\]
+Define
+\[
+\ket{\Psi} = \ket{01}+\ket{10}
+\]
+\[
+\Rightarrow \rho^{BC} = \frac{1}{3}\ket{00}\bra{00}+\frac{1}{3}\ket{\Psi}\bra{\Psi}
+\]
+
+Note $\ket{\Psi}$ is not normalized.
+Let $\ket{\psi}_N$ denote normalized $\ket{\psi}$
+\[
+\ket{\Psi}_N = \frac{1}{\sqrt{2}}(\ket{01}+\ket{10})
+\]
+\[
+\Rightarrow \ket{\Psi}_N\bra{\Psi}_N= \frac{1}{2}\ket{\Psi}\bra{\Psi}
+\Rightarrow \ket{\Psi}\bra{\Psi} = 2\ket{\Psi}_N\bra{\Psi}_N
+\]
+Thus 
+\[
+\rho^{BC} = \frac{1}{3}\ket{00}\bra{00}+\frac{2}{3}\ket{\Psi}_N\bra{\Psi}_N
+\]
+Here, $\ket{00}$ and $\ket{\Psi}_N$ are normalized. Hence $\rho^{BC}$ is a mixed state. We can perform the Concurrence test. It turns out that $C(\rho^{BC})>0$, thus B and C are entangled. Therefore this state can be modelled by 3-Hopf rings.
+
+\section{}
+
+Now we consider the 3-chain state. 
+\[
+\ket{\Psi} = a\ket{000} + b\ket{+1+},  \text{ with a,b } \in \text{R , } |a|^2+|b|^2=1
+\]
+\[
+\rho^{ABC}=\ket{\Psi}\bra{\Psi} = |a|^2 (\ket{000}\bra{000})+|b|^2(\ket{+1+}\bra{+1+})
+\]
+
+Now we trace out B and find $\rho^{AC} $. So, we take partial trace of $\rho^{ABC}$ with respect to B.
+
+\[\rho^{AC} = \mathrm{tr}_B(\rho^{ABC})\]
+
+\[
+\rho^{AC} = |a|^2\mathrm{tr}_B(\ket{0}\bra{0}).(\ket{00}\bra{00}) + |b|^2\mathrm{tr}_B(\ket{1}\bra{1}).(\ket{++}\bra{++})
+\]
+
+Recall that $\mathrm{tr}_B(\ket{0}\bra{0})$ = $\mathrm{tr}_B(\ket{1}\bra{1})$ = 1. 
+Therefore $\rho^{AC}$ represents a mixed state. Note that it can be written as
+\[
+|a|^2\ket{00}\bra{00}+|b|^2\ket{++}\bra{++}
+\]
+\[
+=|a|^2\ket{0}\bra{0}\otimes\ket{0}\bra{0}+|b|^2\ket{+}\bra{+}\otimes\ket{+}\bra{+}
+\]
+Thus, $\rho^{AC}$ is separable. 
+Now we will calculate $\rho^{BC}$ and $\rho^{AB}$ and show that they are not separable
+
+\[
+\rho^{AB}=|a|^2\ket{00}\bra{00}+|b|^2\ket{+1}\bra{+1}
+\]
+\[
+\rho^{BC}=|a|^2\ket{00}\bra{00}+|b|^2\ket{1+}\bra{1+}
+\]
+
+Calculating the concurrence reveals that $\rho^{AB}$ and $\rho^{BC}$ are not separable. Thus, BC, AB still entangled. This is clearly mirrored in the 3-chain link configuration, in which A and C are the outer rings and B is the middle one. So, if B is cut (or in the language of Quantum mechanics, traced out) A and C are separable, they are not linked. However if either A or C are cut, then, other 2 are still linked.
+%88888888888888888888888888888888888888
+\section{}
+
+Thus in this paper,  three examples of the correspondence between quantum entangle
+ment and topological entanglement for some 3-qubit cases were shown. Although this  method does not uniquely determine a topological link corresponding to a quantum state, the authors believe that visualization of quantum states by topological objects could be a useful tool for the study of quantum entanglement.
+
+\end{document}
