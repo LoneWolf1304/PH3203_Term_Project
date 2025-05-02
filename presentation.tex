@@ -42,10 +42,18 @@
 %     }
 %     \hspace{0.5cm}
 %     \vspace{0.2cm}
-
+\titlegraphic{\includesvg[scale=0.3]{pics/Square_knot.svg}}
 \begin{document}
 	
-	\frame{\titlepage}
+	% \frame{\titlepage}
+	\begin{frame}
+		\tikz [remember picture,overlay]
+    \node at
+        ([yshift=1cm, xshift=-1cm]current page.south east) 
+        %or: (current page.center)
+        {\includesvg[scale=0.1]{pics/IISER-Kolkata-logo-vector-01.svg}};
+		\titlepage
+	\end{frame}
 	
 	
 	\begin{frame}
