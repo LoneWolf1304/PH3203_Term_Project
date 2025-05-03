@@ -141,6 +141,16 @@
 			\onslide<8->{\scalebox{0.6}{\input{pics/2_1.tex}}}
 		\end{figure}
 	\end{frame}
+	\begin{frame}{\textbf{Polynomial Approach to Entanglement}}
+		\begin{itemize}
+			\item \onslide<2->{ There must not be any repeated terms, i.e., no ring
+            variable can have a power greater than 1, eg aac is not valid as a has power 2.}
+			\item \onslide<3->{Each ring variable must appear at least once, eg in a system of 4 qubits(a,b,c,d), abc+ab is not a valid polynomial, as d does not appear.}
+			\item \onslide<4->{There must not be first-order terms, eg a + c is not valid.}.
+			\item \onslide<5->{ Relabeling of variables is irrelevant, eg ab + abc and ac + abc represent same link.}
+			\item \onslide<6->{ An n-variable monomial M is irrelevant if all of its variables are already present as an n-ring link of lesser-order  monomials, built only with the variables of M, eg ab + bc + abc is not valid as abc is irrelevant here. }
+		\end{itemize}
+	\end{frame}
 	\begin{frame}{\textbf{Obtaining a Link from given State}}
 		\begin{itemize}
 			\item \onslide<2->{Given a state $\ket{\psi}$, we first check the entanglement property of the entire system using the Peres-Horodecki criterion.}
