@@ -1,0 +1,7 @@
+\begin{itemize}
+    \item{There must not be any repeated terms, i.e., no ring variable can have a power greater than 1}
+    \item{Each ring variable must appear at least once.}
+    \item{There must not be first-order terms.}
+    \item{ Relabeling of variables is irrelevant.}
+    \item{An n-variable monomial M is irrelevant if all of its variables are already present as an n-ring link of lesser-order  monomials, built only with the variables of M.}
+\end{itemize}
