@@ -62,14 +62,12 @@
 			\textbf{\huge Basic Theoretical Background}
 		\end{center}
 	\end{frame}
-	\begin{frame}{\textbf{\large Introduction to Knots}}
-		
-	\end{frame}
+	
 	\begin{frame}{\textbf{\large Introduction to Quantum Information}}
 		\begin{itemize}
-			\item \onslide<2->{A pure state is a quantum state that can be described by a single state vector in a Hilbert space.}
+			\item \onslide<2->{\textbf{Pure State }$\rightarrow$ described by a single vector in Hilbert space.}
 			
-			\item \onslide<3->{When a system is in a statistical ensemble of many pure states $\{\ket{\psi_i}\}$, with respective \textit{classical} probabilities $p_i$, such a state is called a \textbf{mixed state}. We represent such states using the density operator: 
+			\item \onslide<3->{When a system is in a statistical ensemble of many pure states $\{\ket{\psi_i}\}$, with respective \textit{classical} probabilities $p_i$, such a state is called a \textbf{Mixed State}. We represent such states using the density operator: 
 			\[
 			\rho = \sum_i p_i \ket{\psi_i}\bra{\psi_i}
 			\]
@@ -91,9 +89,10 @@
 		\begin{itemize}
 			\item \onslide<2->{This criterion (also called PPT test) is used to decide the separability of mixed states.}
 			\item \onslide<3->{Let the quantum system be represented by $\rho$. Compute the partial transpose of $\rho$ with respect to one subsystem (say, B), call it $\rho^{T_B}$, i.e, you transpose the matrix elements corresponding only to subsystem B, leaving A untouched.}
-			\item \onslide<4->{Calculate the eigenvalues of $\rho^{T_B}$}.
-			\item \onslide<5->{if at least one eigenvalue < 0 , this will ensure that the two subsystems are entangled}
-			\item \onslide<6->{if all eigenvalues are > 0, then, in 2×2 or 2×3 systems, this implies the state is separable.}
+			\onslide<4->{$$\sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{k}\bra{l} \rightarrow \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{l}\bra{k}$$}
+			\item \onslide<5->{Calculate the eigenvalues of $\rho^{T_B}$}.
+			\item \onslide<6->{If at least one eigenvalue $\lambda_j<0$ , this will ensure that the two subsystems are entangled}.
+			\item \onslide<7->{If all eigenvalues positive, then, in 2×2 or 2×3 systems, this implies the state is separable.}
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
@@ -121,7 +120,7 @@
 	\begin{frame}{\textbf{How it all began $\ldots$}}
 		\begin{itemize}
 			\item \onslide<2->{Sugita, 2007 $\rightarrow$ rectified Aravind's method of basis-dependent measurement by considering the partial trace as an analogy of cutting the knot.}
-			\item \onslide<3->{Used \textit{Concurrence Test} to determine separability of the state}
+			\item \onslide<3->{Used \textit{Concurrence Test} to determine separability of the state (for two qubit systems)}
 		\end{itemize}
 		\onslide<4->{\textbf{Concurrence of a density operator:}}
 		\onslide<5->{$$\mathrm{C}(\rho) = \max\{0,\lambda_1-\lambda_2-\lambda_3-\lambda_4\}$$
@@ -134,7 +133,6 @@
 		\begin{itemize}
 			\item \onslide<2->Each linked ring is associated with a variable.
 			\item \onslide<3->{Product of the variables is associated with a link between them.}
-			\item \onslide<4->{Product of the variables is associated with a link between them.}
 			\item \onslide<5->{Link polynomial is made by summing up individual contributions.}
 			\item \onslide<6-> {\textbf{Ring cut:} Making the variable 0 in the polynomial}
 			\item \onslide<7-> {Each polynomial has a link class represented by $n^i$ where $n$ is the number of rings and $i$ is the index of the class.}
@@ -144,7 +142,11 @@
 		\end{figure}
 	\end{frame}
 	\begin{frame}{\textbf{Obtaining a Link from given State}}
-		
+		\begin{itemize}
+			\item \onslide<2->{Given a state $\ket{\psi}$, we first check the entanglement property of the entire system using the Peres-Horodecki criterion.}
+			\item \onslide<3->{We then calculate the partials traces of the density operator with respect to each system and then apply the PPT test. }
+			\item \onslide<4->{From this, we can construct a link polynomial which is characterised by the given state. }
+		\end{itemize}		
 	\end{frame}
 	\begin{frame}{\textbf{Obtaining State from a given Link}}
 		\begin{itemize}
@@ -439,16 +441,21 @@
 
 
 
-	\begin{frame}{Four Qubit System}
+	\begin{frame}{\textbf{Four Qubit System}}
 		Link Class: $4^{20}$
 		
 		Link polynomial: $abc+ abd + ac$
 		\begin{equation*}
 			\ket{\psi_{20}} = \ket{3^1}_{abc}\ket{0}_{d} \ket{0}_e + \ket{3^1}_{abd} \ket{0}_c \ket{1}_e + \ket{2^1}_{ac} \ket{10}_{bd} \ket{2}_e.
 		\end{equation*}
+		\begin{figure}
+			\centering
+			\scalebox{0.5}{\input{pics/4_20.tex}}
+		\end{figure}
+		a: green    b: black   c: red   d: blue   
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 		\begin{equation*}
 			\hat{\rho}_{abcd} = \frac{\Tr_e(\ket{\psi_{20}} \bra{\psi_{20}})}{\sqrt{\bra{\psi_{20}} \ket{\psi_{20}}}}.
 		\end{equation*}
@@ -465,7 +472,7 @@
 		{As the eigenvalues are negative, it has \textbf{FOUR PARTITE ENTANGLEMENT}.}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 		All Possible Partial Traces:
 		
 		\textbf{Partial Trace with respect to system $a$ :}
@@ -475,7 +482,7 @@
 		As this is a diagonal matrix, we can say directly that after measuring $a$, the rest of the system $b$,$c$,$d$ becomes \textbf{separable}.
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 		\textbf{Partial Trace with respect to system $b$ :}
 		\begin{itemize}
 			\item \onslide<2->$\hat{\rho}_{acd}^{T_a}$:
@@ -496,7 +503,7 @@
 		We can not say anything about the subsystem $d$ and $ac$.}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $b$ :}
 			
 			$\mathcal{Q}.$ How to conclude anything about the separability of the subsystem $d$ and $ac$?
@@ -518,7 +525,7 @@
 		If we can show that these vectors are separable as $\ket{v_{ac}} \otimes \ket{v_d}$, then that will show that the $ac$ and $d$ are separable}.
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $b$ :}
 			
 			Consider, 
@@ -530,7 +537,7 @@
 		Similarly, we can say all the vectors of this form are separable.
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $b$ :}
 			
 			Consider,
@@ -548,7 +555,7 @@
 		\onslide<1->{\textbf{So, $ac$ and $d$ are separable.}}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $c$ :}
 			\begin{itemize}
 				\item \onslide<2->$\hat{\rho}_{abd}^{T_a}$:
@@ -567,7 +574,7 @@
 			\onslide<5->{Negative eigenvalues suggest, \textbf{$a$ and $bd$ are entangled}, \textbf{$b$ and $ad$ are entangled.} and \textbf{$d$ and $ab$ are entangled}}.
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $d$ :}
 			\begin{itemize}
 				\item \onslide<2->$\hat{\rho}_{abc}^{T_a}$:
@@ -586,7 +593,7 @@
 			\onslide<5->{Negative eigenvalues suggest, \textbf{$a$ and $bc$ are entangled}, \textbf{$b$ and $ac$ are entangled.} and \textbf{$c$ and $ab$ are entangled}}.
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $ab$ :}
 			\begin{equation*}
 				\hat{\rho}_{cd} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0\end{matrix}\right]
@@ -595,7 +602,7 @@
 		So, \textbf{$c$ and $d$ are separated.}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $bc$ :}
 			\begin{equation*}
 				\hat{\rho}_{ad} =\left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
@@ -604,7 +611,7 @@
 		So, \textbf{$a$ and $d$ are separated.}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $cd$ :}
 			\begin{equation*}
 				\hat{\rho}_{ab} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0.5\end{matrix}\right]
@@ -612,7 +619,7 @@
 			\end{equation*}
 		So, \textbf{$a$ and $b$ are separated.}
 		\end{frame}
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $ad$ :}
 			\begin{equation*}
 				\hat{\rho}_{bc} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right]
@@ -620,7 +627,7 @@
 			\end{equation*}
 		So, \textbf{$b$ and $c$ are separated.}
 		\end{frame}
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $bd$ :}
 			
 			\begin{equation*}
@@ -629,7 +636,7 @@
 			\end{equation*}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			Partial Transpose with respect to $a$:
 			\begin{equation*}
 				\hat{\rho}_{ac}^{T_a} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0 & 0.166 & 0.166 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right].
@@ -639,7 +646,7 @@
 		So, \textbf{$a$ and $c$ are entangled}.
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Partial Trace with respect to system $ac$ :}
 			\begin{equation*}
 				\hat{\rho}_{bd} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.5 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
@@ -648,7 +655,7 @@
 		So, \textbf{$b$ and $d$ are separated.}
 		\end{frame}
 		
-		\begin{frame}{Four Qubit System}
+		\begin{frame}{\textbf{Four Qubit System}}
 			\textbf{Result:}
 			\begin{itemize}
 				\item After tracing out $a$, rest of the system $b$, $c$, $d$ becomes separable.
