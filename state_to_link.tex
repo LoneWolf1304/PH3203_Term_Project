@@ -141,8 +141,9 @@ Now, partial transpose with respect to $B$ is given as
 \end{equation*}
 
 Now, Peres-Horodecki criterion says that if $\rho$ is separable then all the eigenvalues of the partial transpose of $\rho$ is non-negative. So, this means if any of them are negative, then the state is not separable so entangled. The converse of this is not true in general, but in 2 $\times$ 2 and $2 \times 3$ the converse is also true.
-
+%=========================================================================================
 \section{Application to four quibit system}
+%=========================================================================================
 Consider the link class $4^{20}$. The polynomial is $abc+ abd + ac$. The wavefunction corresponding to it is $\ket{\psi_{20}} = \ket{3^1}_{abc}\ket{0}_{d} \ket{0}_e + \ket{3^1}_{abd} \ket{0}_c \ket{1}_e + \ket{2^1}_{ac} \ket{10}_{bd} \ket{2}_e$. The density function corresponding to it is 
 \begin{equation*}
 	\hat{\rho}_{abcd} = \frac{\Tr_e(\bra{\psi_{20}} \ket{\psi_{20}})}{\sqrt{\ket{\psi_{20}} \bra{\psi_{20}}}}.
@@ -216,7 +217,7 @@ Eigenvalues are	0.000, 0.000, 0.000, 0.000, 0.000, 0.167, 0.230, 0.603. It might
 %	\left[\begin{matrix}0.276393202250021 & 0 & 0 & -0.447213595499958\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0\\-0.447213595499958 & 0 & 0 & 0.723606797749979\end{matrix}\right].
 %\end{equation*}
 %\textbf{I am stuck here, I have to check if this matrix is pure or not, but I think it needs to be done exactly not in computer. One of the things we can do is to check if this matrix has only one eigenvalue and one eigenvector or not.}
-Partial trace with respect to system $b$ gives us the reduced density matrix $\hat{\rho}_{abd}$ given by,
+Partial trace with respect to system $c$ gives us the reduced density matrix $\hat{\rho}_{abd}$ given by,
 \begin{equation*}
 	\hat{\rho}_{abd} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\end{matrix}\right].
 \end{equation*}
@@ -231,66 +232,66 @@ Eigenvalues of the matrix are -0.167, 0.000, 0.000, 0.167, 0.167, 0.167, 0.333, 
 Eigenvalues of the matrix are -0.103, 0.000, 0.000, 0.000, 0.167, 0.270, 0.333, 0.333. So, negative eigenvalue suggest entanglement between $b$ and $ad$.
 Partial transpose with respect to the subsystem $d$ gives us the matrix
 \begin{equation*}
-	\hat{\rho}_{abd}^{d} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0.333333333333333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667\end{matrix}\right].
+	\hat{\rho}_{abd}^{T_d} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\end{matrix}\right].
 \end{equation*}
 The eigenvalues are $-0.069, 0.000, 0.000, 0.000, 0.167, 0.167, 0.333, 0.402$. As one of the eigenvalues is negative, $d$ and $ab$ are entangled.
-Partial trace with respect to system $b$ gives us the reduced density matrix $\hat{\rho}_{abd}$ given by,
+Partial trace with respect to system $d$ gives us the reduced density matrix $\hat{\rho}_{abc}$ given by,
 \begin{equation*}
-	\hat{\rho}_{abd} =\left[\begin{matrix}0.333333333333333 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0.166666666666667\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667 & 0\\0.166666666666667 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0.333333333333333\end{matrix}\right]
+	\hat{\rho}_{abc} =\left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0.166 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right]
 	.
 \end{equation*}
 Partial transpose with respect to subsystem $a$ is
 \begin{equation*}
-	\hat{\rho}_{abd}^{T_a} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166666666666667 & 0 & 0.166666666666667 & 0\\0 & 0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0.166666666666667 & 0 & 0 & 0.166666666666667 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333333333333333\end{matrix}\right]
+	\hat{\rho}_{abc}^{T_a} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0.166 & 0\\0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0.166 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right]
 	.
 \end{equation*}
 Eigenvalues of the matrix are -0.208, 0.000, 0.000, 0.074, 0.167, 0.300, 0.333, 0.333. As it has negative eigenvalue, the subsystem $a$ and $bc$ are entangled.
 Partial transpose with respect to the subsystem $b$ is
 \begin{equation*}
-	\hat{\rho}_{abd}^{T_b} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0.166666666666667 & 0 & 0.166666666666667\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0.333333333333333\end{matrix}\right]
+	\hat{\rho}_{abc}^{T_b} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0.166 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right]
 	.
 \end{equation*}
 Eigenvalues of the matrix are -0.122, -0.000, 0.000, 0.000, 0.167, 0.167, 0.333, 0.455. Negative eigenvalues implies subsystem $b$ and $ac$ are entangled.
 Partial transpose with respect to the subsystem $c$ is
 \begin{equation*}
-	\hat{\rho}_{abd}^{T_c} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667 & 0\\0 & 0 & 0.166666666666667 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166666666666667 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166666666666667 & 0 & 0.166666666666667 & 0 & 0 & 0.166666666666667 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333333333333333\end{matrix}\right].
+	\hat{\rho}_{abc}^{T_c} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166 & 0 & 0.166 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right].
 \end{equation*}
 Eigenvalues of the matrix are -0.167, -0.000, 0.000, 0.000, 0.167, 0.333, 0.333, 0.333. As it has negative eigenvalues it means $c$ and the subsystem $ab$ is entangled.
 
 Now we trace out $a$ and $b$, the reduced density matrix is 
 \begin{equation*}
-	\hat{\rho}_{bc} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0.166666666666667 & 0 & 0\\0 & 0 & 0.333333333333333 & 0\\0 & 0 & 0 & 0\end{matrix}\right]
+	\hat{\rho}_{cd} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0\end{matrix}\right]
 	.
 \end{equation*}
 As this is a diagonal matrix, it can be separated, so after tracing out $a$ and $b$, the subsystem $c$ and $d$ are separated.
 If we trace out $b$ and $c$, we get the density matrix
 \begin{equation*}
-	\hat{\rho}_{ad} =\left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333333333333333 & 0\\0 & 0 & 0 & 0.166666666666667\end{matrix}\right]
+	\hat{\rho}_{ad} =\left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
 	.
 \end{equation*}
 So, after tracing out $b$ and $c$, we get that $a$ and $d$ are separated. 
 If we trace out $c$ and $d$, we get the density matrix as,
 \begin{equation*}
-	\hat{\rho}_{ab} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0\\0 & 0.166666666666667 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0.5\end{matrix}\right]
+	\hat{\rho}_{ab} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0.5\end{matrix}\right]
 	.
 \end{equation*}
 So, $c$ and $d$ are separated if we trace out $a$ and $b$.
 If we trace out $a$ and  $d$, we get the reduced density as,
 \begin{equation*}
-	\hat{\rho}_{cd} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333333333333333 & 0\\0 & 0 & 0 & 0.333333333333333\end{matrix}\right]
+	\hat{\rho}_{bc} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right]
 	.
 \end{equation*}
 \begin{equation*}
-	\hat{\rho}_{ac} = \left[\begin{matrix}0.5 & 0 & 0 & 0.166666666666667\\0 & 0 & 0 & 0\\0 & 0 & 0.166666666666667 & 0\\0.166666666666667 & 0 & 0 & 0.333333333333333\end{matrix}\right]
+	\hat{\rho}_{ac} = \left[\begin{matrix}0.5 & 0 & 0 & 0.166\\0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0.166 & 0 & 0 & 0.333\end{matrix}\right]
 	.
 \end{equation*}
 Partial transpose  is
 \begin{equation*}
-	\hat{\rho}_{ac}^{T_a} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0.166666666666667 & 0\\0 & 0.166666666666667 & 0.166666666666667 & 0\\0 & 0 & 0 & 0.333333333333333\end{matrix}\right].
+	\hat{\rho}_{ac}^{T_a} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0 & 0.166 & 0.166 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right].
 \end{equation*}
 eigenvalues are -0.103, 0.270, 0.333, 0.500.
 \begin{equation*}
-	\hat{\rho}_{bd} = \left[\begin{matrix}0.333333333333333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.5 & 0\\0 & 0 & 0 & 0.166666666666667\end{matrix}\right]
+	\hat{\rho}_{bd} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.5 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
 	.
 \end{equation*}
 Being a diagonal matrix it is separable.
