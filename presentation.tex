@@ -433,9 +433,231 @@
 
 
 
-	\begin{frame}{\textbf{Four Qubit System}}
+	\begin{frame}{Four Qubit System}
+		Link Class: $4^{20}$
 		
-	\end{frame}
+		Link polynomial: $abc+ abd + ac$
+		\begin{equation*}
+			\ket{\psi_{20}} = \ket{3^1}_{abc}\ket{0}_{d} \ket{0}_e + \ket{3^1}_{abd} \ket{0}_c \ket{1}_e + \ket{2^1}_{ac} \ket{10}_{bd} \ket{2}_e.
+		\end{equation*}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+		\begin{equation*}
+			\hat{\rho}_{abcd} = \frac{\Tr_e(\ket{\psi_{20}} \bra{\psi_{20}})}{\sqrt{\bra{\psi_{20}} \ket{\psi_{20}}}}.
+		\end{equation*}
+		We need to check for Four-partite entanglement. So we have to compute the eigenvalues of the partial transpose with respect to each subsystem.
+		\begin{equation*}
+		\begin{split}
+			&\hat{\rho}^{T_a}_{abcd} : \text{ Eigenvalues: } -0.270, -0.103, 0.000, 0.103, 0.270, 0.333 \\
+			&\hat{\rho}^{T_b}_{abcd}: \text{ Eigenvalues: } -0.186, 0.000, 0.167, 0.209, 0.333, 0.477 \\
+			&\hat{\rho}^{T_c}_{abcd}: \text{ Eigenvalues: } -0.236, 0.000, 0.064, 0.167, 0.236, 0.333, 0.436 \\
+			&\hat{\rho}^{T_d}_{abcd}: \text{ Eigenvalues: } -0.167, 0.000, 0.033, 0.167, 0.259, 0.541
+		\end{split}
+		\end{equation*}
+		\onslide<2->
+		{As the eigenvalues are negative, it has \textbf{FOUR PARTITE ENTANGLEMENT}.}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+		All Possible Partial Traces:
+		
+		\textbf{Partial Trace with respect to system $a$ :}
+		\begin{equation*}
+			\hat{\rho}_{bcd} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+		\end{equation*}
+		As this is a diagonal matrix, we can say directly that after measuring $a$, the rest of the system $b$,$c$,$d$ becomes \textbf{separable}.
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+		\textbf{Partial Trace with respect to system $b$ :}
+		\begin{itemize}
+			\item \onslide<2->$\hat{\rho}_{acd}^{T_a}$:
+			\begin{equation*}
+				\text{Eigenvalues: }-0.167, 0.000, 0.167, 0.167, 0.333, 0.500.
+			\end{equation*}
+			\item \onslide<3->$\hat{\rho}_{acd}^{T_c}$:
+			\begin{equation*}
+				\text{Eigenvalues: }-0.167, 0.000, 0.167, 0.167, 0.333, 0.500.
+			\end{equation*}
+			\item \onslide<4->$\hat{\rho}_{acd}^{T_d}$:
+			\begin{equation*}
+				\text{Eigenvalues: }0.000, 0.000, 0.000, 0.167, 0.230, 0.603.
+			\end{equation*}
+		\end{itemize}
+		\onslide<5->{Negative eigenvalues suggest, \textbf{$a$ and $cd$ are entangled}, and \textbf{$c$ and $ad$ are entangled.}}
+		\onslide<6->{
+		We can not say anything about the subsystem $d$ and $ac$.}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $b$ :}
+			
+			$\mathcal{Q}.$ How to conclude anything about the separability of the subsystem $d$ and $ac$?
+			
+			\onslide<2->{
+			Computing eigenstates of $\rho_{acd}$:
+			
+			\begin{equation*}
+				\left[\begin{matrix}0\\0\\1.0\\0\\0\\0\\0\\0\end{matrix}\right],
+				\left[\begin{matrix}0\\0\\0\\1.0\\0\\0\\0\\0\end{matrix}\right],
+				\left[\begin{matrix}0\\0\\0\\0\\1.0\\0\\0\\0\end{matrix}\right],
+				\left[\begin{matrix}0\\-1.0\\0\\0\\0\\0\\0\\0\end{matrix}\right],
+				\left[\begin{matrix}0\\0\\0\\0\\0\\0\\0\\1.0\end{matrix}\right],
+				\left[\begin{matrix}0\\0\\0\\0\\0\\1.0\\0\\0\end{matrix}\right],
+				\left[\begin{matrix}0.525\\0\\0\\0\\0\\0\\-0.850\\0\end{matrix}\right],
+				\left[\begin{matrix}0.850\\0\\0\\0\\0\\0\\0.525\\0\end{matrix}\right]
+			\end{equation*}}
+		\onslide<3->{
+		If we can show that these vectors are separable as $\ket{v_{ac}} \otimes \ket{v_d}$, then that will show that the $ac$ and $d$ are separable}.
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $b$ :}
+			
+			Consider, 
+			\begin{equation*}
+				\left[\begin{matrix}0\\0\\1.0\\0\\0\\0\\0\\0\end{matrix}\right] = \ket{0}_a\ket{0}_c\ket{0}_d.
+			\end{equation*}
+		So this vector is separable in this form $\ket{v_{ac}} \otimes \ket{v_d}$.
+		
+		Similarly, we can say all the vectors of this form are separable.
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $b$ :}
+			
+			Consider,
+			\begin{equation*}
+				\left[\begin{matrix}0.525\\0\\0\\0\\0\\0\\-0.850\\0\end{matrix}\right] = 0.525 \ket{0}_a \otimes \ket{0}_c \otimes \ket{0}_d - 0.850 \ket{1}_a \otimes \ket{1}_c \otimes \ket{0}_d
+			\end{equation*}
+		This can be written as,
+		\begin{equation*}
+			\begin{split}
+			&(0.525\ket{0}_a\otimes \ket{0}_c - 0.850\ket{1}_a\otimes \ket{1}_c) \otimes \ket{0}_d.\\
+			=&\ket{v_{ac}} \otimes \ket{v}_d
+		\end{split}
+		\end{equation*}
+		
+		\onslide<1->{\textbf{So, $ac$ and $d$ are separable.}}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $c$ :}
+			\begin{itemize}
+				\item \onslide<2->$\hat{\rho}_{abd}^{T_a}$:
+				\begin{equation*}
+					\text{Eigenvalues: }-0.167, 0.000, 0.167, 0.167, 0.167, 0.333.
+				\end{equation*}
+				\item \onslide<3->$\hat{\rho}_{abd}^{T_b}$:
+				\begin{equation*}
+					\text{Eigenvalues: }-0.103, 0.000, 0.167, 0.270, 0.333, 0.333.
+				\end{equation*}
+				\item \onslide<4->$\hat{\rho}_{abd}^{T_d}$:
+				\begin{equation*}
+					\text{Eigenvalues: }-0.069, 0.000,  0.167, 0.167, 0.333, 0.402.
+				\end{equation*}
+			\end{itemize}
+			\onslide<5->{Negative eigenvalues suggest, \textbf{$a$ and $bd$ are entangled}, \textbf{$b$ and $ad$ are entangled.} and \textbf{$d$ and $ab$ are entangled}}.
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $d$ :}
+			\begin{itemize}
+				\item \onslide<2->$\hat{\rho}_{abc}^{T_a}$:
+				\begin{equation*}
+					\text{Eigenvalues: }-0.208, 0.000, 0.074, 0.167, 0.300, 0.333,
+				\end{equation*}
+				\item \onslide<3->$\hat{\rho}_{abc}^{T_b}$:
+				\begin{equation*}
+					\text{Eigenvalues: }-0.122, 0.000, 0.167, 0.167, 0.333, 0.455.
+				\end{equation*}
+				\item \onslide<4->$\hat{\rho}_{abc}^{T_c}$:
+				\begin{equation*}
+					\text{Eigenvalues: }-0.167, 0.000, 0.167, 0.333, 0.333, 0.333.
+				\end{equation*}
+			\end{itemize}
+			\onslide<5->{Negative eigenvalues suggest, \textbf{$a$ and $bc$ are entangled}, \textbf{$b$ and $ac$ are entangled.} and \textbf{$c$ and $ab$ are entangled}}.
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $ab$ :}
+			\begin{equation*}
+				\hat{\rho}_{cd} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0\end{matrix}\right]
+				.
+			\end{equation*}
+		So, \textbf{$c$ and $d$ are separated.}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $bc$ :}
+			\begin{equation*}
+				\hat{\rho}_{ad} =\left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
+				.
+			\end{equation*}
+		So, \textbf{$a$ and $d$ are separated.}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $cd$ :}
+			\begin{equation*}
+				\hat{\rho}_{ab} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0.5\end{matrix}\right]
+				.
+			\end{equation*}
+		So, \textbf{$a$ and $b$ are separated.}
+		\end{frame}
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $ad$ :}
+			\begin{equation*}
+				\hat{\rho}_{bc} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right]
+				.
+			\end{equation*}
+		So, \textbf{$b$ and $c$ are separated.}
+		\end{frame}
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $bd$ :}
+			
+			\begin{equation*}
+				\hat{\rho}_{ac} = \left[\begin{matrix}0.5 & 0 & 0 & 0.166\\0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0.166 & 0 & 0 & 0.333\end{matrix}\right]
+				.
+			\end{equation*}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			Partial Transpose with respect to $a$:
+			\begin{equation*}
+				\hat{\rho}_{ac}^{T_a} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0 & 0.166 & 0.166 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right].
+			\end{equation*}
+		Eigenvalues are : -0.103, 0.270, 0.333, 0.500.
+		
+		So, \textbf{$a$ and $c$ are entangled}.
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Partial Trace with respect to system $ac$ :}
+			\begin{equation*}
+				\hat{\rho}_{bd} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.5 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
+				.
+			\end{equation*}
+		So, \textbf{$b$ and $d$ are separated.}
+		\end{frame}
+		
+		\begin{frame}{Four Qubit System}
+			\textbf{Result:}
+			\begin{itemize}
+				\item After tracing out $a$, rest of the system $b$, $c$, $d$ becomes separable.
+				\item After tracing out $b$, $a$ and $cd$ remain entangled, $c$ and $ad$ remain entangled, and $ac$ and $d$ are separable.
+				\item After tracing out $c$, $a$ and $bd$, $b$ and $ad$, and $d$ and $ab$ remain entangled.
+				\item After tracing out $d$, $a$ and $bc$, $b$ and $ac$, and $c$ and $ab$ remain entangled.
+				\item After tracing out $ab$, $c$ and $d$ are separable.
+				\item After tracing out $bc$, $a$ and $d$ are separable.
+				\item After tracing out $cd$, $a$ and $d$ are separable.
+				\item After tracing out $ad$, $b$ and $c$ are separable.
+				\item After tracing out $bd$, $a$ and $c$ are entangled.
+				\item After tracing out $ac$, $b$ and $d$ are separable.
+			\end{itemize}
+		So, \textbf{the polynomial is $abc + abd + ac$.}
+		\end{frame}
 	\begin{frame}{\textbf{Application to Qubit Networks}}
 		\begin{itemize}
 			\item \onslide<1-> {Different parties possessing entangled qubits, want to perform protocols with certain restrictions. }
