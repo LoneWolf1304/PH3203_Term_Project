@@ -65,16 +65,14 @@
 	\begin{frame}{\textbf{\large Introduction to Knots}}
 		
 	\end{frame}
-	\begin{frame}{\textbf{\large Introduction to Quantum Information}}
-		\onslide<2->{A pure state is a quantum state that can be described by a single state vector in a Hilbert space}
-		\onslide<3->{Suppose a quantum system is in one of several states $\ket{\psi}$, we do not have complete knowledge about a quantum state, i.e when the state is in statistical ensemble of many pure states where i is an index, with respective probabilities $p_i$. The set $p_i$, $\ket{\psi
-		_i}$ is called an ensemble of
-		pure states. We can not represent such a state as a single vector in the Hilbert space. We represent such states using density operator.
-		A mixed state is represented by a density matrix:
-		\[
-		\rho = \sum_i p_i \ket{\psi_i}\bra{\psi_i}
-		\]
-		where \( p_i \geq 0 \), \( \sum_i p_i = 1 \), and \( \ket{\psi_i} \) are pure states.}
+	\begin{frame}{\textbf{\large Introduction to Quantum Information}
+		\begin{itemize}
+			\item \onslide<2->{A pure state is a quantum state that can be described by a single state vector in a Hilbert space}
+			\item \onslide<3->{when a system is in statistical ensemble of many pure states $\ket{\psi_i}$ (where i is an index), with respective probabilities $p_i$, such a state is called mixed states. We represent such states using density operator: $\rho = \sum_i p_i \ket{\psi_i}\bra{\psi_i}$, where \( p_i \geq 0 \), \( \sum_i p_i = 1 \), and \( \ket{\psi_i} \) are pure states.}
+			\item \onslide<4->{If one of the $p_i$} = 1, the state is a pure state, with the properties $\rho^2$ = $\rho$, $\mathrm{Tr}(\rho^2)$ = 1
+			\item \onslide<5->{A quantum state \( \rho_{AB} \) is \textbf{separable} if it can be written as: $\rho_{AB} = \sum_i p_i$ , $\rho_A^{(i)} \otimes \rho_B^{(i)}$ where $\( p_i \geq 0 \)$, $\( \sum_i p_i = 1 \)$, and $\( \rho_A^{(i)} \)$ and $\( \rho_B^{(i)} \)$ are density matrices of subsystems A and B respectively.}
+			\item \onslide<6->{A state is entangled if it is not separable.}
+		\end{itemize}
 	\end{frame}
 	\begin{frame}{\textbf{Peres-Horodecki Criterion}}
 		
