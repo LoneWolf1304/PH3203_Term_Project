@@ -7,6 +7,7 @@
 \usepackage{calc}
 \usepackage{Style_File}
 \usepackage{fancyhdr}
+\usepackage{tensor}
 \usepackage{array}
 \usepackage{lmodern}
 \everymath{\mathrm{\xdef\tmp{\fam\the\fam\relax}\aftergroup\tmp}}
@@ -137,7 +138,7 @@ This idea has been used successfully to study three-qubit states, as shown in [1
 In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.\\[0.3cm]
 One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  
 
-\section{Previous Works}
+\section{How it all began$\ldots$}
 In his 1997 paper, Aravind points out the connection between three-particle GHZ (Greenberger–Horne–Zeilinger)
 state and Borromean Rings. The latter is a set of three interlinked rings that can not be pulled apart. However, if one of the rings is cut, the other two are separated. The GHZ state of 3 spin-$\frac{1}{2}$ particles has the form:
 
@@ -291,31 +292,25 @@ We start with the 3-particle GHZ state and trace out qubit A from the original d
 which is a separable mixed state, as shown before. Therefore this state corresponds to the Borromean ring. Thus we can establish a connection between qubits and rings in a basis-independent way, since partial trace requires us to find trace, which is basis-independent.\\[0.3cm]
 Now we will see how the correspondence between tracing out a particle (finding the reduced density operator) and cutting of the corresponding ring gives a natural basis-independent way to associate topological rings to quantum entangled states. We have the $\ket{W}$ state as follows:
 \[
-\ket{\mathrm{W}} = \frac{1}{\sqrt{3}}\brac{\ket{100}+\ket{010}+\ket{100}}
+\ket{\mathrm{W}} = \frac{1}{\sqrt{3}}\brac{\ket{001}+\ket{010}+\ket{100}}
 \]
-\textcolor{red}{done till here}
-We $'$trace out$'$ particle A, and find the reduced density operator as:
+The density operator for the W state is then $$\rho = \ket{\mathrm{W}}\bra{\mathrm{W}}$$
+Using the partial trace with respect to particle A, we find the reduced density operator for particles B and C: 
+\begin{align*}
+    \rho_{BC} &= \tensor[_A]{\bra{0}\rho\ket{0}}{_A} + \tensor[_A]{\bra{1}\rho\ket{1}}{_A}
+\end{align*}
+From this calculation we can find the reduced density operator of particles 2 and 3 to be:
 \[
-\rho^{BC} = \frac{1}{3}(\ket{00}\bra{00}+\ket{01}\bra{01}+\ket{10}\bra{10}+\ket{11}\bra{11})
-\]
-Note that
-\[
-(\ket{01}+\ket{10})(\bra{01}+\bra{10}) = \ket{01}\bra{01}+\ket{01}\bra{10}+\ket{10}\bra{01}+\ket{10}\bra{10}
-\]
-Therefore reduced density operator of particles 2 and 3 can be wriiten as:
-\[
- \rho^{BC} = \frac{1}{3}[\ket{00}\bra{00}+(\ket{01}+\ket{10})(\bra{01}+\bra{10})]
+ \rho_{BC} = \frac{1}{3}\brac{\ket{00}\bra{00}+\ket{01}\bra{10}+\ket{10}\bra{10}+\ket{01}\bra{01}+\ket{10}\bra{01}}
 \]
 Define
 \[
-\ket{\Psi} = \ket{01}+\ket{10}
-\]
-\[
-\Rightarrow \rho^{BC} = \frac{1}{3}\ket{00}\bra{00}+\frac{1}{3}\ket{\Psi}\bra{\Psi}
+\ket{\Psi} = \ket{01}+\ket{10}\Rightarrow \rho_{BC} = \frac{1}{3}\ket{00}\bra{00}+\frac{1}{3}\ket{\Psi}\bra{\Psi}
 \]
 
-Note $\ket{\Psi}$ is not normalized.
-Let $\ket{\psi}_N$ denote normalized $\ket{\psi}$
+
+Note that $\ket{\Psi}$ is not normalized.
+Let $\ket{\Psi}_N$ denote normalized $\ket{\Psi}$
 \[
 \ket{\Psi}_N = \frac{1}{\sqrt{2}}(\ket{01}+\ket{10})
 \]
@@ -327,36 +322,51 @@ Thus
 \[
 \rho^{BC} = \frac{1}{3}\ket{00}\bra{00}+\frac{2}{3}\ket{\Psi}_N\bra{\Psi}_N
 \]
-Here, $\ket{00}$ and $\ket{\Psi}_N$ are normalized. Hence $\rho^{BC}$ is a mixed state. We can perform the Concurrence test. It turns out that $C(\rho^{BC})>0$, thus B and C are entangled. Therefore this state can be modelled by 3-Hopf rings.
-
-\section{}
-
-Now we consider the 3-chain state. 
+Here, $\ket{00}$ and $\ket{\Psi}_N$ are normalized. Hence $\rho^{BC}$ is a mixed state. Sugita uses the Concurrence Test\cite{Wootters1998} for separability. The concurrence of a density operator is defined as:
+$$\mathrm{C}(\rho) = \max\{0,\lambda_1-\lambda_2-\lambda_3-\lambda_4\}$$
+%  We can perform the Concurrence test. It turns out that $C(\rho^{BC})>0$, thus B and C are entangled. Therefore this state can be modelled by 3-Hopf rings.
+Here $\lambda_i$ are the sqaure root of the eigenvalues, in decreasing order, of the non-Hermitian matrix $\tilde{\rho}\rho$ where $\tilde{\rho}$ is defined by:
+$$\tilde{\rho} = (\sigma_y\otimes\sigma_y)\rho^*(\sigma_y\otimes\sigma_y)$$
+According to the Concurrence test, a state represented by the density operator $\rho$ is separable iff $C(\rho)=0$. \\[0.3cm]
+For the above reduced density matrix, we find:
+\begin{equation*}
+    \tilde{\rho} =
+    \left[
+    \begin{array}{cccc}
+    0.0 & 0.0 & 0.0 & 0.0 \\
+    0.0 & 0.333 & 0.333 & 0.0 \\
+    0.0 & 0.333 & 0.333 & 0.0 \\
+    0.0 & 0.0 & 0.0 & 0.333 \\
+    \end{array}
+    \right] \quad \text{and}\quad \tilde{\rho}\rho = 
+        \left[
+        \begin{array}{cccc}
+        0.0 & 0.0 & 0.0 & 0.0 \\
+        0.0 & 0.148 & 0.148 & 0.0 \\
+        0.0 & 0.148 & 0.148 & 0.0 \\
+        0.0 & 0.0 & 0.0 & 0.0 \\
+        \end{array}
+        \right]    
+    \end{equation*}
+    The eigenvalues of $\tilde{\rho}\rho$ are $0.444, 0.0,0.0,0.0$ and hence $\mathrm{C(\rho)} = 0.444$ which is positive and hence the state is entangled.\\[0.3cm]
+Now we consider the 3-chain state:
 \[
-\ket{\Psi} = a\ket{000} + b\ket{+1+},  \text{ with a,b } \in \text{R , } |a|^2+|b|^2=1
+\ket{\Psi} = a\ket{000} + b\ket{+1+},  \text{ with } \ a,b \in \mathbb{R}, \  |a|^2+|b|^2=1
 \]
+Then the density matrix is obtained as:
 \[
 \rho^{ABC}=\ket{\Psi}\bra{\Psi} = |a|^2 (\ket{000}\bra{000})+|b|^2(\ket{+1+}\bra{+1+})
 \]
+Now we trace out B and find $\rho^{AC} $:
 
-Now we trace out B and find $\rho^{AC} $. So, we take partial trace of $\rho^{ABC}$ with respect to B.
-
-\[\rho^{AC} = \mathrm{tr}_B(\rho^{ABC})\]
-
-\[
-\rho^{AC} = |a|^2\mathrm{tr}_B(\ket{0}\bra{0}).(\ket{00}\bra{00}) + |b|^2\mathrm{tr}_B(\ket{1}\bra{1}).(\ket{++}\bra{++})
-\]
-
+\[\rho^{AC} = \mathrm{tr}_B(\rho^{ABC})=|a|^2\mathrm{tr}_B(\ket{0}\bra{0}).(\ket{00}\bra{00}) + |b|^2\mathrm{tr}_B(\ket{1}\bra{1}).(\ket{++}\bra{++})\]
 Recall that $\mathrm{tr}_B(\ket{0}\bra{0})$ = $\mathrm{tr}_B(\ket{1}\bra{1})$ = 1. 
-Therefore $\rho^{AC}$ represents a mixed state. Note that it can be written as
+Therefore $\rho^{AC}$ represents a mixed state. Note that it can be written as:
 \[
-|a|^2\ket{00}\bra{00}+|b|^2\ket{++}\bra{++}
+    \rho^{AC} = |a|^2\ket{00}\bra{00}+|b|^2\ket{++}\bra{++}=|a|^2\ket{0}\bra{0}\otimes\ket{0}\bra{0}+|b|^2\ket{+}\bra{+}\otimes\ket{+}\bra{+}
 \]
-\[
-=|a|^2\ket{0}\bra{0}\otimes\ket{0}\bra{0}+|b|^2\ket{+}\bra{+}\otimes\ket{+}\bra{+}
-\]
-Thus, $\rho^{AC}$ is separable. 
-Now we will calculate $\rho^{BC}$ and $\rho^{AB}$ and show that they are not separable
+Thus, we see that $\rho^{AC}$ is also separable. 
+Similarly, we have $\rho^{BC}$ and $\rho^{AB}$:
 
 \[
 \rho^{AB}=|a|^2\ket{00}\bra{00}+|b|^2\ket{+1}\bra{+1}
@@ -364,13 +374,49 @@ Now we will calculate $\rho^{BC}$ and $\rho^{AB}$ and show that they are not sep
 \[
 \rho^{BC}=|a|^2\ket{00}\bra{00}+|b|^2\ket{1+}\bra{1+}
 \]
+Let us now calculate the concurrence of $\rho^{AB}$ and $\rho^{BC}$. From the definition, we calculated: 
+\begin{equation*}
+    \rho_{ab} =
+    \left[
+    \begin{array}{cccc}
+    a^{2} & \frac{1}{2} a b & 0 & \frac{1}{2} a b \\[0.3cm]
+    \frac{1}{2} a b & \frac{1}{2} b^{2} & 0 & \frac{1}{2} b^{2} \\[0.3cm]
+    0 & 0 & 0 & 0 \\[0.3cm]
+    \frac{1}{2} a b & \frac{1}{2} b^{2} & 0 & \frac{1}{2} b^{2} \\[0.3cm]
+    \end{array}
+    \right]\quad \tilde{\rho}_{ab}\rho_{ab} = \frac{ab}{4}\left[
+        \begin{array}{cccc}
+        3 a b & 3 b^{2} & 0 & 3 b^{2} \\[0.5cm]
+        0 & 0 & 0 & 0 \\[0.5cm]
+        -3 a b & -3 b^{2} & 0 & -3 b^{2} \\[0.5cm]
+        4 a^{2} & 3 a b & 0 & 3 a b \\[0.5cm]
+        \end{array}
+        \right]
+    \end{equation*}
 
-Calculating the concurrence reveals that $\rho^{AB}$ and $\rho^{BC}$ are not separable. Thus, BC, AB still entangled. This is clearly mirrored in the 3-chain link configuration, in which A and C are the outer rings and B is the middle one. So, if B is cut (or in the language of Quantum mechanics, traced out) A and C are separable, they are not linked. However if either A or C are cut, then, other 2 are still linked.
+    \begin{equation*}\
+        \rho_{bc} =
+        \left[
+        \begin{array}{cccc}
+        a^{2} & 0 & \frac{1}{2} a b & \frac{1}{2} a b \\[0.3cm]
+        0 & 0 & 0 & 0 \\[0.3cm]
+        \frac{1}{2} a b & 0 & \frac{1}{2} b^{2} & \frac{1}{2} b^{2} \\[0.3cm]
+        \frac{1}{2} a b & 0 & \frac{1}{2} b^{2} & \frac{1}{2} b^{2} \\[0.3cm]
+        \end{array}
+        \right] \quad \tilde{\rho}_{bc}\rho_{bc} =\frac{ab}{4}\left[
+            \begin{array}{cccc}
+            3 a b& 0 & 2 b^{2} & 2 b^{2} \\[0.5cm]
+           3 a b & 0 & -2 b^{2} & -2 b^{2} \\[0.5cm]
+            0 & 0 & 0 & 0 \\[0.5cm]
+            4 a^{2} & 0 & 3 a b& 3 a b\\[0.5cm]
+            \end{array}
+            \right]
+        \end{equation*}
+\noindent
+These matrices have the same eigenvalues (since the system is symmetric with respect to A and C). The eigenvalues are: $|ab|\frac{(1 + \sqrt{2})}{2},|ab| \frac{(\sqrt{2} - 1)}{2},0,0$. Thus the concurrence is: $$\mathrm{C(\rho)} = |ab|>0$$
+\noindent
+Calculating the concurrence reveals that $\rho_{ab}$ and $\rho_{bc}$ are not separable. Thus, BC and AB are still entangled. This is clearly mirrored in the 3-chain link configuration, in which A and C are the outer rings and B is the middle one. So, if B is cut (or in the language of Quantum mechanics, traced out) A and C are separable, they are not linked. However if either A or C are cut, then, other 2 are still linked.
 %88888888888888888888888888888888888888
-\section{}
-
-Thus in this paper,  three examples of the correspondence between quantum entangle
-ment and topological entanglement for some 3-qubit cases were shown. Although this  method does not uniquely determine a topological link corresponding to a quantum state, the authors believe that visualization of quantum states by topological objects could be a useful tool for the study of quantum entanglement.
 
 
 \section{Classification of Links: A Polynomial Approach}
@@ -713,11 +759,12 @@ Each of the above matrices have atleast one negative eigenvalues, thus denoting 
         \item $0.0, 0.25, 0.25, 0.5 \longrightarrow$ no eigenvalue is negative, thus cutting $b$ separates the systems $a$ and $c$.        
        \item $ \mathbf{\mathcolor{red}{-0.25},} 0.25, 0.5, 0.5 \longrightarrow$ one eigenvalue is negative, thus on cutting $c$, the systems $a$ and $b$ remain entangled.
     \end{itemize}
-    This faithfully reproduces the behaviour of the link $abc+ab$ and thus, the state characterises the link.\begin{figure}
+    This faithfully reproduces the behaviour of the link $abc+ab$ and thus, the state characterises the link.\begin{figure}[H]
         \centering
         \scalebox{0.8}{ \input{pics/3_2_possible_cut.tex}}
         \caption{Possible link cuts for the $3^2$ link class. Two cuts lead to complete separability while other cut lead to different entangled configuration.}
     \end{figure}
+    \noindent
 \textbf{\large \texttt{3\textsuperscript{3}} Link Class} \\[0.3cm]
 We now analyse the link class given by $P_3(a,b,c) = ab+ac$. The link diagram is given by:
 \begin{figure}[H]
@@ -848,11 +895,12 @@ The density matrix obtained for the system is:
                 \item $\mathbf{\mathcolor{red}{-0.155}}, 0.25, 0.405, 0.5$ $\longrightarrow$ negative eigenvalue, so on cutting $c$  system $a$ and $b$ remain entangled.
             \end{itemize}
             This is consistent with the link properties and hence the mixed state obtained is indeed characterises the link. 
-            \begin{figure}
+            \begin{figure}[H]
                 \centering
                 \scalebox{0.8}{ \input{pics/3_3_possible_cut.tex}}
                 \caption{Possible link cuts for the $3^3$ link class. One cut lead to complete separability while two of the cuts lead to entangled configurations.}
             \end{figure}
+            \noindent   
 \textbf{\large \texttt{3\textsuperscript{4}} Link Class} \\[0.3cm]
 Let us now analyse the class $P_4(a,b,c) = ab+ac+bc$. The link diagram is given by:
 \begin{figure}[H]
@@ -1055,13 +1103,13 @@ Using the above state after tracing out subsystem $d$, we obtained the density m
            The set of eigenvalues of PPT matrices of $\rho_{bc}$ and $\rho_{ab}$ are the same given by $\mathcolor{red}{\mathbf{-0.038}}, 0.25, 0.375, 0.413$ while the eigenvalues of PPT matrix of $\rho_{ac}$ are $\mathcolor{red}{\mathbf{-0.125}}, 0.25, 0.375, 0.5$. Since in each set, a negative eigenvalue exists, we can conclude that the system exhibits entanglement, thus verifying the behaviour of the link $ab+ac+bc$, that is, even after cutting one variable, the other two remain entangled.
             
 
-           \begin{figure}
+           \begin{figure}[H]
             \centering
             \scalebox{0.8}{ \input{pics/3_4_possible_cut.tex}}
             \caption{Possible link cuts for the $3^4$ link class. All the cuts lead to entangled configuration.}
         \end{figure}
 
-
+\noindent
 
 \subsection{Applying to Four Qubit Systems}
 \section{Physical Significance: Use in Qubit Networks}
