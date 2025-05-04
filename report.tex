@@ -132,12 +132,12 @@ a4paper]{geometry}
 \section{Introduction}
 %     Source - Wikipedia
 
-Classifying entanglement is essential because not all quantum states are equally useful for quantum information tasks. Different types of entanglement serve as distinct resources, each suited to specific applications such as quantum algorithms or secure communication protocols like quantum key distribution. Understanding and identifying these entanglement types helps determine how quantum states can be used and manipulated effectively. hi hi hi this is testing\\[0.3cm]
+Classifying entanglement is essential because not all quantum states are equally useful for quantum information tasks. Different types of entanglement serve as distinct resources, each suited to specific applications such as quantum algorithms or secure communication protocols like BB84 protocol for quantum key distribution (QKD). Understanding and identifying these entanglement types helps determine how quantum states can be used and manipulated effectively.\\[0.3cm]
 SLOCC (Stochastic Local Operations and Classical Communication) is a method for classifying quantum entanglement. It defines equivalence classes of quantum states based on whether they can be converted into each other using local operations (on individual qubits) and classical communication.\\[0.3cm]
-This idea has been used successfully to study three-qubit states, classifying four-qubit states Methods have been developed for handling systems with even more qubits [7,8].[0.3cm]
-In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.\\[0.3cm]
-One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  \\[0.3cm]
-This report is based on the work by Quinta and André \cite{Quinta2018} where they considered a more definitive approach towards modelling entanglement by knots using polynomials whose variables represent the rings and the product of variables represent entanglement. We produce a brief review of the information and procedures explained in \cite{Quinta2018}.
+This idea has been used successfully to study three-qubit states and four-qubit states. Methods have been developed for handling systems with even more qubits.[0.3cm]
+In this paper by Quinta\cite{Quinta2018}, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.\\[0.3cm]
+One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled `knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring and the entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. However, he noted that performing the measurement in different basis would not lead to the same conclusions.\\[0.3cm] This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko} who proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than two levels.  \\[0.3cm]
+This report is based on the work by Quinta and André \cite{Quinta2018} where they considered a more definitive approach towards modelling entanglement by knots using polynomials whose variables represent the rings and the product of variables represent entanglement. We produce a brief review of the information and procedures explained in the paper.
 
 \section{How it all began$\ldots$}
 In his 1997 paper, Aravind points out the connection between three-particle GHZ (Greenberger–Horne–Zeilinger)
@@ -160,8 +160,8 @@ where $\ket{0}$ and $\ket{1}$ are eigenvectors of the operator $\hat{S}_z$
 He made the following associations between the GHZ state and the Borromean rings:
 
 \begin{itemize}
-    \item Each particle is associated with a ring
-    \item Measuring the spin of a particle along the z-direction is equivalent to cutting the corresponding ring
+    \item Each particle is associated with a ring.
+    \item Measuring the spin of a particle along the z-direction is equivalent to cutting the corresponding ring.
     \item The entanglement of any set of particles along is modelled by the inability to separate the corresponding rings.
 \end{itemize}
 Aravind claims, that as long as no measurement is made on particle 1, particles 2 and 3 are in an entangled state, as their reduced density operator $\hat{\rho}_{23}$ can not be written as a product of density operators of particles 2 and 3. However, as pointed out in Sugita's paper, $\hat{\rho}_{23}$ is a separable state. We compute $\hat{\rho}_{23}$ and show that it is a mixed separable state. The density matrix for the entire system is given as:
@@ -245,6 +245,7 @@ Aravind writes about one more linked 3-knots, where the middle ring in linked to
    \scalebox{0.8}{ \input{pics/3_3.tex}}
    \caption{3-chain}
 \end{figure}
+\noindent
 Notice that in previous sections, we started with a multi-particle quantum state, and checked how it behaves under various measurements and partial traces. Then, we tried to find a suitable link configuration but here we do just the reverse. 
 Consider the state:
 \[
@@ -422,17 +423,18 @@ Calculating the concurrence reveals that $\rho_{ab}$ and $\rho_{bc}$ are not sep
 
 \section{Classification of Links: A Polynomial Approach}
 \subsection{Formalism of the Link Polynomial}
+We approach the problem of classifying links using a polynomial where the variables of the polynomial represent the rings and the product of the variables represent the links. Thus, if a polynomial has a term `ab', it would mean that there are two rings and one is interlinked with the other.
 There are a number of rules that should be satisfied in order for a certain polynomial to represent a valid link, as explained in the following:
 \begin{itemize}
     \item{There must not be any repeated terms, i.e., no ring variable can have a power greater than 1, for example, aab,
-    should not appear,as it represents superfluous information ;we already know that the ring a is linked to b from the product ab,so multiplying another a is redundant. So, one only needs to use terms where no variables are repeated.}
-    \item{Each ring variable must appear at least once, as we will only be concerned with the case where all initial rings are linked.}
-    \item{There must not be first-order terms, possibility of including single variable terms is not of interest to us, since it would mean that the ring is not linked to any other. no particular importance is given to any ring variable since no information is contained in the variables themselves. For example, the polynomials ab+ac and ab+bc represent the same link class.}
-    \item{ Relabeling of variables is irrelevant.}
-    \item{An n-variable monomial M is irrelevant if all of its variables are already present as an n-ring link of lesser-order  monomials built only with the variables of M, consider the case where a given polynomial contains the terms ab and ac, it is irrelevant if we further add the term abc, since all the letters of the latter term have already appeared in the smaller monomials. Indeed, one may check by
-    setting each letter to zero independently, that the results of all possible cuts are equal for both ab + ac and ab+ ac+ abc, and so both polynomials must represent the same link class. However, ab + cd and ab+cd+abcd represent different link class as the former represents two links, with 2 knots each, the latter represents 4 rings are linked.}
+    should not appear, as it represents superfluous information; we already know that the ring a is linked to b from the product ab,so multiplying another a is redundant. So, one only needs to use terms where no variables are repeated.}
+    \item{Each ring variable must appear at least once, as we will only be concerned with the case where all initial rings are linked. Thus, a polynomial $\mathrm{P(a,b,c,d) = ab+bc}$ is not valid.}
+    \item{There must not be first-order terms, that is, possibility of including single variable terms is not of interest to us (since it would mean that the ring is not linked to any other ring). }
+    \item{ No particular importance is given to any ring variable since no information is contained in the variables themselves. For example, the polynomials ab+ac and ab+bc represent the same link class.Thus, relabeling of variables is irrelevant.}
+    \item{An n-variable monomial M is irrelevant if all of its variables are already present as an n-ring link of lesser-order  monomials built only with the variables of M. Consider the case where a given polynomial contains the terms `ab' and `ac'. It is irrelevant if we further add the term `abc', since all the letters of the latter term have already appeared in the smaller monomials. \\[0.3cm]Indeed, one may check by
+    setting each letter to zero independently, that the results of all possible cuts are equal for both ab + ac and ab+ ac+ abc, and so both polynomials must represent the same link class.\\[0.3cm] However note that, ab + cd and ab+cd+abcd represent different link class as the former represents two links, with 2 knots each, the latter represents that 4 rings are linked.}
 \end{itemize}
-These rules are sufficient to select the desired polynomials, corresponding to each distinct link class, for any number of rings.  By construction, any link can be associated to one and only one of these classes. 
+These rules are sufficient to select the desired polynomials, corresponding to each distinct link class, for any number of rings. Two ring configurations belong to the same class if the result of all possible cuts are same for both the configurations and the above rules are followed. \\[0.3cm]We denote a particular link class by $n^i$ where $n$ is the number of rings and $i$ is the index of the class (which is arbitrary). By construction, any link can be associated to one and only one of these classes. 
 \subsection{Obtaining a Link from an Entangled Quantum State}\label{link_from_state}
 We have till now only shown existence of a polynomial invariant of a link characterized by the way it behaves after cutting. In this section, we will show that this polynomial can be connected to any quantum state, and using this we can study the entanglement property of the state.
 The polynomial gives us the behavior of the topological link after cutting any particular knot. In the case, we the operation of cutting a particular is equivalent to taking a partial trace with respect to that system. That means if a measurement is done for some system then the other states are entangled or not. \\[0.3cm]
@@ -500,7 +502,7 @@ The polynomial gives us the behavior of the topological link after cutting any p
     
 	 
 \subsection{Obtaining an Entangled Quantum State from a Link}\label{state_from_link}
-In this section, we will see how we can obtain a link from a quantum state. This is in general a difficult task to obtain an entangled quantum states from the polynomial as the number of qubits increases. The process in the paper mentions an algorithm which provides an `incomplete' map betwee a given link and a quantum state. Using the procedure, the general structure of the quantum state can be obtained, however, some free coefficients remain which needs to be fixed computationally. Moreover, presently only mixed states satisfying the link can be obtained using this procedure. \\[0.3cm]
+In this section, we will see how we can obtain a link from a given quantum state. It is, in general, a difficult task to obtain an entangled quantum state from the polynomial as the number of qubits increases. The process in the paper mentions an algorithm which provides an `incomplete' map betwee a given link and a quantum state. Using the procedure, the general structure of the quantum state can be obtained, however, some free coefficients remain which needs to be fixed computationally. Moreover, presently only mixed states satisfying the link can be obtained using this procedure. \\[0.3cm]
 Note that although incomplete, the map is still useful since we can ascertain the structure of each state contained in the mixed state. That is, from a possibility of $2^N$ (for $N$ qubits, there are $2^N$ basis states, namely $\ket{0}, \ket{1}, \ldots \ket{2^N-1}$ where each ket is to be assumed in the binary representation) states, we are reducing it to a much smaller number. \\[0.3cm]
 For this, we will use the GHZ type of state as a building block which are of the form:
 \begin{align*}
@@ -524,6 +526,9 @@ Here $\ket{0}^{\otimes N}$ is the tensor product of $N$ number of $\ket{0}$ stat
    \scalebox{0.8}{ \input{pics/algo_pic.tex}}
    \caption{A schematic diagram of the algorithm}
 \end{figure}
+\noindent
+\textbf{Intuition behind the algorithm:} \\[0.3cm]
+For the variables which are linked, we will associate a GHZ type of state (which is a maximally entangled state) which makes sense. Since the other variables are not linked, we will associate a separable qubit to them and write it as a direct product with the entangled GHZ state. Lastly we will associate a qudit state which will allow us to take the trace and obtain a mixed state. \\[0.3cm]
 \textbf{Example demonstrating the algorithm:} \\[0.3cm]
 We will see a simple example of the algorithm to obtain a state from a link. Consider the polynomial $P(a,b,c) = ab+ac$. This is a three-ring link. 
 \begin{itemize}
@@ -1405,11 +1410,22 @@ The network can be easily described using the link polynomial language as: $\mat
 \end{figure}
 We can easily see that the polynomial describing this network is $\mathrm{P(a,b,c,d) = abc+abd+ac}$. Thus a state can immediately be obtained using the algorithm described previously.
 \section{Discussion and Conclusion}
+We have tried to present an overview of the paper by Quinta and André regarding the knot theoretic approach to entangled quantum states. We studied how a knot can be described by a polynomials and how it can model entangled states. We found out procedures to obtain a link from a given entangled state and vice versa. Explicit calculations of the density matrices and the PPT test have been shown in this report which are not in the paper. We have also tried to present out own intuitions behind some the results mentioned in the paper.\\[0.3cm]
+We note that the process of classifying entangled states using links become tedious because with the increasing number of rings, the number of possible links increases exponentially. Thus, it has limited analytical applications but could be helpful in some practical utilities like designing of an efficient qubit network. \\[0.3cm]
+We conclude by saying that even with limited applications, the proposal is an interesting one and further wrok has been done to incorporate topological aspects to study entanglement properties. 
 \section{Acknowledgements}
-We want to thank \textit{Prof. Sourin Das} for the opportunity to work on this report for the `Term Project' component of the course `PH3203: Advanced Quantum Mechanics' and also for valuable discussions and suggestions. Various information in this report has been taken from different papers which are appropriately cited. The entire repository of this project is maintained at \url{https://github.com/LoneWolf1304/PH3203_Term_Project}.
+We want to thank \textit{Prof. Sourin Das} for the opportunity to work on this report for the `Term Project' component of the course `PH3203: Advanced Quantum Mechanics' during the \textit{Spring} term at IISER Kolkata and also for valuable discussions and suggestions. Various information in this report has been taken from different papers which are appropriately cited. The knots and other diagram have been done on \url{https://www.mathcha.io/}.  The entire repository of this project is maintained at \url{https://github.com/LoneWolf1304/PH3203_Term_Project}.
 \newpage
 \section*{Appendix A: {\huge Quantum Information Basics}}
 \addcontentsline{toc}{section}{Appendix A: Quantum Information Basics} % Optional
+Quantum Information deals with studying the information content in a quantum state. The basic unit of quantum information is a qubit, which is a two-level quantum system. The state of a qubit can be represented as a linear combination of the two basis states $\ket{0}$ and $\ket{1}$, which are the eigenstates of the Pauli matrix $\sigma_z$. The general state of a qubit can be written as:
+\begin{equation*}
+    \ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \quad \text{where } |\alpha|^2 + |\beta|^2 = 1.
+\end{equation*}
+Multi-qubit systems can be represented as tensor products of the individual qubit states. For example, a two-qubit state can be written as:
+\begin{equation*}
+    \ket{\psi_{12}} = \alpha_{00} \ket{00} + \alpha_{01} \ket{01} + \alpha_{10} \ket{10} + \alpha_{11} \ket{11}, \quad \text{where } |\alpha_{00}|^2 + |\alpha_{01}|^2 + |\alpha_{10}|^2 + |\alpha_{11}|^2 = 1
+\end{equation*} 
 \subsection{Density Matrix Formalism}
 If a Hilbert space is given, then any wavefunction is given by an element of the Hilbert space. For isolated system, any quantum state is given by these elements of the Hilbert space. This kind of states are also called pure state. As the whole quantum state is given by one state vector from the Hilbert space.\\[0.3cm]
 But in general, it can be possible that the system is not isolated and connected to an environment. In that case even if we are interested in the wavefunction corresponds to the Hilbert space of the system, the effect of environment makes a difference. In this case, the actual Hilbert space that we should consider should be the tensor product of the Hilbert space of the system and the environment. So any state should corresponds to both the Hilbert space of envirnoment and the system. But we are only interested in the state of the system. So it might be possible that we do not get any pure state but an incoherent superposition of pure states. This is called a mixed state. Mixed states are ensembles of pure states. And each of the states have a probabilty corresponding to it. These states can not be represented as a state vector from the Hilbert space.\\[0.3cm]
@@ -1439,11 +1455,11 @@ Now, partial transpose with respect to $B$ is given as
 \begin{equation*}
 	\rho^{T_B} = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes (\ket{k}\bra{l})^{T} = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{l}\bra{k}.
 \end{equation*}
-Now, Peres-Horodecki criterion says that if $\rho$ is separable then all the eigenvalues of the partial transpose of $\rho$ is non-negative. So, this means if any of them are negative, then the state is not separable so entangled. The converse of this is not true in general, but in 2 $\times$ 2 and $2 \times 3$ the converse is also true.
+Now, Peres-Horodecki criterion says that if $\rho$ is separable then all the eigenvalues of the partial transpose of $\rho$ is non-negative. So, this means if any of them are negative, then the state is not separable so entangled. The converse of this is not true in general, but in 2 $\times$ 2 and $2 \times 3$ the converse is also true. \\[0.3cm]
+These are the basic concepts of quantum information that we have used in this report. For more details, we refer to the book by Nielsen and Chuang \cite{Nielsen_Chuang_2010}.
 \newpage
 
-
-\section*{Appendix C: {\huge Code for Numeric Calculations}}
+\section*{Appendix B: {\huge Code for Numeric Calculations}}
 We used the \texttt{QuantumInformation.jl} package in \texttt{Julia} to perform the numerical calculations. The code provided below shows some basic calculations that we had used in this report. 
 \addcontentsline{toc}{section}{Appendix C: { Code for Numerical Calculations}}
 \begin{lstlisting}[language=Julia,label={lst:transmission}]
