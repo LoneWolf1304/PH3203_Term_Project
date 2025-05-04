@@ -134,7 +134,7 @@ a4paper]{geometry}
 
 Classifying entanglement is essential because not all quantum states are equally useful for quantum information tasks. Different types of entanglement serve as distinct resources, each suited to specific applications such as quantum algorithms or secure communication protocols like quantum key distribution. Understanding and identifying these entanglement types helps determine how quantum states can be used and manipulated effectively. hi hi hi this is testing\\[0.3cm]
 SLOCC (Stochastic Local Operations and Classical Communication) is a method for classifying quantum entanglement. It defines equivalence classes of quantum states based on whether they can be converted into each other using local operations (on individual qubits) and classical communication.\\[0.3cm]
-This idea has been used successfully to study three-qubit states, as shown in [1,2], classifying four-qubit states [3–6] Methods have been developed for handling systems with even more qubits [7,8].[0.3cm]
+This idea has been used successfully to study three-qubit states, classifying four-qubit states Methods have been developed for handling systems with even more qubits [7,8].[0.3cm]
 In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.\\[0.3cm]
 One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  
 
@@ -421,6 +421,17 @@ Calculating the concurrence reveals that $\rho_{ab}$ and $\rho_{bc}$ are not sep
 
 \section{Classification of Links: A Polynomial Approach}
 \subsection{Formalism of the Link Polynomial}
+There are a number of rules that should be satisfied in order for a certain polynomial to represent a valid link, as explained in the following:
+\begin{itemize}
+    \item{There must not be any repeated terms, i.e., no ring variable can have a power greater than 1, for example, aab,
+    should not appear,as it represents superfluous information ;we already know that the ring a is linked to b from the product ab,so multiplying another a is redundant. So, one only needs to use terms where no variables are repeated.}
+    \item{Each ring variable must appear at least once, as we will only be concerned with the case where all initial rings are linked.}
+    \item{There must not be first-order terms, possibility of including single variable terms is not of interest to us, since it would mean that the ring is not linked to any other. no particular importance is given to any ring variable since no information is contained in the variables themselves. For example, the polynomials ab+ac and ab+bc represent the same link class.}
+    \item{ Relabeling of variables is irrelevant.}
+    \item{An n-variable monomial M is irrelevant if all of its variables are already present as an n-ring link of lesser-order  monomials built only with the variables of M, consider the case where a given polynomial contains the terms ab and ac, it is irrelevant if we further add the term abc, since all the letters of the latter term have already appeared in the smaller monomials. Indeed, one may check by
+    setting each letter to zero independently, that the results of all possible cuts are equal for both ab + ac and ab+ ac+ abc, and so both polynomials must represent the same link class. However, ab + cd and ab+cd+abcd represent different link class as the former represents two links, with 2 knots each, the latter represents 4 rings are linked.}
+\end{itemize}
+These rules are sufficient to select the desired polynomials, corresponding to each distinct link class, for any number of rings.  By construction, any link can be associated to one and only one of these classes. 
 \subsection{Obtaining a Link from an Entangled Quantum State}\label{link_from_state}
 
 \subsection{Obtaining an Entangled Quantum State from a Link}\label{state_from_link}
@@ -1165,9 +1176,7 @@ We can easily see that the polynomial describing this network is $\mathrm{P(a,b,
 \subsection{Density Matrix}
 \subsection{Peres-Horodecki Criterion}
 \newpage
-\section*{Appendix B: {\huge Knot Theory Basics}}
-\addcontentsline{toc}{section}{Appendix B: { Knot Theory Basics}}
-\newpage
+
 
 \section*{Appendix C: {\huge Code for Numeric Calculations}}
 We used the \texttt{QuantumInformation.jl} package in \texttt{Julia} to perform the numerical calculations. The code provided below shows some basic calculations that we had used in this report. 
