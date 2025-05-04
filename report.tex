@@ -136,7 +136,8 @@ Classifying entanglement is essential because not all quantum states are equally
 SLOCC (Stochastic Local Operations and Classical Communication) is a method for classifying quantum entanglement. It defines equivalence classes of quantum states based on whether they can be converted into each other using local operations (on individual qubits) and classical communication.\\[0.3cm]
 This idea has been used successfully to study three-qubit states, as shown in [1,2], classifying four-qubit states [3–6] Methods have been developed for handling systems with even more qubits [7,8].[0.3cm]
 In this paper, the authors have proposed an alternative classification scheme for quantum entanglement based on topological links.\\[0.3cm]
-One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  
+One of the first images that comes to mind when we think of entanglement is that of entangled threads. Naturally, one wonders if we could study quantum entanglement using entangled 'knots'. Aravind~\cite{Aravind1997} was the first to point out the connections between entangled quantum states and classical knot configurations, focussing on similarity between 3-particle GHZ state and Borromean rings. He associated each particle with a ring, entanglement of any set of particles as inability to separate their corresponding rings, and measurement of particle state as cutting its ring. But he noted that performing the measurement in different basis would not lead to the same conclusions. This limit in analogy was dealt with by Sugita~\cite{Sugita2007-ko}. He proposed that cutting the ring is equivalent to tracing out the corresponding particle from the density operator, which is a basis-independent operation. This represents viewing the system as though that particle is no longer present. Moreover, the trace operation helps to generalise the idea to quantum systems with more than 2 levels.  \\[0.3cm]
+This report is based on the work by Quinta and André \cite{Quinta2018} where they considered a more definitive approach towards modelling entanglement by knots using polynomials whose variables represent the rings and the product of variables represent entanglement. We produce a brief review of the information and procedures explained in \cite{Quinta2018}.
 
 \section{How it all began$\ldots$}
 In his 1997 paper, Aravind points out the connection between three-particle GHZ (Greenberger–Horne–Zeilinger)
@@ -422,7 +423,71 @@ Calculating the concurrence reveals that $\rho_{ab}$ and $\rho_{bc}$ are not sep
 \section{Classification of Links: A Polynomial Approach}
 \subsection{Formalism of the Link Polynomial}
 \subsection{Obtaining a Link from an Entangled Quantum State}\label{link_from_state}
+We have till now only shown existence of a polynomial invariant of a link characterized by the way it behaves after cutting. In this section, we will show that this polynomial can be connected to any quantum state, and using this we can study the entanglement property of the state.
+The polynomial gives us the behavior of the topological link after cutting any particular knot. In the case, we the operation of cutting a particular is equivalent to taking a partial trace with respect to that system. That means if a measurement is done for some system then the other states are entangled or not. \\[0.3cm]
+	As cutting the link is equivalent to tracing out the state. First step to write down the polynomial expression for the state is to perform all possible partial traces, and then we have to check if the resulting state is entangled or not. This information gives us the polynomial which is essentially the same as finding out the topological link.\\[0.3cm]
+	\textbf{Example:}\\[0.3cm]
+	Consider the three qubit system, given by the wavefunction, 
+	 \begin{equation*}
+	 	\ket{\psi} = \frac{1}{2} (\ket{100}_{abc} + \ket{010}_{abc} + \ket{110}_{abc}+ \ket{011}_{abc}).
+	 \end{equation*}
+ 	The density matrix here is given by the matrix $\rho = \ket{\psi}\bra{\psi}$. Also we chose the convention that the state $a$ is identified as the ring variable $a$,  state $b$ for the ring variable $b$, and state $c$ for the ring variable $c$.
+ 	\begin{equation*}
+ 		\rho = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+ 	Firstly we have to find out if all the wavefunctions are in entangled initially or not. This will tell us if the polynomial has any three variable term or not. To do this we use the PPT test (positive partial transpose) with respect to each subsystem.
+ 	We denote the partial transpose with respect to subsystem $a$ as $\rho^{T_a}$. Here we present the partial transpose with respect to each subsystem.
+ 	\begin{equation*}
+ 		\rho^{T_a} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+ 	The set of eigenvalues of this matrix is $\textcolor{red}{-0.433}, 0.0, 0.0, 0.0, 0.0, 0.25, 0.433, 0.75$, one of which is negative. 
+ 	\begin{equation*}
+ 		\rho^{T_b} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0.25 & 0.25 & 0.25 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+ 	The set of eigenvalues of this matrix is $\textcolor{red}{-0.354}, 0.0, 0.0, 0.0, 0.0, 0.146, 0.354, 0.854$, one of which is negative. 
+ 	\begin{equation*}
+ 		\rho^{T_c} = \left[\begin{matrix}0 & 0 & 0 & 0 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0.25 & 0.25\\0 & 0 & 0.25 & 0.25 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.25 & 0 & 0.25 & 0 & 0.25 & 0 & 0.25 & 0\\0.25 & 0 & 0.25 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+ 	\end{equation*}
+	This matrix is the same as the matrix $\rho^{T_a}$. As partial transpose of all the subsystem has negative eigenvalues we can say that all the subsystems are entangled with each other. So there exists a \textbf{tripartite entanglement.}\\[0.3cm]
+	Now we want to see if the system remains entangled after tracing out with respect to each subsystem or not. Here the reduced density matrix is denoted as $\rho_{ab}$ when the system $c$ is traced out, similarly we have reduced density matrix $\rho_{bc}$, and $\rho_{ac}$. To see if this reduced density matrices are separable or entangled, we again use PPT test. Here as the system size is $2 \times 2$, presence of atleast one negative eigenvalue will imply entanglement between the subsystems, but also if none of the eigenvalues are negative then the systems are separable. The last statement is only true for $2 \times 2$ and $2 \times 3$ systems.\\[0.3cm]
+	The reduced density matrices, $ \rho_{bc},\rho_{ab}, \rho_{ac}$ are the following:
+	
+	\begin{equation*}
+		\rho_{bc} = \left[\begin{matrix}0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0\\0.25 & 0 & 0.5 & 0.25\\0 & 0 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
 
+	\begin{equation*}
+		\rho_{ac} = \left[\begin{matrix}0.25 & 0.25 & 0.25 & 0\\0.25 & 0.25 & 0.25 & 0\\0.25 & 0.25 & 0.5 & 0\\0 & 0 & 0 & 0\end{matrix}\right].
+	\end{equation*}
+
+	\begin{equation*}
+		\rho_{ab} = \left[\begin{matrix}0 & 0 & 0 & 0\\0 & 0.5 & 0.25 & 0.25\\0 & 0.25 & 0.25 & 0.25\\0 & 0.25 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+	%Here also see that $\rho_{ab} = \rho_{bc}$, that means tracing out with respect to $a$ creates the same kind of state as tracing out with respect to $c$. 
+	% We saw symmetry in the partial transpose with respect to a and c also.
+	Partial transpose of $\rho_{bc}$ with respect to subsystem $b $ is $\rho^{T_b}_{bc}$.
+	\begin{equation*}
+		\rho^{T_b}_{bc} = \left[\begin{matrix}0.25 & 0 & 0.25 & 0\\0 & 0 & 0 & 0\\0.25 & 0 & 0.5 & 0.25\\0 & 0 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+	This has all positive eigenvalues: $0.0, 0.0, 0.25, 0.75$. So, the subsystem $b$ and $c$ are separated after $a$ is traced out. Now, partial transpose of $\rho_{ac}$ with respect to the subsystem $a$ is $\rho^{T_a}_{ac}$ and it is
+	\begin{equation*}
+		\rho^{T_a}_{ac} = \left[\begin{matrix}0.25 & 0.25 & 0.25 & 0.25\\0.25 & 0.25 & 0 & 0\\0.25 & 0 & 0.5 & 0\\0.25 & 0 & 0 & 0\end{matrix}\right].
+	\end{equation*}
+	The eigenvalues of this matrix are $\textcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative. So after tracing out subsystem $b$, the subsystem $a$ and $c$ remains entangled.
+	Partial transpose of $\rho_{ab}$ with respect to the subsystem $a$ is the following,
+	\begin{equation*}
+		\rho^{T_a}_{ab} = \left[\begin{matrix}0 & 0 & 0 & 0.25\\0 & 0.5 & 0 & 0.25\\0 & 0 & 0.25 & 0.25\\0.25 & 0.25 & 0.25 & 0.25\end{matrix}\right].
+	\end{equation*}
+	The eigenvalues of this matrix are $\textcolor{red}{-0.233}, 0.121, 0.379, 0.733$, one of which is negative, so after tracing out $c$, the subsystem $a$ and $b$ remains entangled.
+ So to summarize, we want to a 3 variable polynomial with the following property:
+	\begin{itemize}
+		\item If we put $a = 0$, the polynomial is zero.
+		\item If we put $b = 0$, the polynomial is just $ac$, corresponding to the entanglement of $a$ and $c$ after tracing out $b$.
+		\item If we put $c = 0$, the polynomial is $bc$, as tracing out $c$, gives an entangled state of $b$ and $c$.
+	\end{itemize}
+	From these information we can say that the polynomial corresponding to this state is $ac + bc$. This corresponds to the link class $3^3$.
+    
+	 
 \subsection{Obtaining an Entangled Quantum State from a Link}\label{state_from_link}
 In this section, we will see how we can obtain a link from a quantum state. This is in general a difficult task to obtain an entangled quantum states from the polynomial as the number of qubits increases. The process in the paper mentions an algorithm which provides an `incomplete' map betwee a given link and a quantum state. Using the procedure, the general structure of the quantum state can be obtained, however, some free coefficients remain which needs to be fixed computationally. Moreover, presently only mixed states satisfying the link can be obtained using this procedure. \\[0.3cm]
 Note that although incomplete, the map is still useful since we can ascertain the structure of each state contained in the mixed state. That is, from a possibility of $2^N$ (for $N$ qubits, there are $2^N$ basis states, namely $\ket{0}, \ket{1}, \ldots \ket{2^N-1}$ where each ket is to be assumed in the binary representation) states, we are reducing it to a much smaller number. \\[0.3cm]
@@ -1112,6 +1177,177 @@ Using the above state after tracing out subsystem $d$, we obtained the density m
 \noindent
 
 \subsection{Applying to Four Qubit Systems}
+Consider the link class $4^{20}$. The polynomial is $abc+ abd + ac$. We will show here that the statevector corresponding to it is $\ket{\psi_{20}} = \ket{3^1}_{abc}\ket{0}_{d} \ket{0}_e + \ket{3^1}_{abd} \ket{0}_c \ket{1}_e + \ket{2^1}_{ac} \ket{10}_{bd} \ket{2}_e$. The density operator corresponding to it is 
+\begin{equation*}
+	\hat{\rho}_{abcd} = \frac{\Tr_e( \ket{\psi_{20}}\bra{\psi_{20}})}{\sqrt{\braket{\psi_{20}|\psi_{20}} }}.
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \scalebox{0.7}{ \input{pics/4_20.tex}}
+    \caption{The knot diagram, characterising the $4^{20}$ link class.}
+\end{figure}
+The density matrix becomes 
+\begin{equation*}
+	\hat{\rho} = \left[\begin{array}{cccccccccccccccc}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0.166 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}\right]
+	.
+\end{equation*}
+Partial trace with respect to the subsystem $a$ is $\hat{\rho}^{T_a}_{abcd}$. This matrix is, 
+\begin{equation*}
+	\hat{\rho}^{T_a}_{abcd} = \left[\begin{array}{cccccccccccccccc}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0.166 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}\right]
+\end{equation*}
+Eigenvalue of the density matrix is -0.270, -0.103, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.103, 0.167, 0.167, 0.270, 0.333, 0.333. It has negative eigenvalue. So, the qubit $a$ and the subsystem $bcd$ is entangled. Now we compute partial transpose with respect to $b$ subsystem. So, partial trace $\hat{\rho}^{T_b}_{abcd}$ is given by the matrix
+\begin{equation*}
+	\hat{\rho}^{T_b}_{abcd} = \left[\begin{array}{cccccccccccccccc}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.166 & 0.166 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}\right]
+	.
+\end{equation*}
+Eigenvalues of the density matrix is -0.186, -0.000, -0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.167, 0.209, 0.333, 0.477. We see that one of the eigenvalue is negative. So the subsystem $b$ and the subsystem $acd$ is entangled. Now, we want to check if the subsystem $c$ and $abd$ is entangled or not. So, the partial transpose with respect to $c$ is $\hat{\rho}^{T_c}_{abcd}$. The matrix is given by, 
+\begin{equation*}
+	\hat{\rho}^{T_c}_{abcd}= \left[\begin{array}{cccccccccccccccc}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}\right]
+	.
+\end{equation*}
+The eigenvalues of the matrix is -0.236, -0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.064, 0.167, 0.236, 0.333, 0.436. We see that it has negative eigenvalue. So, the subsystem $c$ and $abd$ are entangled. At last, we want to check if the subsystem $d$ and $abc$ is entangled or not. The partial trace is $\hat{\rho}^{T_d}_{abcd}$, the matrix is given by,
+\begin{equation*}
+	\hat{\rho}^{T_d}_{abcd} = \left[\begin{array}{cccccccccccccccc}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0.166 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}\right]
+	.
+\end{equation*}
+The eigenvalues of the matrix are -0.167, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.033, 0.167, 0.167, 0.259, 0.541. So, the subsystem $d$ and the subsystem $abc$ are entangled. This shows that the initial system has \textbf{four partite entanglement}. Now, we compute all possible traces and the find out if the rest of the system is entangled or separable.
+Partial trace with respect to system $a$ gives the reduced density matrix $\hat{\rho}_{bcd}$, given by 
+\begin{equation*}
+	\hat{\rho}_{bcd} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right]
+	.
+\end{equation*}
+As this is a diagonal matrix, after tracing out the subsystems become separable.
+Partial trace with respect to system $b$ gives us the reduced density matrix $\hat{\rho}_{acd}$ given by,
+\begin{equation*}
+	\hat{\rho}_{acd} = \left[\begin{matrix}0.5 & 0 & 0 & 0 & 0 & 0.1 & 0.2 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0.1 & 0 & 0 & 0 & 0 & 0.1 & 0.2 & 0\\0.2 & 0 & 0 & 0 & 0 & 0.2 & 0.4 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+\end{equation*}
+Now partial transpose with respect to the subsystem $a$ gives us
+\begin{equation*}
+	\hat{\rho}_{acd}^{T_a} =\left[\begin{matrix}0.5 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+\end{equation*}
+Its eigenvalues are -0.167, 0.000, 0.000, 0.000, 0.167, 0.167, 0.333, 0.500. The presence of the negative eigenvalue suggest that the subsystem $a$ and $cd$ is entangled. Now, partial transpose with respect to $c$ gives us 
+\begin{equation*}
+	\hat{\rho}_{acd}^{T_c}=\left[\begin{matrix}0.5 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+\end{equation*}
+The eigenvalues of the matrix are same as before -0.167, 0.000, 0.000, 0.000, 0.167, 0.167, 0.333, 0.500. So, $c$ and $ad$ is entangled. Now we see that the partial transpose with respect to $d$ is 
+\begin{equation*}
+	\hat{\rho}_{acd}^{T_d} = \left[\begin{matrix}0.5 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0.166 & 0 & 0\\0.166 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{matrix}\right].
+\end{equation*}
+Eigenvalues are	0.000, 0.000, 0.000, 0.000, 0.000, 0.167, 0.230, 0.603. PPT test says that if the eigenvalues of the partial transpose is negative then the density matrix corresponds to entangled state. But the converse is not true. So, it might be possible that the $d$ and $ac$ are separable. To check this we first compute the eigenvectors of $\hat{\rho}_{acd}$ are 
+\begin{equation*}
+	\left[\begin{matrix}0\\0\\1.0\\0\\0\\0\\0\\0\end{matrix}\right],
+	\left[\begin{matrix}0\\0\\0\\1.0\\0\\0\\0\\0\end{matrix}\right],
+	\left[\begin{matrix}0\\0\\0\\0\\1.0\\0\\0\\0\end{matrix}\right],
+	\left[\begin{matrix}0\\-1.0\\0\\0\\0\\0\\0\\0\end{matrix}\right],
+	\left[\begin{matrix}0\\0\\0\\0\\0\\0\\0\\1.0\end{matrix}\right],
+	\left[\begin{matrix}0\\0\\0\\0\\0\\1.0\\0\\0\end{matrix}\right],
+	\left[\begin{matrix}0.525\\0\\0\\0\\0\\0\\-0.850\\0\end{matrix}\right],
+	\left[\begin{matrix}0.850\\0\\0\\0\\0\\0\\0.525\\0\end{matrix}\right].
+\end{equation*} 
+Now, we will show that the eigenvectors are separable. 
+\begin{equation*}
+	\begin{split}
+	\left[\begin{matrix}0\\0\\1.0\\0\\0\\0\\0\\0\end{matrix}\right] = \ket{0}_a\ket{0}_c\ket{0}_d, \quad \quad \left[\begin{matrix}0.525\\0\\0\\0\\0\\0\\-0.850\\0\end{matrix}\right] = 0.525 \ket{0}_a \otimes \ket{0}_c \otimes \ket{0}_d - 0.850 \ket{1}_a \otimes \ket{1}_c \otimes \ket{0}_d	
+	\end{split}
+\end{equation*}
+The last vector can be written as 
+\begin{equation*}
+	 \Big(0.525\ket{0}_a\otimes \ket{0}_c - 0.850\ket{1}_a\otimes \ket{1}_c\Big) \otimes \ket{0}_d = \ket{v_{ac}} \otimes \ket{v}_d.
+\end{equation*}
+Similarly, we can show that the other vectors are also separable.
+
+Partial trace with respect to system $c$ gives us the reduced density matrix $\hat{\rho}_{abd}$ given by,
+\begin{equation*}
+	\hat{\rho}_{abd} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0.166 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\end{matrix}\right].
+\end{equation*}
+Now, partial transpose with respect to subsystem $a$ gives us the following matrix
+\begin{equation*}
+	\hat{\rho}^{T_a}_{abd} =\left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0 & 0\\0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\end{matrix}\right]	.
+\end{equation*}
+Eigenvalues of the matrix are -0.167, 0.000, 0.000, 0.167, 0.167, 0.167, 0.333, 0.333. Negative eigenvalue imply entanglement between $a$ and $bd$ system. Partial transpose with respect to the subsystem $b$ gives us,
+\begin{equation*}
+	\hat{\rho}_{abd}^{T_b} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\end{matrix}\right].
+\end{equation*}
+Eigenvalues of the matrix are -0.103, 0.000, 0.000, 0.000, 0.167, 0.270, 0.333, 0.333. So, negative eigenvalue suggest entanglement between $b$ and $ad$.
+Partial transpose with respect to the subsystem $d$ gives us the matrix
+\begin{equation*}
+	\hat{\rho}_{abd}^{T_d} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166 & 0 & 0 & 0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\end{matrix}\right].
+\end{equation*}
+The eigenvalues are $-0.069, 0.000, 0.000, 0.000, 0.167, 0.167, 0.333, 0.402$. As one of the eigenvalues is negative, $d$ and $ab$ are entangled.
+Partial trace with respect to system $d$ gives us the reduced density matrix $\hat{\rho}_{abc}$ given by,
+\begin{equation*}
+	\hat{\rho}_{abc} =\left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0.166 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right]
+	.
+\end{equation*}
+Partial transpose with respect to subsystem $a$ is
+\begin{equation*}
+	\hat{\rho}_{abc}^{T_a} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0.166 & 0 & 0.166 & 0\\0 & 0 & 0 & 0.166 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0.166 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right]
+	.
+\end{equation*}
+Eigenvalues of the matrix are -0.208, 0.000, 0.000, 0.074, 0.167, 0.300, 0.333, 0.333. As it has negative eigenvalue, the subsystem $a$ and $bc$ are entangled.
+Partial transpose with respect to the subsystem $b$ is
+\begin{equation*}
+	\hat{\rho}_{abc}^{T_b} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0.166 & 0 & 0.166\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right]
+	.
+\end{equation*}
+Eigenvalues of the matrix are -0.122, -0.000, 0.000, 0.000, 0.167, 0.167, 0.333, 0.455. Negative eigenvalues implies subsystem $b$ and $ac$ are entangled.
+Partial transpose with respect to the subsystem $c$ is
+\begin{equation*}
+	\hat{\rho}_{abc}^{T_c} = \left[\begin{matrix}0.333 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0.166 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\0 & 0.166 & 0 & 0.166 & 0 & 0 & 0.166 & 0\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.333\end{matrix}\right].
+\end{equation*}
+Eigenvalues of the matrix are -0.167, -0.000, 0.000, 0.000, 0.167, 0.333, 0.333, 0.333. As it has negative eigenvalues it means $c$ and the subsystem $ab$ is entangled.
+
+Now we trace out $a$ and $b$, the reduced density matrix is 
+\begin{equation*}
+	\hat{\rho}_{cd} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0\end{matrix}\right]
+	.
+\end{equation*}
+As this is a diagonal matrix, it can be separated, so after tracing out $a$ and $b$, the subsystem $c$ and $d$ are separated.
+If we trace out $b$ and $c$, we get the density matrix
+\begin{equation*}
+	\hat{\rho}_{ad} =\left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
+	.
+\end{equation*}
+This density matrix is also diagonal. So, after tracing out $b$ and $c$, we get that $a$ and $d$ are separated. 
+If we trace out $c$ and $d$, we get the density matrix as,
+\begin{equation*}
+	\hat{\rho}_{ab} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0.166 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0.5\end{matrix}\right]
+	.
+\end{equation*}
+It is also a diagonal matrix, so it is separable. So, $a$ and $b$ are separated if we trace out $c$ and $d$.
+If we trace out $a$ and  $d$, we get the reduced density as,
+\begin{equation*}
+	\hat{\rho}_{bc} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.333 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right]
+	.
+\end{equation*}
+This being a diagonal matrix implies that $\rho_{bc}$ is separable. After tracing out $b$ and $d$, we get the reduced diagonal matrix.
+\begin{equation*}
+	\hat{\rho}_{ac} = \left[\begin{matrix}0.5 & 0 & 0 & 0.166\\0 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0.166 & 0 & 0 & 0.333\end{matrix}\right]
+	.
+\end{equation*}
+Partial transpose of this reduced density matrix with respect to $a$ gives us the matrix,
+\begin{equation*}
+	\hat{\rho}_{ac}^{T_a} = \left[\begin{matrix}0.5 & 0 & 0 & 0\\0 & 0 & 0.166 & 0\\0 & 0.166 & 0.166 & 0\\0 & 0 & 0 & 0.333\end{matrix}\right].
+\end{equation*}
+Eigenvalues of the matrix are -0.103, 0.270, 0.333, 0.500. As one of the eigenvalue is negative, we can see that after tracing out $b$ and $d$, the subsystem $a$ and $c$ remain entangled. Now, if we trace out $a$ and $c$, we get the reduced density matrix,
+\begin{equation*}
+	\hat{\rho}_{bd} = \left[\begin{matrix}0.333 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0.5 & 0\\0 & 0 & 0 & 0.166\end{matrix}\right]
+	.
+\end{equation*}
+Being a diagonal matrix it is separable. So, to summarize the results of all the partial trace and partial transpose,
+\begin{itemize}
+	\item After tracing out $a$, rest of the system $b$, $c$, $d$ becomes separable.
+	\item After tracing out $b$, $a$ and $cd$ remain entangled, $c$ and $ad$ remain entangled, and $ac$ and $d$ are separable.
+	\item After tracing out $c$, $a$ and $bd$, $b$ and $ad$, and $d$ and $ab$ remain entangled.
+	\item After tracing out $d$, $a$ and $bc$, $b$ and $ac$, and $c$ and $ab$ remain entangled.
+	\item After tracing out $ab$, $c$ and $d$ are separable.
+	\item After tracing out $bc$, $a$ and $d$ are separable.
+	\item After tracing out $cd$, $a$ and $d$ are separable.
+	\item After tracing out $ad$, $b$ and $c$ are separable.
+	\item After tracing out $bd$, $a$ and $c$ are entangled.
+	\item After tracing out $ac$, $b$ and $d$ are separable.
+\end{itemize}
+So, the polynomial of the state is $abc + abd + ac$.
 \section{Physical Significance: Use in Qubit Networks}
 The knot theoretic approach to entangled quantum states can be of great use in qubit networks, where different parties posses different qubits, entangled together and they want to perform some protocols (Here protocol means some series of operations/measurements to obtain some result, like the \textbf{BB84 protocol} for secure key distribution).
 \begin{figure}[H]
@@ -1159,11 +1395,40 @@ The network can be easily described using the link polynomial language as: $\mat
 We can easily see that the polynomial describing this network is $\mathrm{P(a,b,c,d) = abc+abd+ac}$. Thus a state can immediately be obtained using the algorithm described previously.
 \section{Discussion and Conclusion}
 \section{Acknowledgements}
+We want to thank \textit{Prof. Sourin Das} for the opportunity to work on this report for the `Term Project' component of the course `PH3203: Advanced Quantum Mechanics' and also for valuable discussions and suggestions. Various information in this report has been taken from different papers which are appropriately cited. The entire repository of this project is maintained at \url{https://github.com/LoneWolf1304/PH3203_Term_Project}.
 \newpage
 \section*{Appendix A: {\huge Quantum Information Basics}}
 \addcontentsline{toc}{section}{Appendix A: Quantum Information Basics} % Optional
-\subsection{Density Matrix}
+\subsection{Density Matrix Formalism}
+If a Hilbert space is given, then any wavefunction is given by an element of the Hilbert space. For isolated system, any quantum state is given by these elements of the Hilbert space. This kind of states are also called pure state. As the whole quantum state is given by one state vector from the Hilbert space.\\[0.3cm]
+But in general, it can be possible that the system is not isolated and connected to an environment. In that case even if we are interested in the wavefunction corresponds to the Hilbert space of the system, the effect of environment makes a difference. In this case, the actual Hilbert space that we should consider should be the tensor product of the Hilbert space of the system and the environment. So any state should corresponds to both the Hilbert space of envirnoment and the system. But we are only interested in the state of the system. So it might be possible that we do not get any pure state but an incoherent superposition of pure states. This is called a mixed state. Mixed states are ensembles of pure states. And each of the states have a probabilty corresponding to it. These states can not be represented as a state vector from the Hilbert space.\\[0.3cm]
+To tackle this problem of representing mixed state, we introduce the formalism of density matrix. First we define density matrix for a pure state. Let $\ket{\psi}$ is an state vector from the Hilbert space $\mathcal{H}$. Then we define the density matrix corresponding to this state as $\rho = \ket{\psi} \bra{\psi}$. Note that, for pure state $\rho^2 = \rho$, this is an alternate definition of pure state. We can also see that this formalism is gauge invariant, as in quantum mechanics any vector if multiplied with a $U(1)$ phase represents the same phase, but in density matrix formalism density matrix remains same. Trace of density matrix is always one. it corresponds to probability conservation. Assume an ensemble of pure state $\{\psi_1, \psi_2, \dots\}$ are given where $\psi_i$ has probability $\lambda_i$, then the density corresponding to this mixed state is given by 
+\begin{equation*}
+    \rho = \lambda_1 \ket{\psi_1}\bra{\psi_1} + \lambda_2\ket{\psi_2}\bra{\psi_2} + \dots.
+\end{equation*}
+Here also, we see that trace of the density matrix is $1$. Mathematically, we can define density matrix as a trace class operator on the Hilbert space $\mathcal{H}$ with trace 1.\\[0.3cm]
+Let $B$ is observable corresponds to the Hilbert space $\mathcal{H}$. The expectation of this observable is given by $\Tr{B \rho}$. The proof follows as following,
+\begin{align*}
+    \langle B \rangle &= \sum_j \lambda_j \bra{\psi_j} B \ket{\psi_j} \\
+    &= \sum_{j,k} \lambda_j \bra{\psi_j} B \ket{\psi_k} \bra{\psi_k} \ket{\psi_j} \\
+    &= \sum_{j,k} \bra{\psi_j} B \lambda_j \ket{\psi_k} \bra{\psi_k} \ket{\psi_j} \\
+    &= \sum_{j,k} \bra{\psi_j} B \lambda_k \ket{\psi_k} \bra{\psi_k} \ket{\psi_j} \\
+    &= \sum_{j} \bra{\psi_j} B \rho \ket{\psi_j} \\
+    &= \Tr{B \rho}
+\end{align*}
+
 \subsection{Peres-Horodecki Criterion}
+The Peres–Horodecki criterion is a necessary condition, for the joint density matrix $\rho$ of two quantum mechanical system $A$ and $B$, to be separable. It is also called the PPT criterion, for positive partial transpose. In the $2\times2$ and $2\times3$ dimensional cases the condition is also sufficient. It is used to decide the separability of mixed states, where the Schmidt decomposition does not apply. The theorem was discovered in 1996 by Asher Peres and the Horodecki family.\\[0.3cm]
+In higher dimensions, the test is inconclusive, and one should supplement it with more advanced tests, such as those based on entanglement witnesses. \\[0.3cm]
+Suppose, we have a general state given by a density matrix $\rho$ in a joint Hilbert state $\mathcal{H}_A \otimes \mathcal{H}_B$. Let the $\rho $ is denoted as, \begin{equation*}
+	\rho = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{k}\bra{l}.
+\end{equation*}
+Here, $i,j$ represents the basis elements from $\mathcal{H}_A$ and $k,l$ represents the basis elements from $\mathcal{H}_B$, and $\otimes$ denote the Kronecker product. %Write about Kronecker Product also.
+Now, partial transpose with respect to $B$ is given as 
+\begin{equation*}
+	\rho^{T_B} = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes (\ket{k}\bra{l})^{T} = \sum_{ijkl} p^{ij}_{kl} \ket{i}\bra{i}\otimes \ket{l}\bra{k}.
+\end{equation*}
+Now, Peres-Horodecki criterion says that if $\rho$ is separable then all the eigenvalues of the partial transpose of $\rho$ is non-negative. So, this means if any of them are negative, then the state is not separable so entangled. The converse of this is not true in general, but in 2 $\times$ 2 and $2 \times 3$ the converse is also true.
 \newpage
 \section*{Appendix B: {\huge Knot Theory Basics}}
 \addcontentsline{toc}{section}{Appendix B: { Knot Theory Basics}}
